@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    
+    <meta charset="UTF-8">
+    
+    <head>
+    
+    <title>Övning 6</title>
+        <style>
+            
+           
+            .wrap{display:inline-block;  
+                
+            }
+            
+            img
+            
+            {
+            width:300px;
+            
+            border: 10px solid black;
+            
+            float: right;
+            margin: 0 0 10px 10px;
+            }
+            
+        
+                
+        .wrap>div {
+  border: 1px solid darkgray;
+  padding: 10px;
+  background-color:grey ;
+}
+            
+            .table div{
+            
+            border:1px solid black;
+                position:relative;
+                margin: 15px;
+            }
+            
+.table .div {
+    margin:10px;
+  display: table;
+  background-color: beige;
+            }
+.table .div > div { display: table-row; 
+            }
+.div > div div {
+  display: table-cell;
+  background-color: beige; }
+            
+            .row {
+                
+                display:flex; flex-direction:row;      
+                padding: 2px;
+            }
+            
+            .titel
+            
+            {
+                
+                display:flex;flex-direction:row;
+                padding: 2px;
+                font-weight:700;}
+            }
+            
+            .column
+            {
+            border:2px solid black; 
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+                
+                
+            }
+            
+            .col2
+            {
+           
+                width: 100%;
+                height:1000px;
+                
+                display: flex;
+                flex-direction: row;}
+                
+                .row1,.row2,.row3
+                {
+                border:1px solid black;
+                }
+                
+                 
+            
+                .col1,.col3
+            
+            {
+                height: 50px;
+                border:1px solid black;
+                background-color:chocolate
+                
+                    
+            }
+            
+            .row1,.row3
+            
+            {
+            background-color: cornsilk;
+                
+                
+            }
+            .row2
+            {
+            background-color: floralwhite    
+                
+            }
+            
+            .col1,.col3,.row1,.row2,.row3
+            
+            {
+            text-align:center;
+            padding:4px;
+                
+                
+            }
+            
+        </style>
+        <!--
+
+
+
+--------------------------------------------------------------------------------------
+-->
+        
+    
+    
+    </head>
+    <body>
+        
+        <h2>Övning 6</h2>
+        
+        <div>
+    
+ 
+            
+            
+            
+            <div class="wrap">
+            <div><p><h3>Hi, I'm Steve.</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae molestie est. Morbi sit amet quam ullamcorper, rhoncus mi sed, suscipit odio. Mauris commodo lacinia finibus. Suspendisse eleifend tellus fermentum magna porttitor vehicula. Aenean lacinia dui eu gravida molestie. Duis sem nibh, porta in mi vel, feugiat ullamcorper dolor. Aenean mollis risus massa, at venenatis dui venenatis id. In facilisis quis sem vel eleifend. Cras luctus ut augue eget consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <p><img src="http://images.huffingtonpost.com/2015-07-17-1437155465-1424656-SteveJobs.jpg">Proin urna risus, iaculis in sem sit amet, tincidunt tempor magna. Maecenas aliquam vestibulum ipsum, eget maximus felis ultricies vel. Praesent porta volutpat neque. Fusce fringilla rhoncus odio sit amet varius. Proin cursus dui eget blandit volutpat. Pellentesque accumsan venenatis nulla. Duis in sapien neque. Phasellus iaculis gravida feugiat. Sed eget lectus orci. Proin facilisis nunc ut laoreet rhoncus.</p>p>
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque hendrerit efficitur ligula vel iaculis. Nulla sagittis convallis lectus eget auctor. Maecenas ex metus, sagittis et venenatis ac, ultricies sed eros. Morbi blandit eros ac eros tempus sollicitudin. Curabitur auctor mattis leo ac faucibus. Ut vel sollicitudin nisi. Cras facilisis cursus luctus. Curabitur auctor ultrices leo, et finibus odio rutrum a.
+
+Maecenas aliquam varius libero, vitae scelerisque eros ultricies nec. Pellentesque sed est laoreet, mollis mauris in, pharetra magna. Nunc auctor iaculis arcu, in euismod justo fermentum sed. Sed suscipit ullamcorper nisi, eu dapibus nunc aliquet non. Nulla ullamcorper gravida ligula a luctus. Aliquam lobortis, leo vel mollis porta, nibh odio finibus ex, mattis imperdiet sapien ipsum sed eros. Donec vitae leo eu purus aliquam feugiat. Fusce maximus consequat orci. Fusce faucibus tincidunt justo venenatis congue. Donec malesuada tempor mauris sit amet elementum. Sed laoreet iaculis nunc, ut vehicula lorem convallis in. Nam et blandit arcu. In elementum, odio et semper convallis, nisl sem fringilla metus, sit amet scelerisque mi tellus in turpis. Fusce vitae tortor ex. Sed semper rutrum metus, in pulvinar nisi iaculis a.</div>
+                </div>
+        
+            
+            <div class="table">
+  <div class="div">
+      <div class="titel">
+      <div>Dag</div>
+      <div>Vecka</div>
+      <div>Månad</div>
+      <div>År</div>
+          
+      </div>
+      
+  <div class="row">
+    <div>Måndag</div>
+    <div>52</div>
+    <div>12</div>
+    <div>2000</div>
+  </div>
+  <div class="row">
+    <div>Fredag</div>
+    <div>1</div>
+      <div>6</div>
+    <div>2006</div>
+  </div>
+</div>
+            
+        </div>
+            
+            </div> <!--
+
+
+
+--------------------------------------------------------------------------------------
+-->
+        
+        
+        <div class="column">
+            
+            <header class="col1"><h3>Header</h3></header>
+            
+            
+            
+            <div class="col2">
+                 
+                <nav class="row1"><h3>Navigate</h3></nav>
+                
+            <article class="row2"><h3>The no-transparency election</h3>(CNN)The 2016 election is setting new lows for presidential transparency in the modern era.
+                
+                <p>Hillary Clinton is under fire for waiting until she nearly collapsed at a public event Sunday to disclose she was diagnosed Friday with pneumonia. She hasn't provided a full accounting of her health, though Donald Trump has revealed far less. The Republican nominee is departing with decades of tradition by not releasing his tax returns, which could provide key details about his investments and financial interests. And both candidates have declined traveling with a "protective pool" of reporters that follow them to provide continuous coverage of their activities.</p>
+<p>Trump, campaign take measured response on Clinton health news
+On Monday night, transparency questions surfaced again as PBS interviewer Charlie Rose grilled former President Bill Clinton about his family's foundation.
+In other words, Trump and Clinton have less than two months to close the sale, but most voters aren't sure exactly what they're buying.</p>
+ 
+<p>Few candidates relish throwing open their most intimate health and financial secrets. But the issue is particularly acute this year given Trump's decades of business dealings. And, of course, Trump, 70, and Clinton, 68, would be the oldest and second oldest presidents inaugurated for a first term in a job that comes with intense physical and mental demands -- making their health a highly relevant issue.
+When asked by CNN's Anderson Cooper Monday why she kept her pneumonia diagnosis secret, Clinton said she "just didn't think it was going to be that big a deal."
+</p>
+</article>
+        
+                <aside class="row3"><h3>Aside</h3></aside>
+                
+            </div>
+        
+        
+            <footer class="col3"><h3>Footer</h3></footer>
+           
+            
+        
+        
+        </div>
+    
+    
+    
+    
+    
+    
+    </body>
+</html>
