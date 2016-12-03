@@ -260,7 +260,7 @@ drawWhatever.addEventListener('click', function(){//Enables "draw circle", sets 
 cons.innerHTML = "Start drawing your circle on the canvas."
 
 toggle1Function()
-    
+c.closePath()   
 clicks = 0; 
 pressedCircle = false; 
 pressedRectangle = false; 
@@ -381,6 +381,7 @@ let mouseup;
 
                     c.lineTo(wx,wy)
                     c.stroke();
+                    
 
                 };
 
@@ -392,6 +393,7 @@ let mouseup;
         mouseup = true;
         pressedWhatever == false;
         cons.innerHTML = 'WOW! Youve got creative veins!'
+        c.closePath()
         }); 
         
       
@@ -535,6 +537,7 @@ pressedWhatever = false;
   
 //----------------------------------------EXPORT TO JSON-------------------------------------
 json.addEventListener('click', function(event){
+if(jsonlist.length>0){
 toggle1Function()
 let jsontext='' 
 for(i=0;i<jsonlist.length;i++){ 
@@ -542,7 +545,10 @@ let obj = JSON.stringify(jsonlist[i], null, 2);
 jsontext = jsontext + obj 
 JSONDIV.innerHTML = jsontext 
 }; 
-
+};
+    if(jsonlist.length==0){
+        JSONDIV.innerHTML = "There are no drawings to show, I'm afraid."
+    }
 }); 
 
 }); 
