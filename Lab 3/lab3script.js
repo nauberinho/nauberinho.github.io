@@ -510,19 +510,18 @@ pressedCircle = false;
 pressedRectangle = false; 
 pressedTriangle = false; 
 pressedWhatever = false;
-pressedEraser = true
-    let moves=0
-     mouseuperaser = false;
-      canvas.addEventListener('mousedown', function(event){
-        
-     
-       
+pressedEraser = true;
+let moves=0;
+mouseuperaser = false;
     
-    if(pressedEraser == true && mouseuperaser == false){
-        moves++
+      canvas.addEventListener('mousedown', function(event){
+
+    
+        
        
         
         if(pressedEraser == true && mouseuperaser == false){
+            moves++
             canvas.addEventListener('mousemove', function(event){
         
         
@@ -537,7 +536,7 @@ pressedEraser = true
 
             });
         };
-        };
+        
         
         canvas.addEventListener('mouseup', function(event){
         mouseuperaser = true;
