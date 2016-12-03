@@ -32,6 +32,7 @@ let clear1 = document.getElementById('clear');
 let json = document.getElementById('json');
 let JSONDIV = document.getElementById('jayson');
 let dropdownbutton = document.getElementById('myBtn');
+let drawWhatever = document.getElementById('drawwhatever');
     
 let userColor; 
 let inputtext = document.getElementById('inputtext');
@@ -146,7 +147,9 @@ var pressedCircle = false;
 var pressedRectangle = false; 
 var pressedTriangle = false; 
 var pressedStop = false; 
-var pressedWhatever = false; 
+var pressedWhatever = false;
+var pressedEraser = false;
+let mouseup;
 var centerX; 
 var centerY; 
 var rx1; 
@@ -249,24 +252,30 @@ dropdownbutton.addEventListener('mouseleave', function(){
 cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
 }); 
 });
+    
+drawWhatever.addEventListener('mouseover', function(event){ 
+cons.innerHTML = "This is where you can explore, draw whatever you like." 
+dropdownbutton.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
+}); 
+});
 
 }
     
 //------------------------------When clicking on "drawing"-buttons-----------------------
     //-----------------------------Circle below-----------------------------------//
-let drawWhatever = document.getElementById('drawwhatever');
+
 drawWhatever.addEventListener('click', function(){//Enables "draw circle", sets variables to init and disables other figures.
 
 cons.innerHTML = "Start drawing your circle on the canvas."
 
-toggle1Function()
-c.closePath()   
+toggle1Function();  
 clicks = 0; 
 pressedCircle = false; 
 pressedRectangle = false; 
 pressedTriangle = false; 
 pressedWhatever = true; 
- 
+pressedEraser = false; 
 });     
     
 drawCircle.addEventListener('click', function(){//Enables "draw circle", sets variables to init and disables other figures.
@@ -279,7 +288,8 @@ clicks = 0;
 pressedCircle = true; 
 pressedRectangle = false; 
 pressedTriangle = false; 
-pressedWhatever = false; 
+pressedWhatever = false;
+pressedEraser = false;
 centerY = 0; 
 centerX = 0; 
 radius = 0; 
@@ -315,7 +325,8 @@ clicks = 0
 pressedCircle = false; 
 pressedRectangle = false; 
 pressedTriangle = true; 
-pressedWhatever = false; 
+pressedWhatever = false;
+pressedEraser = false;
 var tx1 = 0 
 var ty1 = 0 
 var tx2 = 0 
@@ -325,36 +336,11 @@ var ty3 = 0
 
 }); 
 
-let whatever = document.getElementById('whatever'); 
 
-/*whatever.addEventListener('click', function(){//Enables "draw whatever", sets variables to init and disables other figures. 
 
-clicks = 0; 
-pressedCircle = false; 
-pressedRectangle = false; 
-pressedTriangle = false 
-pressedWhatever = true 
-let X = 0; 
-let Y = 0; 
-radius = 0; 
-
-});
-
-*/
 //---------------------------------DRAW WHATEVER - WHEN MOUSE DOWN ON CANVAS-----------------------------------
-let mouseup;
 
 
-    function Polygon( points ){
-	for(i=0; i<points.length; i++){
-		let propertyx = "x" + (i+1)
-		let propertyy = "y" + (i+1)
-		this[propertyx] = points[i].x;
-		this[propertyy] = points[i].y;
-		
-	}
-	
-}
     canvas.addEventListener('mousedown', function(event){
         
      let move=0
@@ -512,7 +498,60 @@ c.closePath();
 }; 
 }); 
 
-//--------------------------------------CLEAR BUTTON---------------------------------- 
+//--------------------------------------ERASE BUTTON---------------------------------- 
+let eraser = document.getElementById('erase')
+let mouseuperaser = false;
+eraser.addEventListener('click', function(event){
+    
+toggle1Function()
+    
+clicks = 0 
+pressedCircle = false; 
+pressedRectangle = false; 
+pressedTriangle = false; 
+pressedWhatever = false;
+pressedEraser = true
+    let moves=0
+     mouseuperaser = false;
+      canvas.addEventListener('mousedown', function(event){
+        
+     
+       
+    
+    if(pressedEraser == true && mouseuperaser == false){
+        moves++
+       
+        
+        if(pressedEraser == true && mouseuperaser == false){
+            canvas.addEventListener('mousemove', function(event){
+        
+        
+                if(moves>moves-1 && mouseuperaser == false){
+
+                let wx = event.clientX - rect.left; 
+                let wy = event.clientY - rect.top;  
+
+                c.clearRect(wx,wy,14,14)
+
+                };
+
+            });
+        };
+        };
+        
+        canvas.addEventListener('mouseup', function(event){
+        mouseuperaser = true;
+        pressedEraser == false;
+        cons.innerHTML = 'WOW! Youve got creative veins!'
+        
+        }); 
+        
+      
+        
+  });
+});
+
+ //--------------------------------------CLEAR BUTTON---------------------------------- 
 
 clear1.addEventListener('click', function(event){ 
 toggle1Function()
@@ -521,6 +560,8 @@ jsonlist = []
 JSONDIV.innerHTML = ''
 
 }); 
+       
+
 //------------------------------------------------------------------------------------- 
 
 //---------------------------------------STOP DRAWING-------------------------------------// //-------------Sets all bools + var clicks to false and 0---------------------// 
