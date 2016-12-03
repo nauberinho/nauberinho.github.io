@@ -254,7 +254,21 @@ cons.innerHTML = "Hover your mouse around to learn about your new drawing tool."
     
 //------------------------------When clicking on "drawing"-buttons-----------------------
     //-----------------------------Circle below-----------------------------------//
+let drawWhatever = document.getElementById('drawwhatever');
+drawWhatever.addEventListener('click', function(){//Enables "draw circle", sets variables to init and disables other figures.
 
+cons.innerHTML = "Start drawing your circle on the canvas."
+
+toggle1Function()
+    
+clicks = 0; 
+pressedCircle = false; 
+pressedRectangle = false; 
+pressedTriangle = false; 
+pressedWhatever = true; 
+ 
+});     
+    
 drawCircle.addEventListener('click', function(){//Enables "draw circle", sets variables to init and disables other figures.
 
 cons.innerHTML = "Start drawing your circle on the canvas."
@@ -324,15 +338,75 @@ let X = 0;
 let Y = 0; 
 radius = 0; 
 
-}); 
+});
+
 */
+//---------------------------------DRAW WHATEVER - WHEN MOUSE DOWN ON CANVAS-----------------------------------
+let mouseup;
+
+
+    function Polygon( points ){
+	for(i=0; i<points.length; i++){
+		let propertyx = "x" + (i+1)
+		let propertyy = "y" + (i+1)
+		this[propertyx] = points[i].x;
+		this[propertyy] = points[i].y;
+		
+	}
+	
+}
+    canvas.addEventListener('mousedown', function(event){
+        
+     let move=0
+     mouseup = false;
+       
+    
+    if(pressedWhatever == true && mouseup == false){
+        move++
+        if(move=1 && mouseup == false){
+        let wx = event.clientX - rect.left; 
+        let wy = event.clientY - rect.top;
+        c.beginPath(); 
+        c.moveTo(wx,wy)
+        }
+        
+        if(pressedWhatever == true && mouseup == false){
+            canvas.addEventListener('mousemove', function(event){
+        
+        
+                if(move>move-1 && mouseup == false){
+
+                let wx = event.clientX - rect.left; 
+                let wy = event.clientY - rect.top;  
+
+                    c.lineTo(wx,wy)
+                    c.stroke();
+
+                };
+
+            });
+        };
+        };
+        
+        canvas.addEventListener('mouseup', function(event){
+        mouseup = true;
+        pressedWhatever == false;
+        cons.innerHTML = 'WOW! Youve got creative veins!'
+        }); 
+        
+      
+        
+  });
+ 
 //-------------------------------WHEN CLICKING ON CANVAS-------------------------------------------------------------------------------------- 
 canvas.addEventListener('click', function(event){ 
 
 
 
-//----------------------RECTANGLE DRAW BELOW------------------------------------------------------------- 
+            //----------------------RECTANGLE DRAW BELOW----------------------------
 
+    
+    
 if(pressedRectangle == true){ 
 clicks++ 
 
