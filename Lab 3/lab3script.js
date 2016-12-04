@@ -2,7 +2,9 @@ window.addEventListener('load', function(event){
 
 let canvas = document.getElementById("myCanvas"); 
 let c = canvas.getContext('2d');
-var rect = canvas.getBoundingClientRect(); 
+var rect = canvas.getBoundingClientRect();
+let lineWidth;
+c.lineWidth = lineWidth
 
 let cons = document.getElementById('consoled'); 
 
@@ -47,7 +49,7 @@ inputWidth.addEventListener('keyup',function(event){
 
 if(inputWidth.value.match(widthValues) !== null){ 
 widthisok = true; 
-cons.innerHTML ="valid width"; 
+cons.innerHTML ="valid width:" + widthValues; 
 addWidth.disabled= false; 
 } 
 
@@ -61,7 +63,8 @@ addWidth.disabled= true;
 let addWidth = document.getElementById('addWidth')
 addWidth.addEventListener('click', function(event){ 
 
-c.lineWidth = Number(inputWidth);
+lineWidth = inputWidth;
+cons.innerHTML =lineWidth;
 
 }); 
 
@@ -340,7 +343,7 @@ var ty3 = 0
 
 //---------------------------------DRAW WHATEVER - WHEN MOUSE DOWN ON CANVAS-----------------------------------
 
-
+    
     canvas.addEventListener('mousedown', function(event){
         
      let move=0
@@ -356,9 +359,9 @@ var ty3 = 0
         c.moveTo(wx,wy)
         }
         
-        if(pressedWhatever == true && mouseup == false){
-            canvas.addEventListener('mousemove', function(event){
         
+            canvas.addEventListener('mousemove', function(event){
+        if(pressedWhatever == true && mouseup == false){
         
                 if(move>move-1 && mouseup == false){
 
@@ -371,20 +374,24 @@ var ty3 = 0
 
                 };
 
-            });
-        };
-        };
+            };
+        });
         
-        canvas.addEventListener('mouseup', function(event){
+                canvas.addEventListener('mouseup', function(event){
         mouseup = true;
         pressedWhatever == false;
         cons.innerHTML = 'WOW! Youve got creative veins!'
         c.closePath()
         }); 
+        };
+        
+        
+
         
       
         
   });
+
  
 //-------------------------------WHEN CLICKING ON CANVAS-------------------------------------------------------------------------------------- 
 canvas.addEventListener('click', function(event){ 
