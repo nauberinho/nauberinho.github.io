@@ -1,5 +1,5 @@
 body{
-    font-family: imani, Ubuntu; times new roman; verdana;
+    font-family: verdana; Raleway; Ubuntu; times new roman;
     background-image:url(http://cdn.paper4pc.com/images/grayscale-wallpaper-8.jpg)
 }
 
@@ -17,7 +17,6 @@ z-index:1;
 .dropbtn:hover, .dropbtn:focus { 
 background-color: #e0e3e5; 
 color:black;
-border:1px solid black;
 } 
 
 
@@ -27,7 +26,8 @@ position: absolute;
 background-color: #f9f9f9;  
 overflow: auto; 
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
-z-index:1; 
+z-index:1;
+font-size: 0.81em;
 } 
 
 .dropdown-content a { 
@@ -78,14 +78,16 @@ width: 10%;
 
 #consoled{ 
 text-align: center;
-border: 2px solid black; 
-background-color: #f9fcf7;
+border: 2px solid white; 
+background-color: #09214E;
+color:#F4F4F4;
 min-height: 7em;
 max-height: 7em;
 min-width:320px;
-max-width:320x;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9); 
-} 
+max-width:320px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+font-size: 0.7em;
+}
 
 #colorDiv{  
 border: 2px solid black;
@@ -98,7 +100,7 @@ margin: 40px;
 
 #showcolor{
     height:5px;
-    background-color: aquamarine;
+    background-color: white;
     border:1px solid black;
 
 }
@@ -109,25 +111,29 @@ margin-left:0px;
 } 
 
 #jayson{ 
-border:2px solid black; 
-min-height: 150px;
-max-height: 150px;
-min-width: 290px; 
-background-color: black; 
+border:2px solid white; 
+min-height: 30px;
+max-height: 50px;
+min-width: 346px;
+max-width: 346px;
+text-align: center;
+background-color: #09214E; 
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9); 
-color:#fff;
+color:#F4F4F4;
+font-size: 0.7em;
 }
 
+
 #style{
-padding: 0px 5%;
-min-width: 160px;
-max-width: 153px;
+padding: 0px 15px;
+min-width: 178px;
+max-width: 178px;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9fcf7+0,f5f9f0+100;L+Green+3D */
 background: rgb(249,252,247); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(249,252,247,1) 0%, rgba(245,249,240,1) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A7AB8D', endColorstr='#A7AB8D',GradientType=0 ); /* IE6-9 */
-box-shadow: 8px 8px 8px 3px rgba(0,0,0,0.7)
-
+box-shadow: 8px 8px 8px 3px rgba(0,0,0,0.7);
+font-size: 0.7em;
 }

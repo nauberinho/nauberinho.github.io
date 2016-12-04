@@ -1,3 +1,7 @@
+//-----------------------------Created by Niklas Nauber in November 2016------------------------------------------//
+    //-----------------------------Contact: nauber91@hotmail.com---------------------------------------------------------//
+      //-----------------------------LAB 3 - CANVAS-project------------------------------------------//
+
 window.addEventListener('load', function(event){ 
 
 let canvas = document.getElementById("myCanvas"); 
@@ -352,7 +356,7 @@ var ty3 = 0
     
     if(pressedWhatever == true && mouseup == false){
         move++
-        if(move=1 && mouseup == false){
+        if(move==1 && mouseup == false){
         let wx = event.clientX - rect.left; 
         let wy = event.clientY - rect.top;
         c.beginPath(); 
@@ -590,11 +594,11 @@ let jsontext=''
 for(i=0;i<jsonlist.length;i++){ 
 let obj = JSON.stringify(jsonlist[i], null, 2); 
 jsontext = jsontext + obj 
-JSONDIV.innerHTML = jsontext 
+JSONDIV.value = jsontext 
 }; 
 };
     if(jsonlist.length==0){
-        JSONDIV.innerHTML = "There are no drawings to show, I'm afraid."
+        JSONDIV.value = "There are no drawings to show, I'm afraid."
     }
 }); 
 
