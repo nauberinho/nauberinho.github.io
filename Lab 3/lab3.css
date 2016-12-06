@@ -3,15 +3,20 @@ body{
     background-image:url(http://cdn.paper4pc.com/images/grayscale-wallpaper-8.jpg)
 }
 
+.dropdown{
+    position:fixed;
+    z-index:1;
+}
 .dropbtn { 
 color: white; 
- 
+opacity:0.5;
 font-size: 20px; 
 font-family: times; 
 border: none; 
 cursor: pointer; 
 border-radius: 5px; 
 z-index:1; 
+min-width: 90px;
 } 
 
 .dropbtn:hover, .dropbtn:focus { 
@@ -48,6 +53,9 @@ display:block;
 
 /*-----THE CANVAS + BELONGING ELEMENTS------------------------------------------*/
 #myCanvas{ 
+    
+    width=700px;
+    height=500px;
 
 border:1px solid black;
   
@@ -57,12 +65,11 @@ background: linear-gradient(to bottom, rgba(169,3,41,0.92) 0%,rgba(169,3,41,1) 7
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eba90329', endColorstr='#6d0019',GradientType=0);
 box-shadow: 4px 8px 16px 0px rgba(1,3,6,0.6); 
     
-margin: 0 auto;
+margin: 0px;
 } 
 
 #redigera{
 min-width: 100%; 
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
 align-content: center;
 padding: 0% 25% 0% 25%;
 } 
@@ -72,7 +79,7 @@ padding: 0% 25% 0% 25%;
 }
 
 #myBtn{
-width: 10%;
+width: 90px;;
 }
 
 
@@ -83,19 +90,14 @@ background-color: #09214E;
 color:#F4F4F4;
 min-height: 7em;
 max-height: 7em;
-min-width:320px;
-max-width:320px;
+min-width:346px;
+max-width:346px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
 font-size: 0.7em;
 }
 
-#colorDiv{  
-border: 2px solid black;
+#colorDiv{ 
 padding: 0% 30% 0% 30%;
-} 
-
-#addColor{ 
-margin: 40px; 
 } 
 
 #showcolor{
@@ -113,19 +115,19 @@ margin-left:0px;
 #jayson{ 
 border:2px solid white; 
 min-height: 30px;
-max-height: 50px;
+max-height: 30px;
 min-width: 346px;
 max-width: 346px;
 text-align: center;
 background-color: #09214E; 
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9); 
 color:#F4F4F4;
-font-size: 0.7em;
+font-size: 1em;
 }
 
 
 #style{
-padding: 0px 15px;
+padding: 0px 0px;
 min-width: 178px;
 max-width: 178px;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9fcf7+0,f5f9f0+100;L+Green+3D */
