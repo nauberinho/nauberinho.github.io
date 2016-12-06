@@ -43,11 +43,13 @@ let drawWhatever = document.getElementById('drawwhatever');
 let userColor; 
 let inputtext = document.getElementById('inputtext');
 let hexColors = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'; 
-let widthValues = '([0-9]{1}|10{2})$';
+let widthValues = '([0-9]{1}|[0-1]{2})$'
 let inputWidth = document.getElementById('inputWidth')
 
 let colorisOk;
 let widthisok;
+    
+    //----ADD WIDTH BELOW--------------------------------
 
 inputWidth.addEventListener('keyup',function(event){ 
 
@@ -58,7 +60,7 @@ addWidth.disabled= false;
 } 
 
 else if(inputWidth.value.match(widthValues) == null || inputWidth.value == ''){ 
-widthisOk = false; 
+widthisok = false; 
 cons.innerHTML="Not Valid"; 
 addWidth.disabled= true; 
 } 
@@ -66,10 +68,11 @@ addWidth.disabled= true;
 
 let addWidth = document.getElementById('addWidth')
 addWidth.addEventListener('click', function(event){ 
+if(widthisok==true){
 
-lineWidth = inputWidth;
-cons.innerHTML =lineWidth;
-
+c.lineWidth = Number(inputWidth.value);
+cons.innerHTML = c.lineWidth;
+};
 }); 
 
     
@@ -80,9 +83,9 @@ if(inputtext.value.match(hexColors) !== null){
 colorisOk = true; 
 cons.innerHTML ="valid color"; 
 addbutton.disabled= false;
-var text = 'Add color'
+var text = 'Add color';
 text.bold();
-addbutton.innerHTML = text
+addbutton.innerHTML = text;
 } 
 
 else if(inputtext.value.match(hexColors) == null || inputtext.value == ''){ 
