@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> LAB 3 </title>
+    <script src="lab3script.js" async></script>
+    <link rel="stylesheet" type="text/css" href="lab3.css">
+    </head>
+    
+   <body>
+       <div id="consoled">HEJ</div>
+       <div id="jayson"></div>
+       
+       <div class="dropdown">
+            
+            <button id="myBtn" class="dropbtn">Menu</button>
+            <div id="dropdown" class="dropdown-content">
+            <a href="#circle" id="hidden1">What is a circle?</a>
+            <a href="#rectangle" id="hidden2">What is a rectangle?</a>
+            <a href="#trianglecontact" id="hidden3">What is a triangle?</a>
+                <button id="drawcircle" class="redbtn"><a href="#">Draw a circle</a></button><br>
+                   <button id="drawrectangle" class="redbtn"><a href="#">Draw a rectangle</a></button><br>
+                   <button id="drawtriangle" class="redbtn"><a href="#">Draw a triangle</a></button><br>
+                   <button type ="button" id="drawpolygon" disabled class="redbtn">Draw a polygon</button><br>
+                <button id="stop" class="redbtn"><a href="#">Stop drawing</a></button><br>
+                   <button id="clear" class="redbtn"><a href="#">Clear canvas</a></button><br>
+
+                   <button disabled id="whatever" class="redbtn">Draw whatever you like</button><br>
+                   <button id="json" class="redbtn"><a href="#">Export to JSON</a></button><br>
+            </div>
+       </div>
+       
+            <div class='containscanvasetc' id="redigera">
+               <canvas id="myCanvas" width="700px" height="500px">Your browser doesn't support canvas.</canvas>
+                <div id="colorDiv">       
+<form>
+Select your color:
+<select id="selectColor">
+    <option selected  disabled value='no'>Select a color</option>
+  <option value='#3dd123'>Green</option>
+  <option value='#efad04'>Orange</option>
+  <option value='#1e1ebf'>Blue</option>
+  <option value='#ecef17'>Yellow</option>
+</select>
+    <br>
+    
+    <div id="showcolor"></div>
+    
+    <input type="text" name="addColor" id="inputtext" placeholder="Type a color">
+    <button id="addbutton" type="button">Add color</button>
+    <input type="text" name="addWidth" id="inputWidth" placeholder="Set width, from 1-10">
+    <button id="addWidth" type="button">Set width</button>
+    
+    
+</form>
+       </div>  
+            </div>
+
+  
+   
+
+    </body>
+
+</html>

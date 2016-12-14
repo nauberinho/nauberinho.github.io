@@ -1,0 +1,121 @@
+<html>
+    <head>
+       
+       <meta charset="utf-8"/>
+        <title>
+           
+            The Github
+        </title>
+
+    <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+    
+    </head>
+    
+    <style>
+        html {overflow-x:hidden; font-family: 'Lato', sans-serif;}
+        html, body {margin: 0; padding: 0}
+        .about{
+            background-image: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/08/cool-white-background-8.jpg'); color: white; height: 100vh;}
+        .work{background-color: rgb(120,68,145); color: white; height: 100vh;
+        }
+        
+        .contact{background-color: rgb(90,126,45); color: white; height: 50vh;}
+        
+        .colwhite{
+        color:white;
+        }
+    
+        .navigation{background-color: #333; width: 100vw; position:fixed; top: 0; left: 0; z-index: 100; font-size: 2em; box-shadow: 0px 10px 10px #888888;}
+        
+        .hiddenspan{
+        opacity:0;
+        transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
+        .navigation a{
+            transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
+        a:hover .hiddenspan { opacity: 1;}
+        
+        .navhover{ padding: 10px 0px 10px 0px; color: white !important;
+        }
+        
+        .navhover:hover{
+            background-color: rgb(50,80,90);
+            color:white;
+             text-decoration: none;
+        }
+        
+        .niklasnauber{
+            padding: 10px 0px 10px 0;
+            background-color: rgb(90, 40, 155);
+        }
+        
+        .scroll{
+            height: 100px;
+            position: relative;
+            top: -50px;
+            margin-bottom: -100px;
+        }
+        
+        .spanunderline{
+            text-decoration-line: overline;
+        };
+        
+        
+        
+        
+    </style>
+    
+    <body>
+      
+      <div class="container-fluid text-center navigation colwhite">
+    
+            <div class="row">
+                  <div class="col-xs-4 niklasnauber">
+                  | <span class="spanunderline"> NIKLAS <i class="fa fa-eye" aria-hidden="true"></i> NAUBER </span>|
+                </div>
+                   <nav class="col-xs-8">
+                        
+                        <div class="row">
+
+                        <a href="#" class="col-xs-4 navhover"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> THIS IS ME</span></a>
+                        <a href="#" class="col-xs-4 navhover"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
+                        <a href="#" class="col-xs-4 navhover"><span class="hiddenspan"> CONTACT</span></a>
+                        
+                        </div>
+                    </nav>
+            </div>
+          
+      </div>
+      
+        
+       
+       <div class="container-fluid text-center about" id=gotoabout>
+           <h2>About</h2>
+           <div class="row"></div>
+       </div>
+       
+       <div class="container-fluid scroll text-center"><a href='#gotowork'>work</a></div>
+       
+       <div class="container-fluid text-center work" id="gotowork">
+           <h2>Work</h2>
+           <div class="row"></div>
+       </div>
+       
+        <div class="container-fluid scroll text-center"><a href='#gotocontact'>contact</a></div>
+       
+       <div class="container-fluid text-center contact" id="gotocontact">
+           <h2>Contact</h2>
+           <div class="row"></div>
+       </div>
+        
+    </body>
+</html>
