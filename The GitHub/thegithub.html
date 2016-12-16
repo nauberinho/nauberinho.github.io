@@ -11,30 +11,26 @@
  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" rel="stylesheet">
     
-    <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+  
     
     </head>
     
     <style>
-        html {overflow-x:hidden; font-family: 'Lato', sans-serif;}
-        html, body {margin: 0; padding: 0}
+        html {overflow-x:hidden; font-family: 'Open Sans', sans-serif;
+font-family: 'Space Mono', monospace;}
+        html, body {margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;}
         .about{
             background-image: url('tunnel.png'); background-size: 100%;color: white; height: 100vh; transition: 1s cubic-bezier(.83,.69,.56,1.56);}
           .line{margin-left: 0; opacity: 0; transition: 4s cubic-bezier(.83,.69,.56,1.56); width: 0vw;}
         .about:hover .line{
           border:1px outset white; width:100vw; height:1px; position: relative; top: 50px; opacity: 0.7; left: 0px;
-
         }
-
           .line2{margin-bottom: 0; opacity: 0; transition: 4s cubic-bezier(1,-0.12,.69,1); height: 0vh;}
-
         .about:hover .line2{
           border:1px inset white; width:1px; height:100vh; position: absolute; top: 0px; opacity: 0.7; right: 5%;
-
         }
-
         .work{background-image: url('openbook.png'); background-size: 100%; color: white; height: 100vh;
         }
         
@@ -60,10 +56,14 @@
         .navhover{ padding: 10px 0px 10px 0px; color: black;
         }
         
-        .navhover:hover{
+        .navhover:hover, .navhover:active, .navhover:focus{
             background-color: white;
             color:black;
-             text-decoration: none;
+            text-decoration: none;
+        }
+        
+        .navhover:focus .hiddenspan{
+            opacity:1;
         }
         
         .niklasnauber{
@@ -71,18 +71,27 @@
             background-color: black;
         }
         
-        .scrolls .scroll{
+        #scrolls .scroll{
             height: 100px;
             position: relative;
             top: -50px;
             margin-bottom: -100px;
         }
         
+        #scrolls{
+            transition: 1s cubic-bezier(.75,1.8,.64,.84);
+            position: relative;
+        }
+        
         .spanunderline{
             text-decoration-line: overline;
         };
         
-        
+        .active{
+            background-color: white;
+            color:black;
+            text-decoration: none;
+        };
         
         
     </style>
@@ -92,16 +101,18 @@
       <div class="container-fluid text-center navigation colwhite">
     
             <div class="row">
-                  <div class="col-xs-4 niklasnauber">
-                  | <span class="spanunderline"> NIKLAS <i class="fa fa-eye" aria-hidden="true"></i> NAUBER </span>|
+                  <div class="col-xs-4 niklasnauber" id='niklasnauber'>
+              
                 </div>
                    <nav class="col-xs-8">
                         
                         <div class="row">
 
-                        <a href="#gotoabout" class="col-xs-4 navhover scroll"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> THIS IS ME</span></a>
-                        <a href="#gotowork" class="col-xs-4 navhover scroll"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
-                        <a href="#gotocontact" class="col-xs-4 navhover scroll"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTACT</span></a>
+                        <a href="#" class="col-xs-4 navhover scroll" onclick='goTo(1)' id='aboutbtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> ABOUT</span></a>
+                        
+                        <a href="#" class="col-xs-4 navhover scroll" id='workbtn'  onclick='goTo(2)'> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
+                        
+                        <a href="#" class="col-xs-4 navhover scroll"  onclick='goTo(3)' id="contactbtn"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTACT</span></a>
                         
                         </div>
                     </nav>
@@ -110,7 +121,7 @@
       </div>
       
         
-       <div class="scrolls">
+       <div id="scrolls">
        <div class="container-fluid text-center about" id=gotoabout>
            <h2>About</h2>
            <div class="line"></div>
@@ -135,4 +146,79 @@
        </div>
         
     </body>
+    <script>
+    //window.addEventListener('onload', function(event){
+        
+        var letterByLetter = function(string, element) {
+            let text = ''
+            let time = 0;
+            
+            function doSetTimeout (text, time){
+                setTimeout(function(){ element.innerHTML = text}, time);
+                
+            }
+            for(let i=0;i<=string.length;i++){
+                let j = string.charAt(i)
+                
+                text += j
+                
+                time += 150
+                doSetTimeout(text,time)
+    
+}
+        }
+        
+    let upperleft = document.getElementById('niklasnauber')
+    letterByLetter('NIKLAS NAUBER', upperleft);
+        
+   /* var letterByLetter = function(string, element) {
+    let date = new Date;
+    let seconds = date.getSeconds();
+    let text = ''
+    for(i=0;i<=string.length;i++)
+if(seconds==i/2){
+    text += string.charAt(i)
+    element.innerHTML = text
+    console.log(text)
+}
+} 
+
+*/
+        
+        
+    var contactbtn = document.getElementById('contactbtn'),
+    aboutbtn = document.getElementById('aboutbtn'),
+    workbtn = document.getElementById('workbtn'),
+    slide = document.getElementById('scrolls').style;
+
+function goTo(num) {
+    
+    resetClasses();
+    switch(num) {
+        case 1:
+            aboutbtn.className += ' active';
+            slide.left = '0';
+            break;
+        case 2:
+            workbtn.className += ' active';
+            slide.left = '-100vw';
+            break;
+        case 3:
+            contactbtn.className += ' active';
+            slide.left = '-200vw';
+            break;
+    }
+}
+
+function resetClasses() {
+    aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-4 navhover scroll';
+}
+
+
+        
+
+ 
+    //});
+        
+    </script>
 </html>
