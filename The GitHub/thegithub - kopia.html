@@ -1,0 +1,138 @@
+<html>
+    <head>
+       
+       <meta charset="utf-8"/>
+        <title>
+           
+            The Github
+        </title>
+
+    <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+    
+    </head>
+    
+    <style>
+        html {overflow-x:hidden; font-family: 'Lato', sans-serif;}
+        html, body {margin: 0; padding: 0}
+        .about{
+            background-image: url('tunnel.png'); background-size: 100%;color: white; height: 100vh; transition: 1s cubic-bezier(.83,.69,.56,1.56);}
+          .line{margin-left: 0; opacity: 0; transition: 4s cubic-bezier(.83,.69,.56,1.56); width: 0vw;}
+        .about:hover .line{
+          border:1px outset white; width:100vw; height:1px; position: relative; top: 50px; opacity: 0.7; left: 0px;
+
+        }
+
+          .line2{margin-bottom: 0; opacity: 0; transition: 4s cubic-bezier(1,-0.12,.69,1); height: 0vh;}
+
+        .about:hover .line2{
+          border:1px inset white; width:1px; height:100vh; position: absolute; top: 0px; opacity: 0.7; right: 5%;
+
+        }
+
+        .work{background-image: url('openbook.png'); background-size: 100%; color: white; height: 100vh;
+        }
+        
+        .contact{background-image: url('abandonedstreets.png'); background-size: 100%; color: white; height: 50vh;}
+        
+        .colwhite{
+        color:white;
+        }
+    
+        .navigation{background-color: #444; width: 100vw; position:fixed; top: 0; left: 0; z-index: 100; font-size: 2em;  box-shadow: 0px 10px 10px #888888;}
+        
+        .hiddenspan, .scroll{
+        opacity:0;
+        transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
+        .navigation a{
+            transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
+        a:hover .hiddenspan, .scroll { opacity: 1;}
+        
+        .navhover{ padding: 10px 0px 10px 0px; color: black;
+        }
+        
+        .navhover:hover{
+            background-color: white;
+            color:black;
+             text-decoration: none;
+        }
+        
+        .niklasnauber{
+            padding: 10px 0px 10px 0;
+            background-color: black;
+        }
+        
+        .scrolls .scroll{
+            height: 100px;
+            position: relative;
+            top: -50px;
+            margin-bottom: -100px;
+        }
+        
+        .spanunderline{
+            text-decoration-line: overline;
+        };
+        
+        
+        
+        
+    </style>
+    
+    <body>
+      
+      <div class="container-fluid text-center navigation colwhite">
+    
+            <div class="row">
+                  <div class="col-xs-4 niklasnauber">
+                  | <span class="spanunderline"> NIKLAS <i class="fa fa-eye" aria-hidden="true"></i> NAUBER </span>|
+                </div>
+                   <nav class="col-xs-8">
+                        
+                        <div class="row">
+
+                        <a href="#gotoabout" class="col-xs-4 navhover scroll"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> THIS IS ME</span></a>
+                        <a href="#gotowork" class="col-xs-4 navhover scroll"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
+                        <a href="#gotocontact" class="col-xs-4 navhover scroll"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTACT</span></a>
+                        
+                        </div>
+                    </nav>
+            </div>
+          
+      </div>
+      
+        
+       <div class="scrolls">
+       <div class="container-fluid text-center about" id=gotoabout>
+           <h2>About</h2>
+           <div class="line"></div>
+           <div class="line2"></div>
+           <div class="row"></div>
+       </div>
+       
+       <div class="container-fluid scroll text-center"><a href='#gotowork'>work</a></div>
+       
+       <div class="container-fluid text-center work" id="gotowork">
+           <h2>Work</h2>
+           <div class="row"></div>
+       </div>
+       
+        <div class="container-fluid scroll text-center"><a href='#gotocontact'>contact</a></div>
+       
+       <div class="container-fluid text-center contact" id="gotocontact">
+           <h2>Contact</h2>
+           <div class="row"></div>
+       </div>
+
+       </div>
+        
+    </body>
+</html>
