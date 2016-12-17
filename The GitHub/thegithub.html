@@ -18,29 +18,52 @@
     </head>
     
     <style>
-        html {overflow-x:hidden; font-family: 'Open Sans', sans-serif;
-font-family: 'Space Mono', monospace;}
-        html, body {margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;}
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        html {
+            overflow-x:hidden; font-family: 'Open Sans', sans-serif;!important
+            
+        }
+        
+        html, body {
+            margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;
+        }
+        
+        .home{
+            background-image: url('tunnel.png'); background-size: 100%; color: white; height: 100vh; transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
         .about{
-            background-image: url('tunnel.png'); background-size: 100%;color: white; height: 100vh; transition: 1s cubic-bezier(.83,.69,.56,1.56);}
-          .line{margin-left: 0; opacity: 0; transition: 4s cubic-bezier(.83,.69,.56,1.56); width: 0vw;}
+            background-image: url('garlics-png.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 100%; top:0; transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        }
+        
+          .line{
+              margin-left: 0; opacity: 0; transition: 4s cubic-bezier(.83,.69,.56,1.56); width: 0vw;
+        }
+        
         .about:hover .line{
           border:1px outset white; width:100vw; height:1px; position: relative; top: 50px; opacity: 0.7; left: 0px;
         }
-          .line2{margin-bottom: 0; opacity: 0; transition: 4s cubic-bezier(1,-0.12,.69,1); height: 0vh;}
+        
+          .line2{
+              margin-bottom: 0; opacity: 0; transition: 4s cubic-bezier(1,-0.12,.69,1); height: 0vh;
+        }
+        
         .about:hover .line2{
           border:1px inset white; width:1px; height:100vh; position: absolute; top: 0px; opacity: 0.7; right: 5%;
         }
-        .work{background-image: url('openbook.png'); background-size: 100%; color: white; height: 100vh;
+        
+        .work{
+            background-image: url('openbook.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0;
         }
         
-        .contact{background-image: url('abandonedstreets.png'); background-size: 100%; color: white; height: 50vh;}
+        .contact{background-image: url('abandonedstreets.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0;
+        }
         
         .colwhite{
         color:white;
         }
     
-        .navigation{background-color: #444; width: 100vw; position:fixed; top: 0; left: 0; z-index: 100; font-size: 2em;  box-shadow: 0px 10px 10px #888888;}
+        .navigation{background-color: #444; width: 100vw; position:fixed; top: 0; left: 0; z-index: 100; font-size: 2em;}
         
         .hiddenspan, .scroll{
         opacity:0;
@@ -74,6 +97,7 @@ font-family: 'Space Mono', monospace;}
         #scrolls .scroll{
             height: 100px;
             position: relative;
+            right: 5vw;
             top: -50px;
             margin-bottom: -100px;
         }
@@ -82,16 +106,19 @@ font-family: 'Space Mono', monospace;}
             transition: 1s cubic-bezier(.75,1.8,.64,.84);
             position: relative;
         }
-        
-        .spanunderline{
-            text-decoration-line: overline;
-        };
+
         
         .active{
             background-color: white;
             color:black;
             text-decoration: none;
         };
+        
+        #hometext{
+            border: 2px solid white;
+            color:white;
+            font-size: 2em;
+        }
         
         
     </style>
@@ -102,17 +129,19 @@ font-family: 'Space Mono', monospace;}
     
             <div class="row">
                   <div class="col-xs-4 niklasnauber" id='niklasnauber'>
-              
+                  NIKLAS NAUBER
                 </div>
                    <nav class="col-xs-8">
                         
                         <div class="row">
+                        
+                        <a href="#" class="col-xs-3 navhover scroll focusonload" onclick='goTo(1)' id='homebtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> HOME</span></a>
 
-                        <a href="#" class="col-xs-4 navhover scroll" onclick='goTo(1)' id='aboutbtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> ABOUT</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll" onclick='goTo(2)' id='aboutbtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> ABOUT</span></a>
                         
-                        <a href="#" class="col-xs-4 navhover scroll" id='workbtn'  onclick='goTo(2)'> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll" id='workbtn'  onclick='goTo(3)'> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
                         
-                        <a href="#" class="col-xs-4 navhover scroll"  onclick='goTo(3)' id="contactbtn"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTACT</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll"  onclick='goTo(4)' id="contactbtn"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTT</span></a>
                         
                         </div>
                     </nav>
@@ -122,6 +151,15 @@ font-family: 'Space Mono', monospace;}
       
         
        <div id="scrolls">
+       
+       <div class="container-fluid text-center home" id=gotohome>
+           <h2>Home</h2>
+           <div class="row">
+               
+            <div class="col-xs-12" id="hometext"></div>
+           </div>
+       </div>
+       
        <div class="container-fluid text-center about" id=gotoabout>
            <h2>About</h2>
            <div class="line"></div>
@@ -149,7 +187,11 @@ font-family: 'Space Mono', monospace;}
     <script>
     //window.addEventListener('onload', function(event){
         
-        var letterByLetter = function(string, element) {
+    function focusonload () {
+    document.getElementById('focusonload').focus();
+};
+        
+        var letterByLetter = function(string, element, interval) {
             let text = ''
             let time = 0;
             
@@ -162,14 +204,13 @@ font-family: 'Space Mono', monospace;}
                 
                 text += j
                 
-                time += 150
+                time += interval
                 doSetTimeout(text,time)
     
 }
         }
         
     let upperleft = document.getElementById('niklasnauber')
-    letterByLetter('NIKLAS NAUBER', upperleft);
         
    /* var letterByLetter = function(string, element) {
     let date = new Date;
@@ -189,29 +230,41 @@ if(seconds==i/2){
     var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
     workbtn = document.getElementById('workbtn'),
+    homebtn = document.getElementById('homebtn'),
     slide = document.getElementById('scrolls').style;
+        
+homebtn.addEventListener('click', function(){
+    let homediv = document.getElementById('hometext')
+    let hometext = "Hi, I'm Nauber. Stay tuned for more."
+    letterByLetter(hometext, homediv, 50)
+});
 
 function goTo(num) {
     
     resetClasses();
     switch(num) {
         case 1:
-            aboutbtn.className += ' active';
+            homebtn.className += ' active';
             slide.left = '0';
             break;
         case 2:
-            workbtn.className += ' active';
+            aboutbtn.className += ' active';
             slide.left = '-100vw';
             break;
         case 3:
-            contactbtn.className += ' active';
+            workbtn.className += ' active';
             slide.left = '-200vw';
             break;
+        case 4:
+            contactbtn.className += ' active';
+            slide.left = '-300vw';
+            break;
+
     }
 }
 
 function resetClasses() {
-    aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-4 navhover scroll';
+    homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 }
 
 
