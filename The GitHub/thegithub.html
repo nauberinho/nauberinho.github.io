@@ -8,10 +8,11 @@
         </title>
 
     <script src="https://use.fontawesome.com/28fa0f3d25.js"></script>
+    
  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     
   
     
@@ -20,20 +21,23 @@
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
         html {
-            overflow-x:hidden; font-family: 'Open Sans', sans-serif;!important
+            overflow-x:hidden; font-family: 'Open Sans', sans-serif, verdana;
             
         }
         
         html, body {
             margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;
+            
         }
         
+        .homebtn:focus{}
+        
         .home{
-            background-image: url('tunnel.png'); background-size: 100%; color: white; height: 100vh; transition: 1s cubic-bezier(.83,.69,.56,1.56);
+             background-color: black; background-size: 100%; color: white; height: 100vh; width: 100vw; transition: 1s cubic-bezier(.83,.69,.56,1.56);
         }
         
         .about{
-            background-image: url('garlics-png.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 100%; top:0; transition: 1s cubic-bezier(.83,.69,.56,1.56);
+            background-color: black; background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 100%; top:0; transition: 1s cubic-bezier(.83,.69,.56,1.56);
         }
         
           .line{
@@ -56,7 +60,7 @@
             background-image: url('openbook.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0;
         }
         
-        .contact{background-image: url('abandonedstreets.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0;
+        .contact{background-image: url('earth.png'); background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0;
         }
         
         .colwhite{
@@ -91,7 +95,8 @@
         
         .niklasnauber{
             padding: 10px 0px 10px 0;
-            background-color: black;
+            background-image: url(code.png);
+            background-size: 100%;
         }
         
         #scrolls .scroll{
@@ -105,6 +110,7 @@
         #scrolls{
             transition: 1s cubic-bezier(.75,1.8,.64,.84);
             position: relative;
+            background-color: 'black'!important;
         }
 
         
@@ -114,11 +120,27 @@
             text-decoration: none;
         };
         
-        #hometext{
-            border: 2px solid white;
-            color:white;
-            font-size: 2em;
+        #homemoon{
+            position: absolute;
+            top: 500px;
+            margin: auto;
+            transition: 4s cubic-bezier(.83,.69,.56,1.56);
         }
+        
+        .hometextdiv{
+            position: relative;
+            top: -25vh;
+            height:2em;
+        }
+        
+        .abouttextdiv{
+            position: relative;
+            top: -25vh;
+            height:2em;
+        }
+        
+        
+
         
         
     </style>
@@ -128,20 +150,20 @@
       <div class="container-fluid text-center navigation colwhite">
     
             <div class="row">
-                  <div class="col-xs-4 niklasnauber" id='niklasnauber'>
+            <div class="col-xs-4 niklasnauber" id='niklasnauber'>
                   NIKLAS NAUBER
-                </div>
+            </div>
                    <nav class="col-xs-8">
                         
                         <div class="row">
                         
-                        <a href="#" class="col-xs-3 navhover scroll focusonload" onclick='goTo(1)' id='homebtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> HOME</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll focusonload focus" onclick='goTo(1)' id='homebtn'><i class="fa fa-home" aria-hidden="true"></i><span class="hiddenspan"> HOME</span></a>
 
-                        <a href="#" class="col-xs-3 navhover scroll" onclick='goTo(2)' id='aboutbtn'><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="hiddenspan"> ABOUT</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll" onclick='goTo(2)' id='aboutbtn'><i class="fa fa-info-circle" aria-hidden="true"></i><span class="hiddenspan"> ABOUT</span></a>
                         
-                        <a href="#" class="col-xs-3 navhover scroll" id='workbtn'  onclick='goTo(3)'> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll" id='workbtn'  onclick='goTo(3)'> <i class="fa fa-code" aria-hidden="true"></i><span class="hiddenspan"> WORK</span></a>
                         
-                        <a href="#" class="col-xs-3 navhover scroll"  onclick='goTo(4)' id="contactbtn"> <i class="fa fa-briefcase" aria-hidden="true"></i><span class="hiddenspan"> CONTT</span></a>
+                        <a href="#" class="col-xs-3 navhover scroll"  onclick='goTo(4)' id="contactbtn"> <i class="fa fa-address-card-o" aria-hidden="true"></i><span class="hiddenspan"> CONTT</span></a>
                         
                         </div>
                     </nav>
@@ -151,30 +173,88 @@
       
         
        <div id="scrolls">
-       
-       <div class="container-fluid text-center home" id=gotohome>
+       <!--------------------HOME------------------------------------->
+       <div class="container-fluid text-center home" id='gotohome'>
            <h2>Home</h2>
            <div class="row">
+           
+            <div class='col-xs-12'>
+            
+                <div class='moon'>
+                    <a href="#" class='col-xs-12 homemoon'>
+                    <img src="moon11.png" alt="The Moon" width="150px" height="150px" border="0" id='homemoon'>
+                    </a>
+                </div>
+                
+                <a href="#" class='astronaut'>
+                    <img src="astronaut.png" alt="The Astronaut" width="182px" height="112px" border="0" id='homeastronaut'>
+                </a>
+                
+                 <a href="#" class='codeworld' id="homecodeworld">
+                    <img src="codeworld.png" alt="The Codeworld" width="182px" height="112px" border="0">
+                </a>
+                
                
-            <div class="col-xs-12" id="hometext"></div>
+           
+            <div class='col-xs-12 hometextdiv'>
+            <div class="col-xs-4" id="astronauttext">
+            </div>
+            <div class="col-xs-4" id="hometext">
+            </div>
+            <div class="col-xs-4" id="codeworldtext">
+            </div>
+            </div>
+            
+            </div>   
+            
            </div>
        </div>
-       
+       <!------------------------------------------------------------------>
+       <!-----------------------------ABOUT-------------------------------->
        <div class="container-fluid text-center about" id=gotoabout>
-           <h2>About</h2>
-           <div class="line"></div>
-           <div class="line2"></div>
-           <div class="row"></div>
-       </div>
+           <h2></h2>
+           <div class="row">
+           
+                <div class='col-xs-12'>
+
+                        <div class='col-xs-12 aboutastronautdiv'>
+                        <a href="#" class='aboutastronaut'>
+                            <img src="astronaut.png" alt="The Astronaut" width="182px" height="112" border="0" id="aboutastronaut">
+                        </a>
+                        </div>
+
+                     
+
+
+
+                    <div class='col-xs-12 abouttextdiv'>
+
+                        <div class="col-xs-12" id="aboutastronauttext">
+                        </div>
+
+                    </div>
+                    
+                </div>
+            
+            </div>  
+               
+           </div>
        
-       <div class="container-fluid scroll text-center"><a href='#gotowork'>work</a></div>
+    
+       
+       <!------------------------------------------------------------------>
+       <!--
+       <div class="container-fluid scroll text-center"><a href='#gotowork'>work</a>
+       -->
        
        <div class="container-fluid text-center work" id="gotowork">
            <h2>Work</h2>
            <div class="row"></div>
        </div>
        
+       <!--
         <div class="container-fluid scroll text-center"><a href='#gotocontact'>contact</a></div>
+        -->
        
        <div class="container-fluid text-center contact" id="gotocontact">
            <h2>Contact</h2>
@@ -182,96 +262,7 @@
        </div>
 
        </div>
-        
+        </div>
     </body>
-    <script>
-    //window.addEventListener('onload', function(event){
-        
-    function focusonload () {
-    document.getElementById('focusonload').focus();
-};
-        
-        var letterByLetter = function(string, element, interval) {
-            let text = ''
-            let time = 0;
-            
-            function doSetTimeout (text, time){
-                setTimeout(function(){ element.innerHTML = text}, time);
-                
-            }
-            for(let i=0;i<=string.length;i++){
-                let j = string.charAt(i)
-                
-                text += j
-                
-                time += interval
-                doSetTimeout(text,time)
-    
-}
-        }
-        
-    let upperleft = document.getElementById('niklasnauber')
-        
-   /* var letterByLetter = function(string, element) {
-    let date = new Date;
-    let seconds = date.getSeconds();
-    let text = ''
-    for(i=0;i<=string.length;i++)
-if(seconds==i/2){
-    text += string.charAt(i)
-    element.innerHTML = text
-    console.log(text)
-}
-} 
-
-*/
-        
-        
-    var contactbtn = document.getElementById('contactbtn'),
-    aboutbtn = document.getElementById('aboutbtn'),
-    workbtn = document.getElementById('workbtn'),
-    homebtn = document.getElementById('homebtn'),
-    slide = document.getElementById('scrolls').style;
-        
-homebtn.addEventListener('click', function(){
-    let homediv = document.getElementById('hometext')
-    let hometext = "Hi, I'm Nauber. Stay tuned for more."
-    letterByLetter(hometext, homediv, 50)
-});
-
-function goTo(num) {
-    
-    resetClasses();
-    switch(num) {
-        case 1:
-            homebtn.className += ' active';
-            slide.left = '0';
-            break;
-        case 2:
-            aboutbtn.className += ' active';
-            slide.left = '-100vw';
-            break;
-        case 3:
-            workbtn.className += ' active';
-            slide.left = '-200vw';
-            break;
-        case 4:
-            contactbtn.className += ' active';
-            slide.left = '-300vw';
-            break;
-
-    }
-}
-
-function resetClasses() {
-    homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
-}
-
-
-        
-
- 
-    //});
-        
-    </script>
+    <script type="text/javascript" src="thegithub.js"></script>
 </html>
