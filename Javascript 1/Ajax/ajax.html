@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<script>
+    
+window.addEventListener('load',     function(event){
+    
+    let clickme = document.getElementById('clickme');
+    let resultat = document.getElementById('resultat');    
+   
+
+clickme.addEventListener('click', function(event){
+    
+     let list = document.createElement('ul')
+    resultat.appendChild(list);
+    let li = document.createElement('li')
+    list.appendChild(li);
+                         
+let request = new XMLHttpRequest();
+
+request.open('GET', "http://mardby.se/AJK15G/lorem_text_random.php?numberOfWords=10");
+
+    
+request.onreadystatechange = function(event) {
+	console.log("readyState:" + request.readyState);
+	console.log("status:" + request.status);
+	console.log("responseText:" + request.responseText);
+	if( request.status == 4 ){
+        console.log('- success!');
+	console.log("-----");
+    };
+    //resultat.innerHTML = request.responseText   
+    li.innerHTML = request.responseText
+};
+    
+    request.send();
+});
+        });
+
+</script>
+       
+    </head>
+    <body>
+       
+        
+        <button id="clickme">
+        Click me
+        </button>
+        
+        <div id="resultat">Resultat: </div>
+        
+        
+       
+        
+        
+    </body>
+</html>

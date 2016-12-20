@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    ssungxlp4gjg
+<head>
+<script>
+    
+window.addEventListener('load',     function(event){
+    
+    let clickme = document.getElementById('clickme');
+    let resultat = document.getElementById('resultat');   
+   
+
+clickme.addEventListener('click', function(event){
+    
+     let list = document.createElement('ul')
+    resultat.appendChild(list);
+    let li = document.createElement('li')
+    list.appendChild(li);
+                         
+let request = new XMLHttpRequest();
+
+request.open('GET', 'http://forverkliga.se/JavaScript/api/ajax-lab.php? register=true&name=nauber');
+
+    
+request.onreadystatechange = function(event) {
+	console.log("readyState:" + request.readyState);
+	console.log("status:" + request.status);
+	console.log("responseText:" + request.responseText);
+	if( request.status == 4 ){
+        console.log('- success!');
+	console.log("-----");
+    };
+    //resultat.innerHTML = request.responseText   
+    
+    
+};
+    
+    request.send();
+    
+    
+    
+});
+        });
+
+</script>
+       
+    </head>
+    <body>
+       
+        
+        <button id="clickme">
+        Get information
+        </button>
+        
+        <div id="resultat">Your information: </div>
+        
+        <button
+        
+        
+        
+        
+       
+        
+        
+    </body>
+</html>
