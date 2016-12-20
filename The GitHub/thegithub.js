@@ -30,12 +30,20 @@
             homecodeworld.style.left='28vw'
             homecodeworld.style.transition = '2s ease';
 
-        let aboutastronaut = document.getElementsByClassName('aboutastronaut')[0]
+        let aboutastronaut = document.getElementsByClassName('aboutastronaut')[4]
             aboutastronaut.style.position = 'relative'
-            aboutastronaut.style.top = '25vh'
+            aboutastronaut.style.top = '30vh'
+            aboutastronaut.style.left = 'vw'
             aboutastronaut.style.transition = '2s ease';
             aboutastronaut.style.paddingBottom = '200px';
-            aboutastronaut.style.border = '1px solid white';
+            //aboutastronaut.style.border = '1px solid white';
+
+        let aboutsymbols = document.getElementsByClassName('aboutsymbol')
+       
+        for(i=0;i<aboutsymbols.length;i++){
+            aboutsymbols[i].style.top = '20vh'
+            aboutsymbols[i].style.opacity = '0'
+        }
 
 
         
@@ -168,7 +176,7 @@ aboutbtn.addEventListener('click', function(){
     //homediv.style.boxShadow = '5px 5px 10px #282f3a'
     aboutastronauttext.style.borderRadius = '5px'
     aboutastronauttext.style.height = '2em'
-    aboutastronauttext.style.border= '1px solid white'
+    //aboutastronauttext.style.border= '1px solid white'
     
     let aboutastronaut1 = document.getElementById('aboutastronaut')
     aboutastronaut1.style.transition = '2s ease'
@@ -185,7 +193,7 @@ aboutbtn.addEventListener('click', function(){
                
     if(mouseoverbool == true){
         
-    aboutastronaut1.style.border = '1px solid white'
+    //aboutastronaut1.style.border = '1px solid white'
     aboutastronaut1.style.height = '130px'
     aboutastronaut1.style.width = '200px'
     }
@@ -199,6 +207,27 @@ aboutbtn.addEventListener('click', function(){
     });
     
     aboutastronaut1.addEventListener('click', function(){
+        for(i=0;i<aboutsymbols.length;i++){
+            aboutsymbols[i].style.transition = '2s ease'
+            aboutsymbols[i].style.opacity = '1'
+        }
+        
+        aboutastronauttext.innerHTML = ''
+        
+        let educationsymbol = document.getElementById('abouteducation')
+        
+        educationsymbol.addEventListener('click', function(){
+            educationsymbol.style.border='1px solid white'
+            let contentdiv = document.getElementsByClassName('aboutastronautdiv')[0]
+            contentdiv.style.transition= '2s ease'
+            contentdiv.style.position = 'relative'
+            contentdiv.style.top = '40vh'
+            
+            contentdiv.removeChild(aboutastronaut)
+            educationtext = 'Run, Forrest, run!'
+            letterByLetter(educationtext, contentdiv, 30, 650)
+        })
+        
         
     });
     
