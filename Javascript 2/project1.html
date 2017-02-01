@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="project1.css">
+</head>
+<body>
+  <div class='maindiv'>
+   
+   <div id='map'></div>
+   
+   
+   
+     
+
+     <input type="text" placeholder='Type your location' id='locationvalue' class='textarea'>
+     <input id="btn" type="button" value="Search" />
+     
+    </div>
+    
+</body>
+</html>
+       <script>
+       let project1Map = document.getElementById('map')
+        project1Map.className='project1Map'
+    
+        
+        
+    let searchbtn = document.getElementById("btn")
+    
+    let locationvalue = document.getElementById('locationvalue')
+    
+    searchbtn.addEventListener('click', function(){
+        console.log(locationvalue.value + 'här')
+        let lat;
+        let lng;
+          var geocoder =  new google.maps.Geocoder();
+    geocoder.geocode( { 'address': locationvalue.value}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+             const lat = results[0].geometry.location.lat() 
+             const lng = results[0].geometry.location.lng();
+             
+              console.log('Detta är latitude och longitud: ' + lat, lng)
+              
+                                     function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(lat, lng),
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                    
+        var marker = new google.maps.Marker({
+          position: {lat: lat, lng: lng},
+          map: map
+        });
+      }
+        
+        myMap() 
+          } else {
+            alert("Something got wrong " + status);
+          }
+        });
+        
+
+});
+
+            
+ 
+           
+
+           
+           
+
+                
+   
+
+</script>
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=myMap"></script>

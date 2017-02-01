@@ -1,0 +1,51 @@
+body{
+    background-image:url(mapbackground.png);
+    background-size: 100%;
+    background-repeat: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+    .project1Map{
+        position: absolute;
+        top: 90px;
+        height:400px;
+        width: 625px;
+        border: 2px solid #b9beb8;
+        transition: 2s ease;
+        background-color: #434c5b;
+        background-size: 100%;
+}
+
+.textarea{
+        height: 60px;
+        width:450px;
+    font-size: 2em;
+    font-weight: 0.5;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #c1a149;
+    transition: 1.5s ease;
+}
+
+#btn{
+        height: 85px;
+        width:150px;
+        font-size: 2em;
+        background-color: #e0e0e0;
+    color: #c1a149;
+    transition: 1.5s ease;
+}
+
+#btn:hover, #btn:active, .textarea:hover, .textarea:active, .textarea:focus{
+    
+    color: #e0e0e0;
+    background-color: #c1a149;
+    
+}
+
+.maindiv{
+    position: absolute;
+    top: 20vh;
+    left: 650px;
+}
