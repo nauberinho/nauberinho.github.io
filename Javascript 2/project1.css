@@ -24,7 +24,7 @@ body{
     padding: 10px;
     font-family: 'Raleway', sans-serif;
     background-color: #e0e0e0;
-    color: #c1a149;
+    color: #635822;
     transition: 1.5s ease;
 }
 
@@ -33,7 +33,7 @@ body{
         width:150px;
         font-size: 2em;
         background-color: #e0e0e0;
-    color: #c1a149;
+    color: #635822;
     transition: 1.5s ease;
     font-family: 'Raleway', sans-serif;
 }
@@ -41,7 +41,7 @@ body{
 #btn:hover, #btn:active, .textarea:hover, .textarea:active, .textarea:focus{
     
     color: #e0e0e0;
-    background-color: #c1a149;
+    background-color: #635822;
     
 }
 
