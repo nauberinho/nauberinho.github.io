@@ -1,19 +1,21 @@
 body{
-    background-image:url(mapbackground.png);
+    background-image:url(mapbackground2.png);
     background-size: 100%;
-    background-repeat: none;
+    /*background-repeat: no-repeat;*/
     font-family: 'Raleway', sans-serif;
+    padding: 30vh 35vw;
 }
 
     .project1Map{
         position: absolute;
-        top: 90px;
+        top: 100vh;
         height:400px;
         width: 625px;
         border: 2px solid #b9beb8;
         transition: 2s ease;
-        background-color: #434c5b;
+        background-image: url(mapbackground2.png);
         background-size: 100%;
+        
 }
 
 .textarea{
@@ -29,13 +31,16 @@ body{
 }
 
 #btn{
-        height: 85px;
-        width:150px;
-        font-size: 2em;
-        background-color: #e0e0e0;
+    position:absolute;
+    top:0vh;
+    height: 86px;
+    width:150px;
+    font-size: 2em;
+    background-color: #e0e0e0;
     color: #635822;
     transition: 1.5s ease;
     font-family: 'Raleway', sans-serif;
+    margin-left:2px;
 }
 
 #btn:hover, #btn:active, .textarea:hover, .textarea:active, .textarea:focus{
@@ -46,7 +51,8 @@ body{
 }
 
 .maindiv{
-    position: absolute;
-    top: 20vh;
-    left: 20vw;
+    position:absolute;
+    width: 650px;
+    height: 486px;
+    overflow: hidden;
 }

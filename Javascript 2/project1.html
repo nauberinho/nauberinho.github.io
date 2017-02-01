@@ -8,18 +8,15 @@
     <link rel="stylesheet" type="text/css" href="project1.css">
 </head>
 <body>
+ 
   <div class='maindiv'>
+  
+  <input type="text" placeholder='Type your location' id='locationvalue' class='textarea'>
+     <input id="btn" type="button" value="Search" />
    
    <div id='map'></div>
-   
-   
-   
-     
 
-     <input type="text" placeholder='Type your location' id='locationvalue' class='textarea'>
-     <input id="btn" type="button" value="Search" />
-     
-    </div>
+</div>
     
 </body>
 </html>
@@ -59,8 +56,13 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         });
       }
         
-        myMap() 
+        myMap()
+        project1Map.style.top='86px'
           }
+        
+        if(location.value.length===0){
+           alert("Please type a location.")
+        }
 
         else {
             alert("Something went wrong " + status);
