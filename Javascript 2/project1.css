@@ -35,6 +35,7 @@ body{
         background-color: #e0e0e0;
     color: #c1a149;
     transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
 }
 
 #btn:hover, #btn:active, .textarea:hover, .textarea:active, .textarea:focus{
@@ -47,5 +48,5 @@ body{
 .maindiv{
     position: absolute;
     top: 20vh;
-    left: 650px;
+    left: 20vw;
 }

@@ -60,13 +60,23 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       }
         
         myMap() 
-          } else {
+          }
+        if(locationvalue.value.length==0){
+            
+        }
+        else {
             alert("Something got wrong " + status);
           }
         });
         
 
 });
+           
+window.onload=function(){
+    setTimeout(function(){
+        locationvalue.focus()
+    }, 2500)
+}
 
             
  
