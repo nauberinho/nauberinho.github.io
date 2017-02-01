@@ -107,6 +107,22 @@ selectedColor.appendChild(newOption);
 newOption.innerHTML = userColor; 
 } 
 });
+    
+//--------------------DROPDOWN MENU---------------------------------------- 
+let myBtn = document.getElementById("myBtn")
+myBtn.addEventListener('click', function() { 
+toggleFunction() 
+}); 
+
+function toggleFunction() { 
+document.getElementById("dropdown").classList.toggle("show"); 
+}; 
+
+function toggle1Function() { 
+document.getElementById("dropdown").classList.toggle("show"); 
+}; 
+
+
 
 //---------------------------KONSTRUKTORER--------------------------------- 
 
@@ -163,7 +179,31 @@ pressedRectangle !== true ||
 pressedTriangle !== true ||
 pressedStop !== true ||
 pressedWhatever !== true){
+hidden1.addEventListener('mouseover', function(){ 
+cons.innerHTML = "A circle has a center point (x, y) and a radius. Draw two points where the first point is the center point and the second sets the radius of the circle. A circle's parameters in Javascript CANVAS are: c.arc (20, 40, 30, 300, 0.5 * Math.PI) "
 
+hidden1.addEventListener('mouseleave', function(){
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool."
+});
+}); 
+
+
+hidden2.addEventListener('mouseover', function(){ 
+
+cons.innerHTML = "A rectangle is a quadrilateral with four right angles. Draw to points on the canvas and JS will take care of the rest." 
+hidden3.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool."
+}); 
+
+}); 
+
+hidden3.addEventListener('mouseover', function(){ 
+cons.innerHTML = "A triangle is a polygon with three edges and three vertices. Draw three points on the canvas and JS will take care of the rest." 
+hidden3.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
+}); 
+
+}); 
 
 
 stopdrawing.addEventListener('mouseover', function(event){ 
@@ -216,16 +256,26 @@ JSONDIV.addEventListener('mouseleave', function(){
 cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
 }); 
 });
-
+    
+dropdownbutton.addEventListener('mouseover', function(event){ 
+cons.innerHTML = "Click here to navigate during your drawing session." 
+dropdownbutton.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
+}); 
+});
     
 drawWhatever.addEventListener('mouseover', function(event){ 
 cons.innerHTML = "This is where you can explore - draw whatever you like." 
-
+dropdownbutton.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
+}); 
 });
 
 eraser.addEventListener('mouseover', function(event){ 
 cons.innerHTML = "Use the eraser to erase parts of your work." 
-
+dropdownbutton.addEventListener('mouseleave', function(){ 
+cons.innerHTML = "Hover your mouse around to learn about your new drawing tool." 
+}); 
 });
     
 canvas.addEventListener('mouseover', function(event){ 
@@ -238,7 +288,7 @@ cons.innerHTML = "Hover your mouse around to learn about your new drawing tool."
 }
     
 function changecursor (typeofcursor){
-    canvas.style.cursor = url(typeofcursor)
+    canvas.style.cursor = url(typeofcursor), progress;
 }
     
 //------------------------------When clicking on "drawing"-buttons-----------------------
@@ -246,8 +296,12 @@ function changecursor (typeofcursor){
 
 drawWhatever.addEventListener('click', function(){//Enables "draw whatever you like", sets variables to init and disables other figures.
 
+    canvas.addEventListener('mouseover', function(){
+        changecursor('http://vector.me/files/images/1/0/103427/pencil_clip_art.jpg')
+    });
 cons.innerHTML = "Start drawing on the canvas."
- 
+
+toggle1Function();  
 clicks = 0; 
 pressedCircle = false; 
 pressedRectangle = false; 
@@ -260,7 +314,7 @@ drawCircle.addEventListener('click', function(){//Enables "draw circle", sets va
 
 cons.innerHTML = "Start drawing your circle on the canvas."
 
-
+toggle1Function()
     
 clicks = 0; 
 pressedCircle = true; 
@@ -277,7 +331,8 @@ radius = 0;
  
 
 drawRectangle.addEventListener('click', function(){//Enables "draw rectangle", sets variables to init and disables other figures.
-
+    
+toggle1Function()
 
 clicks = 0; 
 pressedCircle = false; 
@@ -296,6 +351,7 @@ var ry2 = 0;
 
 drawTriangle.addEventListener('click', function(){//Enables "draw triangle", sets variables to init and disables other figures. 
 
+toggle1Function()
     
 clicks = 0 
 pressedCircle = false; 
@@ -326,8 +382,8 @@ var ty3 = 0
     if(pressedWhatever == true && mouseup == false){
         move++
         if(move==1 && mouseup == false){
-        let wx = event.clientX - rect.left; 
-        let wy = event.clientY - rect.top;
+        let wx = event.clientX - rect.left - canvas.offsetLeft; 
+        let wy = event.clientY - rect.top - canvas.offsetTop;
         c.beginPath(); 
         c.moveTo(wx,wy)
         }
@@ -338,8 +394,8 @@ var ty3 = 0
         
                 if(move>move-1 && mouseup == false){
 
-                let wx = event.clientX - rect.left; 
-                let wy = event.clientY - rect.top;  
+                let wx = event.clientX - rect.left - canvas.offsetLeft; 
+                let wy = event.clientY - rect.top - canvas.offsetTop;  
 
                     c.lineTo(wx,wy)
                     c.stroke();
@@ -483,7 +539,8 @@ clicks=0
 
 let mouseuperaser = false;
 eraser.addEventListener('click', function(event){
-
+    
+toggle1Function()
     
 clicks = 0 
 pressedCircle = false; 
@@ -532,7 +589,8 @@ mouseuperaser = false;
  //--------------------------------------CLEAR BUTTON---------------------------------- 
 
 clear1.addEventListener('click', function(event){ 
-c.clearRect(0, 0, 500, 650)
+toggle1Function()
+c.clearRect(0, 0, 1000, 1000)
 jsonlist = []
 JSONDIV.innerHTML = ''
 
@@ -544,7 +602,7 @@ JSONDIV.innerHTML = ''
 //---------------------------------------STOP DRAWING-------------------------------------// //-------------Sets all bools + var clicks to false and 0---------------------// 
 
 stopdrawing.addEventListener('click', function(event){ 
-
+toggle1Function()
 clicks = 0 
 pressedCircle = false; 
 pressedRectangle = false; 
@@ -556,6 +614,7 @@ pressedWhatever = false;
 //----------------------------------------EXPORT TO JSON-------------------------------------
 json.addEventListener('click', function(event){
 if(jsonlist.length>0){
+toggle1Function()
 let jsontext='' 
 for(i=0;i<jsonlist.length;i++){ 
 let obj = JSON.stringify(jsonlist[i], null, 2); 

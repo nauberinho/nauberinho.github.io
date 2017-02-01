@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> LAB 3 </title>
+    <title> Picasso's Legacy </title>
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="lab3.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
     </head>
     
    <body>
@@ -19,33 +21,25 @@
 
                     <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12' id="redigera">
                       
-        <div class="dropdown">
-            
-            <button id="myBtn" class="dropbtn">Menu</button>
-                    <div id="dropdown" class="dropdown-content">
-                        <a href="#circle" id="hidden1">What is a circle?</a>
-                        <a href="#rectangle" id="hidden2">What is a rectangle?</a>
-                        <a href="#trianglecontact" id="hidden3">What is a triangle?</a>
-                        <button id="drawcircle" class="redbtn"><a href="#">Draw a circle</a></button><br>
-                        <button id="drawrectangle" class="redbtn"><a href="#">Draw a rectangle</a></button><br>
-                        <button id="drawtriangle" class="redbtn"><a href="#">Draw a triangle</a></button><br>
-                        <button id="drawwhatever" class="redbtn"><a href="#">Draw whatever you like      <p class="glyphicon glyphicon-pencil"></p>     </a></button><br>
-                        <button id="stop" class="redbtn"><a href="#">Stop drawing</a></button><br>
-                        <button id="erase" class="redbtn"><a href="#">Eraser</a></button><br>
-                        <button id="clear" class="redbtn"><a href="#">Clear canvas</a></button><br>
-                        <button id="json" class="redbtn glyphicon glyphicon-download"><a href="#">Export to JSON</a></button><br>
+     
+                    <div class='leftmenu'>
+                        <button id="drawcircle" class="redbtn leftbtns"><a href="#">Draw a circle</a></button><br>
+                        <button id="drawrectangle" class="redbtn leftbtns"><a href="#">Draw a rectangle</a></button><br>
+                        <button id="drawtriangle" class="redbtn leftbtns"><a href="#">Draw a triangle</a></button><br>
+                        <button id="drawwhatever" class="redbtn leftbtns"><a href="#">Draw whatever you like     </a></button><br>
                     </div>
-       </div>
-                       <canvas id="myCanvas" width="700px" height="500px">Your browser doesn't support canvas.</canvas>
+                        
+                    <div class='rightmenu'>
+                        <button id="stop" class="redbtn rightbtns"><a href="#">Stop drawing</a></button><br>
+                        <button id="erase" class="redbtn rightbtns"><a href="#">Eraser</a></button><br>
+                        <button id="clear" class="redbtn rightbtns"><a href="#">Clear canvas</a></button><br>
+                        <button id="json" class="redbtn rightbtns"><a href="#">Export to JSON</a></button><br>
                     </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12" id="colorDiv">
+                        
                        
-                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="style">
                        
-                           <div>
-                                <form>
-                                   
+                       <div id="style">
+                
                                     <select id="selectColor">
                                       <option selected  disabled value='no'>
                                       Select a color
@@ -64,21 +58,19 @@
                                     <input type="text" name="addWidth" id="inputWidth" placeholder="Set width, from 1-10">
                                     <button id="addWidth" type="button">Set width</button>
 
-                                </form>
-                            </div>
                         </div>  
                         
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="textrutor">
+                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="textrutor">
                        <div id="consoled">Hover your mouse around to learn about your new drawing tool.</div>
                        <div><input type="text" class="inputjayson" id="jayson">
                        </div>
                        </div>
-                   </div>  
+                       </div>
+                       
+                       <canvas id="myCanvas" width='500' height='700'>Your browser doesn't support canvas.</canvas>
 
-                  
-            
         </div>
-    </div>
+     </div>
     </div>
   
    
