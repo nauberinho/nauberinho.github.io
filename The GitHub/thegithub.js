@@ -48,8 +48,6 @@ for(i=0;i<maincontentarray.length;i++){
 }*/
 //------------------------------------------MOBILE END-----------------------------------------------------------//
  function whenloaded(){
-  
-           
 
 var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
@@ -68,10 +66,9 @@ var contactbtn = document.getElementById('contactbtn'),
 
         let aboutsymbols = document.getElementsByClassName('aboutsymbol')
         
-   home()
+   
 
- }
-
+       
         for(i=0;i<aboutsymbols.length;i++){
             aboutsymbols[i].style.top = '0vh'
             aboutsymbols[i].style.opacity = '0'
@@ -1412,3 +1409,9 @@ function goTo(num) {
 function resetClasses() {
     homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 };
+ home()    
+}
+
+     
+
+
