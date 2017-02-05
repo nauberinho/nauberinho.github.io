@@ -61,7 +61,8 @@ var contactbtn = document.getElementById('contactbtn'),
         let pressedabout = false;
         let pressedwork = false;
         let pressedcontact = false;
-
+ home()    
+ }
       let navigation = document.getElementsByClassName('navigation')[0]
 
         let aboutsymbols = document.getElementsByClassName('aboutsymbol')
@@ -1409,8 +1410,8 @@ function goTo(num) {
 function resetClasses() {
     homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 };
- home()    
-}
+
+
 
      
 
