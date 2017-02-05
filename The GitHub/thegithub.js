@@ -138,29 +138,29 @@ function home(){
     }, 50);
         setTimeout(function(){
         let homearray = []
-        let homeportfolio = document.createElement('DIV')
-        homearray.push(homeportfolio)
-        homeportfolio.style.position = 'absolute'
-        homeportfolio.style.bottom = '-20vh'
-        homeportfolio.style.left = '0vw'
-        homeportfolio.style.width = '20vw'
-        homeportfolio.style.height= '30vh'
-        homeportfolio.style.transition= '2s ease'
-        homeportfolio.style.backgroundImage= 'url(homeportfolio.png)'
-        homeportfolio.style.backgroundRepeat= 'no-repeat'
-        homeportfolio.style.backgroundSize= '100%'
-        let homeme = document.createElement('DIV')
+    let homeme = document.createElement('DIV')
         homearray.push(homeme)
         homeme.style.position = 'absolute'
         homeme.style.bottom = '-20vh'
-        homeme.style.left = '20vw'
+        homeme.style.left = '0vw'
         homeme.style.width = '20vw'
         homeme.style.height= '30vh'
         homeme.style.transition= '2s ease'
         homeme.style.backgroundImage= 'url(homeabout.png)'
         homeme.style.backgroundSize= '100%'
         homeme.style.backgroundRepeat= 'no-repeat'
-        let homecontact = document.createElement('DIV')
+    let homeportfolio = document.createElement('DIV')
+        homearray.push(homeportfolio)
+        homeportfolio.style.position = 'absolute'
+        homeportfolio.style.bottom = '-20vh'
+        homeportfolio.style.left = '20vw'
+        homeportfolio.style.width = '20vw'
+        homeportfolio.style.height= '30vh'
+        homeportfolio.style.transition= '2s ease'
+        homeportfolio.style.backgroundImage= 'url(homeportfolio.png)'
+        homeportfolio.style.backgroundRepeat= 'no-repeat'
+        homeportfolio.style.backgroundSize= '100%'
+    let homecontact = document.createElement('DIV')
         homearray.push(homecontact)
         homecontact.style.position = 'absolute'
         homecontact.style.bottom = '-20vh'
@@ -171,8 +171,8 @@ function home(){
         homecontact.style.backgroundImage = 'url(homecontact.png)'
         homecontact.style.backgroundRepeat= 'no-repeat'
         homecontact.style.backgroundSize= '100%'
-        homemaindiv.appendChild(homeportfolio)
         homemaindiv.appendChild(homeme)
+        homemaindiv.appendChild(homeportfolio)
         homemaindiv.appendChild(homecontact)
             setTimeout(function(){ 
             homeportfolio.style.bottom = '0vh'
@@ -942,7 +942,7 @@ function work(){
     let workrightarray = []
     let workimagearray = []
     let textdivarray = []
-    let workrighttextarray=[' A javascript focused project in which canvas is explored. The criterias was that it had to feature a circle, a rectangle, a triangle, a clear and a ‘export to JSON’ tool.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Bootstrap ', ' A school project with the idea of getting familiar with the process of planning a project with the client as well as learning relevant graphic design tools. <br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>• Balsamique<br>• Bootstrap', 'url(workrightcase3.png)', 'url(workrightcase4.png)']
+    let workrighttextarray=[' A javascript focused project in which canvas is explored. The criterias was that it had to feature a circle, a rectangle, a triangle, a clear and a ‘export to JSON’ tool.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Bootstrap ', ' A school project with the idea of getting familiar with the process of planning a project with the client as well as learning relevant graphic design tools. <br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>• Balsamique<br>• Bootstrap', "Learning about API's, I did a 'search your place'- app by connecting the users wish to google.<br><br><br><br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>", 'A school assignment with the goal of learning about forms and button.<br><br><br><br><br>• HTML5<br>• CSS3 ']
     let backgroundimagearray = ['url(canvasBW.png)', 'url(caseimageMGC.png)', 'url(caseimagegoogleapi.png)', 'url(formsandbuttons.png)']
 let childrenappended;
     if(childrenappended!==true){
@@ -1119,10 +1119,10 @@ let watchproject = document.createElement('A')
         let rightclicks = 0;
         
         workleftarrow.addEventListener('click', function(){
-            
+             
         var leftvalue1 = 0
         
-        if(rightclicks>0 && leftclicks<7){
+        if(rightclicks>0 && leftclicks<4){
             
             leftclicks++
             rightclicks--
@@ -1141,20 +1141,21 @@ let watchproject = document.createElement('A')
                 workarray[i].style.left=newleftvalue1
             }
         }
+            console.log(rightclicks, leftclicks)
     })
 
     
     workrightarrow.addEventListener('click', function(){
          var leftvalue1 = 0
                
-        if(leftclicks<=7 && rightclicks<=7){
+        if(leftclicks<=3 && rightclicks<3){
          rightclicks++
          
          if(leftclicks !== 0){
          leftclicks-- 
          }
-         
-         if(leftclicks<=7 && rightclicks<=7){
+         console.log(rightclicks, leftclicks)
+         if(leftclicks<=4 && rightclicks<=3){
             for(i=0;i<workarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
@@ -1220,8 +1221,8 @@ pressedcontact = true;
     contactmaindiv.style.left = '21.5vw'
     }, 50);
         setTimeout(function(){ 
-    let contactlinkedin = document.createElement('DIV')
-        contactlinkedin.href = '#'
+    let contactlinkedin = document.createElement('A')
+        contactlinkedin.href = 'https://www.linkedin.com/in/niklasnauber'
         contactlinkedin.style.position = 'absolute'
         contactlinkedin.style.top = '4.65vh'
         contactlinkedin.style.left = '-20.5vw'
@@ -1231,7 +1232,7 @@ pressedcontact = true;
         contactlinkedin.style.backgroundImage= 'url(contactlinkedin.png)'
         contactlinkedin.style.backgroundRepeat = 'no-repeat'
         contactlinkedin.style.backgroundSize= '100%'
-    let contactmail = document.createElement('A')
+    let contactmail = document.createElement('DIV')
         contactmail.href = '#'
         contactmail.style.position = 'absolute'
         contactmail.style.top = '31.3vh'
@@ -1239,9 +1240,15 @@ pressedcontact = true;
         contactmail.style.width = '15vw'
         contactmail.style.height= '23vh'
         contactmail.style.transition= '2s ease'
-        contactmail.style.backgroundImage= 'url(contactmail.png)'
+        contactmail.style.backgroundImage='url(contactmail.png)'
         contactmail.style.backgroundRepeat = 'no-repeat'
         contactmail.style.backgroundSize= '100%'
+        contactmail.innerHTML=' nauber91@hotmail.com'
+        contactmail.style.fontSize='1vw'
+        contactmail.style.fontFamily="'Open Sans Condensed', sans-serif";
+        contactmail.style.padding='4.5vw 1.3vw 4.5vw 1.3vw'
+        contactmail.style.textDecoration='none'
+        contactmail.style.color='#003300'
     let contactmap = document.createElement('DIV')
         contactmap.id='map';
         contactmap.href = '#'
@@ -1270,8 +1277,6 @@ pressedcontact = true;
             contactmap.style.left = '24.5vw'
             contactlinkedin.style.padding = '8vh'
             contactlinkedin.style.fontSize = '2em'
-            contactmail.style.padding = '8vh'
-            contactmail.style.fontSize = '2em'
             contactmap.style.padding = '8vh'
             contactmap.style.fontSize = '2em'
             

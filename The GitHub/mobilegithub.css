@@ -1,0 +1,13 @@
+
+
+.mobilemessage{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #7b827c;
+    color: white;
+    font-size: 2em;
+    z-index:2000;
+    padding: 20vh 20vw;
+}
+
