@@ -48,6 +48,8 @@ for(i=0;i<maincontentarray.length;i++){
 }*/
 //------------------------------------------MOBILE END-----------------------------------------------------------//
 
+           function whenloaded(){
+               home()
            
 
 var contactbtn = document.getElementById('contactbtn'),
@@ -1410,8 +1412,6 @@ function resetClasses() {
     homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 };
      
- function whenloaded(){
-  home()
  }
      
 
