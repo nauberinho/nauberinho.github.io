@@ -49,7 +49,7 @@ for(i=0;i<maincontentarray.length;i++){
 //------------------------------------------MOBILE END-----------------------------------------------------------//
 
            function whenloaded(){
-               home()
+               
            
 
 var contactbtn = document.getElementById('contactbtn'),
@@ -66,7 +66,8 @@ var contactbtn = document.getElementById('contactbtn'),
         let pressedcontact = false;
 
       let navigation = document.getElementsByClassName('navigation')[0]
-
+home()
+           }
         let aboutsymbols = document.getElementsByClassName('aboutsymbol')
         
  
@@ -1412,7 +1413,7 @@ function resetClasses() {
     homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 };
      
- }
+ 
      
 
 
