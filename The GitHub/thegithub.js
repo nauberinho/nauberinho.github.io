@@ -48,7 +48,7 @@ for(i=0;i<maincontentarray.length;i++){
 }*/
 //------------------------------------------MOBILE END-----------------------------------------------------------//
 
-           function whenloaded(){
+           const whenloaded = function(){
                
            
 
@@ -57,148 +57,147 @@ var contactbtn = document.getElementById('contactbtn'),
     workbtn = document.getElementById('workbtn'),
     homebtn = document.getElementById('homebtn'),
     slide = document.getElementById('scrolls').style;
-      let clickedhomeonce = false;
-    let logoframe = document.createElement('DIV')
+    let clickedhomeonce = false;
+    let logoframe = document.createElement('DIV');
     
     let pressedhome = false;
         let pressedabout = false;
         let pressedwork = false;
         let pressedcontact = false;
 
-      let navigation = document.getElementsByClassName('navigation')[0]
-home()
-           }
-        let aboutsymbols = document.getElementsByClassName('aboutsymbol')
+      let navigation = document.getElementsByClassName('navigation')[0];
+
+      home();
+
+      
+        let aboutsymbols = document.getElementsByClassName('aboutsymbol');
         
  
        
         for(i=0;i<aboutsymbols.length;i++){
-            aboutsymbols[i].style.top = '0vh'
-            aboutsymbols[i].style.opacity = '0'
-            aboutsymbols[i].style.border = '2px solid black'
-            aboutsymbols[i].style.width = '15vw'
-        }
+            aboutsymbols[i].style.top = '0vh';
+            aboutsymbols[i].style.opacity = '0';
+            aboutsymbols[i].style.border = '2px solid black';
+            aboutsymbols[i].style.width = '15vw';
+        };
 
     function changeBackground(img){
-        let background = document.getElementById('background')
+        let background = document.getElementById('background');
         
-        background.style.transition = '2s ease'
-        background.style.backgroundImage = 'none'
+        background.style.transition = '2s ease';
+        background.style.backgroundImage = 'none';
         
-        background.style.backgroundImage = img
-    }
+        background.style.backgroundImage = img;
+    };
 
-    let degrees = 0
+    let degrees = 0;
     function backgroundTransition(btn, imagestring, btnnumber, firstdegstring, seconddegstring, degs){
      
-        degrees = degs
-        console.log('Degrees är: ' + degrees)
+        degrees = degs;
+        console.log('Degrees är: ' + degrees);
     
     background.style.transform = firstdegstring;
         
         setTimeout(function(){ 
-        background.style.transition = '0.3s cubic-bezier(.07,.54,.74,1.05)'
+        background.style.transition = '0.3s cubic-bezier(.07,.54,.74,1.05)';
         background.style.transform = seconddegstring;
     
     changeBackground(imagestring)
-                         },700)
-        goTo(btnnumber)
+                         },700);
+        goTo(btnnumber);
     setTimeout(function(){ 
-        background.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)'
+        background.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)';
     
-    changeBackground(imagestring)
-                         },1400)
+    changeBackground(imagestring);
+                         },1400);
   
-    }
+    };
 
 function home(){
-    let homeportfolio = document.createElement('A')
-    let homeme = document.createElement('A')
-    let homecontact = document.createElement('A')
-    let homedivtext = document.getElementById('hometext')
-    let homedivremoveadd = document.getElementById('removeadd')
+    let homeportfolio = document.createElement('A');
+    let homeme = document.createElement('A');
+    let homecontact = document.createElement('A');
+    let homedivtext = document.getElementById('hometext');
+    let homedivremoveadd = document.getElementById('removeadd');
     let pressedskipintro = false;
     
     function appendHomeMenu(){
-            let homemaindiv = document.createElement('DIV')
-    homemaindiv.className = 'homemaindiv'
-    homedivremoveadd.appendChild(homemaindiv)
-    homemaindiv.style.opacity = '0'
+    let homemaindiv = document.createElement('DIV');
+    homemaindiv.className = 'homemaindiv';
+    homedivremoveadd.appendChild(homemaindiv);
+    homemaindiv.style.opacity = '0';
     setTimeout(function(){ 
-    homemaindiv.style.opacity = '1'
-    homemaindiv.style.width = '60vw'
-    homemaindiv.style.height = '50vh'
-    homemaindiv.style.left = '20vw'
+    homemaindiv.style.opacity = '1';
+    homemaindiv.style.width = '60vw';
+    homemaindiv.style.height = '50vh';
+    homemaindiv.style.left = '20vw';
     }, 50);
         setTimeout(function(){
-        let homearray = []
-    let homeme = document.createElement('DIV')
-        homearray.push(homeme)
-        homeme.style.position = 'absolute'
-        homeme.style.bottom = '-20vh'
-        homeme.style.left = '0vw'
-        homeme.style.width = '20vw'
-        homeme.style.height= '30vh'
-        homeme.style.transition= '2s ease'
+        let homearray = [];
+        homearray.push(homeme);
+        homeme.style.position = 'absolute';
+        homeme.style.bottom = '-20vh';
+        homeme.style.left = '0vw';
+        homeme.style.width = '20vw';
+        homeme.style.height= '30vh';
+        homeme.style.transition= '2s ease';
         homeme.style.backgroundImage= 'url(homeabout.png)'
-        homeme.style.backgroundSize= '100%'
-        homeme.style.backgroundRepeat= 'no-repeat'
-    let homeportfolio = document.createElement('DIV')
-        homearray.push(homeportfolio)
-        homeportfolio.style.position = 'absolute'
-        homeportfolio.style.bottom = '-20vh'
-        homeportfolio.style.left = '20vw'
-        homeportfolio.style.width = '20vw'
-        homeportfolio.style.height= '30vh'
-        homeportfolio.style.transition= '2s ease'
-        homeportfolio.style.backgroundImage= 'url(homeportfolio.png)'
-        homeportfolio.style.backgroundRepeat= 'no-repeat'
-        homeportfolio.style.backgroundSize= '100%'
-    let homecontact = document.createElement('DIV')
-        homearray.push(homecontact)
-        homecontact.style.position = 'absolute'
-        homecontact.style.bottom = '-20vh'
-        homecontact.style.left = '40vw'
-        homecontact.style.width = '20vw'
-        homecontact.style.height= '30vh'
-        homecontact.style.transition= '2s ease'
-        homecontact.style.backgroundImage = 'url(homecontact.png)'
-        homecontact.style.backgroundRepeat= 'no-repeat'
-        homecontact.style.backgroundSize= '100%'
-        homemaindiv.appendChild(homeme)
-        homemaindiv.appendChild(homeportfolio)
-        homemaindiv.appendChild(homecontact)
+        homeme.style.backgroundSize= '100%';
+        homeme.style.backgroundRepeat= 'no-repeat';
+        homearray.push(homeportfolio);
+        homeportfolio.style.position = 'absolute';
+        homeportfolio.style.bottom = '-20vh';
+        homeportfolio.style.left = '20vw';
+        homeportfolio.style.width = '20vw';
+        homeportfolio.style.height= '30vh';
+        homeportfolio.style.transition= '2s ease';
+        homeportfolio.style.backgroundImage= 'url(homeportfolio.png)';
+        homeportfolio.style.backgroundRepeat= 'no-repeat';
+        homeportfolio.style.backgroundSize= '100%';
+        homearray.push(homecontact);
+        homecontact.style.position = 'absolute';
+        homecontact.style.bottom = '-20vh';
+        homecontact.style.left = '40vw';
+        homecontact.style.width = '20vw';
+        homecontact.style.height= '30vh';
+        homecontact.style.transition= '2s ease';
+        homecontact.style.backgroundImage = 'url(homecontact.png)';
+        homecontact.style.backgroundRepeat= 'no-repeat';
+        homecontact.style.backgroundSize= '100%';
+        homemaindiv.appendChild(homeme);
+        homemaindiv.appendChild(homeportfolio);
+        homemaindiv.appendChild(homecontact);
             setTimeout(function(){ 
-            homeportfolio.style.bottom = '0vh'
-            homeme.style.bottom = '0vh'
-            homecontact.style.bottom = '0vh'
-            homeportfolio.style.padding = '8vh'
-            homeportfolio.style.fontSize = '2em'
-            homeme.style.padding = '8vh'
-            homeme.style.fontSize = '2em'
-            homecontact.style.padding = '8vh'
-            homecontact.style.fontSize = '2em'
+            homeportfolio.style.bottom = '0vh';
+            homeme.style.bottom = '0vh';
+            homecontact.style.bottom = '0vh';
+            homeportfolio.style.padding = '8vh';
+            homeportfolio.style.fontSize = '2em';
+            homeme.style.padding = '8vh';
+            homeme.style.fontSize = '2em';
+            homecontact.style.padding = '8vh';
+            homecontact.style.fontSize = '2em';
  
 homeportfolio.addEventListener('click', function(){ 
-work()
-})
+work();
+});
 homeme.addEventListener('click', function(){ 
-about()
-})
+about();
+});
 
 homecontact.addEventListener('click', function(){ 
-contact()
-})
+contact();
+});
 
     for(i=0;i<homearray.length;i++){
-        let btn = homearray[i]
+        let btn = homearray[i];
                 btn.addEventListener('mouseover', function(){
-                       btn.className ='homebtns'                       
-                })
+                       btn.className ='homebtns';                    
+                });
                 btn.addEventListener('mouseleave', function(){
-                        btn.className =''                       
-                })
-            }
+                        btn.className ='';                     
+                });
+            };
 
 
             }, 10);
@@ -222,98 +221,98 @@ contact()
     let logodiv = document.createElement('DIV')
     logodiv.style.transition = '0.8s cubic-bezier(.07,.54,.74,1.05)'
     logodiv.style.position = 'fixed'
-    logodiv.style.top = '-15vh'
-    logodiv.style.left = '38vw'
-    logodiv.style.width = '20vw'
-    logodiv.style.height = '30vh'
-    logodiv.style.backgroundImage = 'url(logomain.png)'
-    logodiv.style.backgroundSize = '100%'
-    logodiv.style.backgroundRepeat = 'no-repeat'
-    logodiv.style.opacity = '0'
-    body.appendChild(logodiv)
+    logodiv.style.top = '-15vh';
+    logodiv.style.left = '38vw';
+    logodiv.style.width = '20vw';
+    logodiv.style.height = '30vh';
+    logodiv.style.backgroundImage = 'url(logomain.png)';
+    logodiv.style.backgroundSize = '100%';
+    logodiv.style.backgroundRepeat = 'no-repeat';
+    logodiv.style.opacity = '0';
+    body.appendChild(logodiv);
     
-    logoframe.style.position = 'absolute'
-    logoframe.style.top = '-50vh'
-    logoframe.style.backgroundRepeat = 'no-repeat'
-    logoframe.style.width = '99%'
-    logoframe.style.height = '99%'
-    logoframe.style.left = '00.9px'
-    logoframe.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)'
-    logoframe.style.opacity = '0'
-    logoframe.style.backgroundImage='url(logoframe.png)'
-    logoframe.style.backgroundSize='100%'
-    logodiv.appendChild(logoframe)
-    let logotext = document.createElement('DIV')
-    logodiv.appendChild(logotext)
-    let skipintro = document.createElement('DIV')
+    logoframe.style.position = 'absolute';
+    logoframe.style.top = '-50vh';
+    logoframe.style.backgroundRepeat = 'no-repeat';;
+    logoframe.style.width = '99%';
+    logoframe.style.height = '99%';
+    logoframe.style.left = '00.9px';
+    logoframe.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)';
+    logoframe.style.opacity = '0';
+    logoframe.style.backgroundImage='url(logoframe.png)';
+    logoframe.style.backgroundSize='100%';
+    logodiv.appendChild(logoframe);
+    let logotext = document.createElement('DIV');
+    logodiv.appendChild(logotext);
+    let skipintro = document.createElement('DIV');
      
     setTimeout(function(){
         setTimeout(function(){
-    skipintro.style.position='absolute'
-    skipintro.style.transition='1.7s ease'
+    skipintro.style.position='absolute';
+    skipintro.style.transition='1.7s ease';
     skipintro.style.width='50%';
     skipintro.style.height='50%';
     skipintro.style.top='25%';
     skipintro.style.left='0';
     skipintro.style.opacity='0';
-    skipintro.style.backgroundImage='url(skipintro.png)'
-    skipintro.style.backgroundSize='100%'
-    skipintro.style.backgroundRepeat='no-repeat'
-    skipintro.className='cursor skipintro'
-    logodiv.appendChild(skipintro)
+    skipintro.style.backgroundImage='url(skipintro.png)';
+    skipintro.style.backgroundSize='100%';
+    skipintro.style.backgroundRepeat='no-repeat';
+    skipintro.className='cursor skipintro';
+    logodiv.appendChild(skipintro);
     setTimeout(function(){
-        skipintro.style.left='20vw'
+        skipintro.style.left='20vw';
         skipintro.style.opacity='1';
-        logodiv.style.left='28vw'
-    }, 50)
-        }, 800)
+        logodiv.style.left='28vw';
+    }, 50);
+        }, 800);
        
     skipintro.addEventListener('click', function(){
-        homedivtext.style.transition='1s ease'
-        homedivtext.style.left='-100vw'
-        skipintro.style.left='300vw'
+        homedivtext.style.transition='1s ease';
+        homedivtext.style.left='-100vw';
+        skipintro.style.left='300vw';
         appendHomeMenu()
-        logodiv.style.transform = 'scale(0.6)'
-        logodiv.style.top = '75vh'
-        logodiv.style.left = '38vw'
-        menu.className = 'container-fluid text-center navigation colwhite'
+        logodiv.style.transform = 'scale(0.6)';
+        logodiv.style.top = '75vh';
+        logodiv.style.left = '38vw';
+        menu.className = 'container-fluid text-center navigation colwhite';
 
         
-        pressedskipintro = true
-    })
+        pressedskipintro = true;
+    });
   
-    logodiv.style.top = '35vh'
-    logodiv.style.opacity = '1'
+    logodiv.style.top = '35vh';
+    logodiv.style.opacity = '1';
     setTimeout(function(){
 
     setTimeout(function(){
-        logoframe.style.top = '0.3vh'
-        logoframe.style.opacity = '1'
-    }, 100)
+        logoframe.style.top = '0.3vh';
+        logoframe.style.opacity = '1';
+    }, 100);
         setTimeout(function(){
     
-    logotext.style.position = 'absolute'
-    logotext.style.width = '100%'
-    logotext.style.height = '100%'
-    logotext.style.top = '-15vh'
-    logotext.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)'
-    logotext.style.opacity = '1'
-    logotext.style.backgroundImage='url(logotext.png)'
-    logotext.style.backgroundSize='100%'
-    logotext.style.backgroundRepeat = 'no-repeat'
+    logotext.style.position = 'absolute';
+    logotext.style.width = '100%';
+    logotext.style.height = '100%';
+    logotext.style.top = '-15vh';
+    logotext.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)';
+    logotext.style.opacity = '1';
+    logotext.style.backgroundImage='url(logotext.png)';
+    logotext.style.backgroundSize='100%';
+    logotext.style.backgroundRepeat = 'no-repeat';
     setTimeout(function(){
-        logotext.style.top = '0'
-        logotext.style.opacity = '1'
-    }, 100 )
+        logotext.style.top = '0';
+        logotext.style.opacity = '1';
+    }, 100 );
    
-    }, 300)
+    }, 300);
        
-    }, 400)
+    }, 400);
        
-    }, 100)
+    }, 100);
     clickedhomeonce = true;
                setTimeout(function(){ 
-    logoframe.style.transition = '0.8s cubic-bezier(1,0,.83,.67)'
+    logoframe.style.transition = '0.8s cubic-bezier(1,0,.83,.67)';
    
     //logoframe.style.transform = 'scale(1.5)'
     //logoframe.style.transform = 'rotateZ(45deg)'
@@ -323,41 +322,41 @@ contact()
     
         if(pressedskipintro!==true){
            setTimeout(function(){
-    logodiv.style.transform = 'scale(0.6)'
-    logodiv.style.top = '75vh'
-    logodiv.style.left='38vw'
-    skipintro.style.left='0'
-    skipintro.opacity='0'
-    setTimeout(function(){
+    logodiv.style.transform = 'scale(0.6)';
+    logodiv.style.top = '75vh';
+    logodiv.style.left='38vw';
+    skipintro.style.left='0';
+    skipintro.opacity='0';
+    setTimeout(function(){;
         logodiv.removeChild(skipintro)
-    }, 600)
+    }, 600);
     
     
-    }, 0010);
-            }
+    }, 10);
+            };
     
-    }, 0010);
+    }, 10);
            
     setTimeout(function(){ 
   
-    logoframe.style.transform = 'scale(1)'
-    logoframe.style.transform = 'rotateZ(0deg)'
+    logoframe.style.transform = 'scale(1)';
+    logoframe.style.transform = 'rotateZ(0deg)';
     }, 1000); 
     menu.className='container-fluid text-center navigation colwhite';
                    console.log(clickedhomeonce)
     
     }, 13000); 
-    }
+    };
  
      if(pressedabout == true || pressedcontact == true || pressedwork ==  true){
          navigation.style.backgroundColor = '#738070';
     
          let degreebackstring = degrees.toString()
          let degreetostring = (degrees + 20).toString();
-         let skewstring = 'skewY(' + degreetostring + 'deg)'
-         console.log(skewstring)
-         let skewback = 'skewY(' + degreebackstring  + 'deg)'
-         console.log(skewstring)
+         let skewstring = 'skewY(' + degreetostring + 'deg)';
+         console.log(skewstring);
+         let skewback = 'skewY(' + degreebackstring  + 'deg)';
+         console.log(skewstring);
          
     pressedabout = false;
     pressedwork = false;
@@ -365,8 +364,8 @@ contact()
         backgroundTransition(homebtn, 'url(background.png)', 1, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(-60deg)'
-         }, 200)
-    }
+         }, 200);
+    };
     
     
 setTimeout(function(){
@@ -379,7 +378,7 @@ setTimeout(function(){
     homedivtext.style.backgroundColor = 'rgba(0,0,0,0)'
     //homediv.style.boxShadow = '5px 5px 10px #282f3a'
     homedivtext.style.borderRadius = '0px'
-    homedivtext.focus()
+    homedivtext.focus();
 
     letterByLetter(hometext, homedivtext, 50, 650)
       
@@ -393,13 +392,13 @@ setTimeout(function(){
 if(pressedskipintro!==true){
    homedivremoveadd.removeChild(homedivtext)
    appendHomeMenu()
-   }
+   };
     }, 10500);
     
 
-}, 2500)
-}
-}
+}, 2500);
+};
+};
 function about(){
 navigation.style.backgroundColor = '#7b827c';   
 
@@ -419,7 +418,7 @@ pressedabout = true;
         backgroundTransition(homebtn, 'url(background.png)', 2, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(60deg)'
-         }, 200)
+         }, 200);
    };
 
     if(pressedwork == true || pressedcontact == true){
@@ -485,7 +484,7 @@ pressedabout = true;
     btnarray[i].style.border= '2px solid #47603c'
     btnarray[i].style.borderRadius =  '50%';
     btnarray[i].style.transition =  '1s ease';
-    }
+    };
         
     setTimeout(function(){
         for(i=0;i<btnarray.length;i++){
@@ -503,16 +502,16 @@ pressedabout = true;
 
         //futurebtn.style.right =  '32.5vw';
 
-        }
+        };
         
         setTimeout(function(){
             studiesbtn.style.backgroundImage = 'url(studiesbtn.png)'
             resumebtn.style.backgroundImage = 'url(resumebtn.png)'
             /*futurebtn.style.backgroundImage = 'url(futurebtn.png)'*/
             mebtn.style.backgroundImage = 'url(mebtn.png)'
-        },200)
+        },200);
        
-    }, 2000)
+    }, 2000);
     
     function higherMenu(){
     for(i=0;i<btnarray.length;i++){
@@ -521,7 +520,7 @@ pressedabout = true;
       btnarray[i].style.padding = '3px 2px 2px 2px'
       btnarray[i].style.fontSize = '1.7em'
       btnarray[i].style.textDecoration = 'none'
-    }
+    };
         
     studiesbtn.style.top = '11vh'
     studiesbtn.style.backgroundImage = 'url(studiesbtn2.png)'
@@ -535,7 +534,7 @@ pressedabout = true;
     resumebtn.style.top = '11vh'
     resumebtn.style.backgroundImage = 'url(resumebtn2.png)'
     resumebtn.style.height = '8vh'
-}
+};
 
 let studiesclicked;
 let meclicked;
@@ -545,14 +544,14 @@ studiesbtn.addEventListener('click', function(){
     studiesclicked=true;
     meclicked=false;
     resumeclicked=false;
-    higherMenu()
+    higherMenu();
     studiesbtn.className='aboutmouseover'
     for(i=0; i<btnarray.length; i++){
         if(i!==0){
        btnarray[i].className='aboutmouseleave'
-        }
-    }
-})
+        };
+    };
+});
 
 mebtn.addEventListener('click', function(){
     studiesclicked=false;
@@ -563,9 +562,9 @@ mebtn.addEventListener('click', function(){
     for(i=0; i<btnarray.length; i++){
         if(i!==1){
         btnarray[i].className='aboutmouseleave'
-        }
-    }
-})
+        };
+    };
+});
 
 
 
@@ -579,9 +578,9 @@ resumebtn.addEventListener('click', function(){
     for(i=0; i<btnarray.length; i++){
         if(i!==3){
         btnarray[i].className='aboutmouseleave'
-        }
-    }
-})
+        };
+    };
+});
 
     for(i=0; i<btnarray.length; i++){
         let btn = btnarray[i]
@@ -589,19 +588,19 @@ resumebtn.addEventListener('click', function(){
             btn.addEventListener('mouseover', function(){
             btn.className = 'aboutmouseover'
             
-            })
+            });
             btn.addEventListener('mouseleave', function(){
             btn.className = 'aboutmouseleave'
             
             
-            })
-                                  }
+            });
+                                  };
 let pressedresume = false;
 let pressedme = false;
 let pressedstudies = false;
-    let about1 = document.createElement('DIV')
-    let about2 = document.createElement('DIV')
-    let about3 = document.createElement('DIV') 
+    let about1 = document.createElement('DIV');
+    let about2 = document.createElement('DIV');
+    let about3 = document.createElement('DIV'); 
     
 function newDivs(classname1, classname2, classname3, about1left, about2left, about3left){
 
@@ -642,7 +641,7 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
             }, 150);
             
         }, 20);
-    }    
+    };
 
         let wordarray=[]
         
@@ -675,9 +674,9 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
                 console.log(intervalresumes)
                 wordarray.push(word)
                 console.log(word)
-            }, intervalresumes)
+            }, intervalresumes);
             
-        }
+        };
     pressedsummaryonce=true;
     }
     
@@ -691,11 +690,11 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
                 console.log('Wordarray längd: ' + wordarray.length)
         wordarray[i].style.left = '0vw'
         console.log(wordarray[i])
-            }, intervalresumes)
+            }, intervalresumes);
         
-    }
-    }
-          }
+    };
+    };
+          };
         
     function wordForWordBack(){
         console.log('wordForWordBack initiated')
@@ -711,10 +710,10 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
             setTimeout(function(){
                 wordarray[i].style.left='-65vw'
                 console.log(wordarray[i])
-            }, intervalresumes)
+            }, intervalresumes);
             
-        }
-    }        
+        };
+    };    
         
       
 studiesbtn.addEventListener('click', function(){
@@ -729,7 +728,7 @@ studiesbtn.addEventListener('click', function(){
                pressedstudies=true;
                pressedme = false;
                pressedresume=false;
-            }, 1500)
+            }, 1500);
                 }
         
          else if(pressedresume==true){
@@ -745,8 +744,8 @@ studiesbtn.addEventListener('click', function(){
                pressedstudies=true;
                pressedme = false;
                pressedresume=false;
-            }, 1500)
-            }, 2000)
+            }, 1500);
+            }, 2000);
     
                 }
         
@@ -755,11 +754,11 @@ studiesbtn.addEventListener('click', function(){
                pressedstudies=true;
                pressedme = false;
                pressedresume=false;
-            }, 1000)
-        }
+            }, 1000);
+        };
         
-    }
-})
+    };
+});
 
 mebtn.addEventListener('click', function(){
     if(pressedme!==true){
@@ -774,7 +773,7 @@ mebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = true;
                pressedresume=false;
-            }, 1500)
+            }, 1500);
                 }
         
         else if(pressedresume==true){
@@ -790,8 +789,8 @@ mebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = true;
                pressedresume=false;
-            }, 1500)
-            }, 2000)
+            }, 1500);
+            }, 2000);
     
                 }
         
@@ -804,11 +803,11 @@ mebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = true;
                pressedresume=false;
-            }, 800)
-            }
-        }
+            }, 800);
+            };
+        };
  
-})
+});
 let pressedsummaryonce=false;
 
 
@@ -824,12 +823,12 @@ resumebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = false;
                pressedresume=true;
-            }, 900)
+            }, 900);
                  
                  wordForWord()
 
     
-                }
+                };
     }
         
         else if(pressedresume==false && pressedsummaryonce==false){
@@ -847,7 +846,7 @@ resumebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = false;
                pressedresume=true;
-            }, 900)
+            }, 900);
             }
             
             else{
@@ -860,10 +859,10 @@ resumebtn.addEventListener('click', function(){
                pressedstudies=false;
                pressedme = false;
                pressedresume=true;
-            }, 900)
-            }
-        }
-})
+            }, 900);
+            };
+        };
+});
 
 
 
@@ -874,8 +873,8 @@ pressedaboutonce=true
     
     if(pressedaboutonce==true){
        
-    }
-}
+    };
+};
 let pressedworkonce = false;
 function work(){
     navigation.style.backgroundColor = '#7b827c';
@@ -897,8 +896,8 @@ function work(){
         backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(60deg)'
-         }, 200)
-    }
+         }, 200);
+    };
     
     if(pressedcontact == true){
              let degreebackstring = degrees.toString()
@@ -914,8 +913,8 @@ function work(){
         backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(.60deg)'
-         }, 200)
-    }
+         }, 200);
+    };
       
     
     if(pressedworkonce!==true){
@@ -925,7 +924,7 @@ function work(){
     workremoveadd.style.left = '14vw'
     setTimeout(function(){
         workremoveadd.style.width = '70vw'
-    }, 1000)
+    }, 1000);
     workremoveadd.style.height = '33vw'
     workremoveadd.style.top = '15vh'
     workremoveadd.style.overflow = 'hidden'
@@ -947,12 +946,12 @@ function createCase(casename){
         casename.style.opacity = '1'
         workarray.push(casename)
         workremoveadd.appendChild(casename)
-    }
+    };
     
     for(i=1;i<=4;i++){
         let casename = 'case' + i.toString
     createCase(casename)
-        }
+        };
         
     function createCaseImage(caseimagename, caseToAppend, backgroundimage){
             caseimagename = document.createElement('DIV')
@@ -967,13 +966,13 @@ function createCase(casename){
             caseimagename.style.backgroundSize = '100%'
             caseimagename.style.zIndex = '300'
             caseimagename.style.filter= 'brightness(0.45) blur(3px)'
-    }
+    };
     
     for(i=0;i<workarray.length;i++){
     let caseimagename = 'caseimage' + (i+1).toString
             createCaseImage(caseimagename, workarray[i], backgroundimagearray[i])
 
-        }
+        };
     
     function createWorkRight(name, workrighttext, caseToAppend){
         name = document.createElement('DIV')
@@ -999,13 +998,13 @@ function createCase(casename){
         name.style.zIndex = '301'
         workrightarray.push(name)
         caseToAppend.appendChild(name)
-    }
+    };
         
         for(i=0; i<workrighttextarray.length;i++){
             let itoString = (i+1).toString()
             let workrightname  = 'workright' + itoString
             createWorkRight(workrightname, workrighttextarray[i], workarray[i])
-        }
+        };
         
 let linkarray = ['www.fcbarcelona.com', 'www.aftonbladet.se', 'www.fcbarcelona.com', 'www.fcbarcelona.com']
 
@@ -1015,11 +1014,11 @@ let watchproject = document.createElement('A')
     watchproject.className = 'watchproject'
     watchproject.href=linkarrayindex
     workrightToAppend.appendChild(watchproject)
-}
+};
 
     for(i=0;i<linkarray.length;i++){
     createwatchproject(workrightarray[i], linkarray[i])
-}
+};
     
     textarray = ["Picasso's Legacy: a canvas project", 'From wireframe to mockup: The Music Gear Company', 'Interactive map: connecting API with user', 'Forms and buttons: just as it sounds', '', '', '', '']
     
@@ -1038,7 +1037,7 @@ let watchproject = document.createElement('A')
         nameelement.style.zIndex='500'
         textdivarray.push(nameelement)
         parentdiv.appendChild(nameelement)
-    }
+    };
 
     function makeElementDarker(imageelement, textelement){
         imageelement.addEventListener('mouseover', function(){
@@ -1046,8 +1045,8 @@ let watchproject = document.createElement('A')
             textelement.zIndex=''
 
                 textelement.style.left='-200vw'       
-        })
-    }
+        });
+    };
     
     function makeElementBrighter(imageelement, textelement){
         imageelement.addEventListener('mouseleave', function(){
@@ -1057,24 +1056,24 @@ let watchproject = document.createElement('A')
                 textelement.zIndex='500'
             textelement.style.opacity='1'
       
-        })
-    }
+        });
+    };
         
     for(i=0;i<workarray.length;i++){
         createCaseText('casetext' + i.toString(), textarray[i], workarray[i])
 
-    }
+    };
     
     for(i=0;i<workimagearray.length;i++){
         makeElementDarker(workimagearray[i], textdivarray[i])
 
-    }
+    };
     
     for(i=0;i<workimagearray.length;i++){
 
         makeElementBrighter(workimagearray[i], textdivarray[i])
         console.log(workimagearray[i])
-    }
+    };
     
     console.log(workarray)
     
@@ -1103,7 +1102,7 @@ let watchproject = document.createElement('A')
     workarray[i].style.transition='1.5s ease'
     workarray[i].style.float='left'
     
-    }
+    };
     
     let workleftarrow = document.getElementById('workleftarrow')
     
@@ -1130,13 +1129,13 @@ let watchproject = document.createElement('A')
                 let newleftvalue1 = leftvalue1.toString() + 'vw'
 
                 workarray[i].style.left=newleftvalue1
-                }
+                };
                 
                 workarray[i].style.left=newleftvalue1
-            }
-        }
+            };
+        };
             console.log(rightclicks, leftclicks)
-    })
+    });
 
     
     workrightarrow.addEventListener('click', function(){
@@ -1147,7 +1146,7 @@ let watchproject = document.createElement('A')
          
          if(leftclicks !== 0){
          leftclicks-- 
-         }
+         };
          console.log(rightclicks, leftclicks)
          if(leftclicks<=4 && rightclicks<=3){
             for(i=0;i<workarray.length; i++){
@@ -1159,21 +1158,21 @@ let watchproject = document.createElement('A')
                 let newleftvalue1 = leftvalue1.toString() + 'vw'
 
                 workarray[i].style.left=newleftvalue1
-                }
+                };
 
 
                 workarray[i].style.left=newleftvalue1
 
-            }
+            };
          };
-        }
-    })
+        };
+    });
 
         pressedworkonce = true;
 
-}
-}
-}
+};
+};
+};
      
 let pressedcontactonce = false;
 function contact(){
@@ -1197,7 +1196,7 @@ pressedcontact = true;
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(60deg)'
          }, 200)
-    }
+    };
     
     if(pressedcontactonce==false){
     setTimeout(function(){
@@ -1279,14 +1278,14 @@ pressedcontact = true;
         center: new google.maps.LatLng(57.6826198, 12.0007051),
         zoom: 11,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+    };
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
                     
         var marker = new google.maps.Marker({
           position: {lat: 57.6826198, lng: 12.0007051},
           map: map
         });
-      }
+      };
 
                 
 myMap()          
@@ -1297,9 +1296,9 @@ myMap()
          pressedcontactonce = true;
     }, 1000);
         
-    }
+    };
             
-}
+};
 
 
 
@@ -1313,7 +1312,7 @@ myMap()
             
             function doSetTimeout (text, time){
                 setTimeout(function(){ element.value = text}, time);
-            }
+            };
             
             for(let i=0;i<=string.length;i++){
                 let j = string.charAt(i)
@@ -1322,8 +1321,8 @@ myMap()
                 
                 time += interval
                 doSetTimeout(text,time)
-}
-        } 
+};
+        }; 
         
         var letterByLetterRemove = function(string, element, interval, timestart) {
             
@@ -1332,7 +1331,7 @@ myMap()
             
             function doSetTimeout (text, time){
                 setTimeout(function(){ element.value = text}, time);
-            }
+            };
             
             for(let i=0;i<=string.length;i++){
                 let j = string.charAt(i)
@@ -1341,9 +1340,9 @@ myMap()
                 
                 time += interval
                 doSetTimeout(text,time)
-}     
+};    
             
-        } 
+        }; 
         
     
         
@@ -1413,7 +1412,6 @@ function resetClasses() {
     homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
 };
      
- 
      
-
-
+home()
+           }
