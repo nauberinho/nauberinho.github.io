@@ -285,7 +285,11 @@
     
      <script>
     
-    setTimeout(whenloaded(), before(), after(), 300)
+    setTimeout(function(){
+        whenloaded ()
+        before ()
+        after ()
+    }, 300)
 
     </script>
     </body>
