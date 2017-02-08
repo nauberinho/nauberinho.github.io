@@ -47,11 +47,13 @@ for(i=0;i<maincontentarray.length;i++){
     elementToggle( menubtns[i], maincontentarray[i])
 }*/
 //------------------------------------------MOBILE END-----------------------------------------------------------//
-
-           const whenloaded = function(){
-               
+function before(){
+    console.log('before')
+}
+           let whenloaded = function(){
            
-
+           
+/*
 var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
     workbtn = document.getElementById('workbtn'),
@@ -67,7 +69,6 @@ var contactbtn = document.getElementById('contactbtn'),
 
       let navigation = document.getElementsByClassName('navigation')[0];
 
-      home();
 
       
         let aboutsymbols = document.getElementsByClassName('aboutsymbol');
@@ -80,6 +81,44 @@ var contactbtn = document.getElementById('contactbtn'),
             aboutsymbols[i].style.border = '2px solid black';
             aboutsymbols[i].style.width = '15vw';
         };
+               
+        var letterByLetter = function(string, element, interval, timestart) {
+            let text = ''
+            let time = timestart;
+            
+            function doSetTimeout (text, time){
+                setTimeout(function(){ element.value = text}, time);
+            };
+            
+            for(let i=0;i<=string.length;i++){
+                let j = string.charAt(i)
+                
+                text += j
+                
+                time += interval
+                doSetTimeout(text,time)
+};
+        }; 
+        
+        var letterByLetterRemove = function(string, element, interval, timestart) {
+            
+            let text = ''
+            let time = timestart;
+            
+            function doSetTimeout (text, time){
+                setTimeout(function(){ element.value = text}, time);
+            };
+            
+            for(let i=0;i<=string.length;i++){
+                let j = string.charAt(i)
+                
+                text = string.substring(0, string.length-i)
+                
+                time += interval
+                doSetTimeout(text,time)
+};    
+            
+        }; 
 
     function changeBackground(img){
         let background = document.getElementById('background');
@@ -112,6 +151,7 @@ var contactbtn = document.getElementById('contactbtn'),
                          },1400);
   
     };
+               
 
 function home(){
     let homeportfolio = document.createElement('A');
@@ -461,7 +501,7 @@ pressedabout = true;
     futurebtn.style.top = '25vh'
     futurebtn.style.right = '35vw'
     futurebtn.style.animationDuration =  '2s';
-    futurebtn.style.animation =  'futurecurved 2s ease';*/
+    futurebtn.style.animation =  'futurecurved 2s ease';* /
     
     
 //resumebtn declared------------------------------------
@@ -507,7 +547,7 @@ pressedabout = true;
         setTimeout(function(){
             studiesbtn.style.backgroundImage = 'url(studiesbtn.png)'
             resumebtn.style.backgroundImage = 'url(resumebtn.png)'
-            /*futurebtn.style.backgroundImage = 'url(futurebtn.png)'*/
+            /*futurebtn.style.backgroundImage = 'url(futurebtn.png)'* /
             mebtn.style.backgroundImage = 'url(mebtn.png)'
         },200);
        
@@ -521,7 +561,7 @@ pressedabout = true;
       btnarray[i].style.fontSize = '1.7em'
       btnarray[i].style.textDecoration = 'none'
     };
-        
+     
     studiesbtn.style.top = '11vh'
     studiesbtn.style.backgroundImage = 'url(studiesbtn2.png)'
     studiesbtn.style.height = '8vh'
@@ -530,7 +570,7 @@ pressedabout = true;
     mebtn.style.height = '8vh'
     /*futurebtn.style.top = '15vh'
     futurebtn.style.backgroundImage = 'url(futurebtn2.png)'
-    futurebtn.style.height = '8vh'*/
+    futurebtn.style.height = '8vh'* /
     resumebtn.style.top = '11vh'
     resumebtn.style.backgroundImage = 'url(resumebtn2.png)'
     resumebtn.style.height = '8vh'
@@ -1306,43 +1346,7 @@ myMap()
     
 
         
-        var letterByLetter = function(string, element, interval, timestart) {
-            let text = ''
-            let time = timestart;
-            
-            function doSetTimeout (text, time){
-                setTimeout(function(){ element.value = text}, time);
-            };
-            
-            for(let i=0;i<=string.length;i++){
-                let j = string.charAt(i)
-                
-                text += j
-                
-                time += interval
-                doSetTimeout(text,time)
-};
-        }; 
-        
-        var letterByLetterRemove = function(string, element, interval, timestart) {
-            
-            let text = ''
-            let time = timestart;
-            
-            function doSetTimeout (text, time){
-                setTimeout(function(){ element.value = text}, time);
-            };
-            
-            for(let i=0;i<=string.length;i++){
-                let j = string.charAt(i)
-                
-                text = string.substring(0, string.length-i)
-                
-                time += interval
-                doSetTimeout(text,time)
-};    
-            
-        }; 
+
         
     
         
@@ -1380,7 +1384,7 @@ contactbtn.addEventListener('click', function(){
 contact()
 
 
-})
+});
 
 //-----------------------------WHEN SWITCHING PAGE------------------------
 
@@ -1414,4 +1418,9 @@ function resetClasses() {
      
      
 home()
+function after(){
+    console.log('after')
+}
+           
+           */
            }
