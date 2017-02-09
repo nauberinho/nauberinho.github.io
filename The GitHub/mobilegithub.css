@@ -1,4 +1,6 @@
-
+.desktop{
+    display: none !important;
+}
 
 .mobilemessage{
     position: fixed;

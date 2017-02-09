@@ -103,7 +103,7 @@ hmtl{
         color:white;
         }
     
-        .navigation{background-color: #7b827c;  width: 100vw; height: 3.4vw; position:fixed; top: 0; left: 0vw; z-index: 201; font-family: 'Open Sans Condensed', sans-serif; font-size: 1.7vw; display: inline-block; transition: 2s ease; border-bottom: 2px solid #703632;}
+        .navigation{background-color: #7b827c;  width: 100vw; height: 3.4vw; position:fixed; top: 0; left: 0vw; z-index: 201; font-family: 'Open Sans Condensed', sans-serif; font-size: 1.7vw; display: inline-block; transition: 0.5s ease; border-bottom: 2px solid #703632;}
         
         .navigationup{background-color: #7b827c;  width: 100vw; height: 60px; position:fixed; top: -62px; left: 0vw; z-index: 201; font-size: 2em; display: inline-block; transition: 2s ease;}
 
@@ -114,12 +114,12 @@ hmtl{
         
         .hiddenspan, .scroll{
         opacity:1;
-        transition: 1s cubic-bezier(.83,.69,.56,1.56);
+        transition: 0.4s cubic-bezier(.83,.69,.56,1.56);
         }
         
         .navigation a{
             box-shadow: 0px 0px 0px 0.3px rgba(255,255,255, 0.3);
-            transition: 1s cubic-bezier(.83,.69,.56,1.56);
+            transition: 0.4s cubic-bezier(.83,.69,.56,1.56);
              
         }
         
@@ -166,7 +166,7 @@ hmtl{
         }
         
         #scrolls{
-            transition: 2s cubic-bezier(.07,.54,.74,1.05);
+            transition: 1s cubic-bezier(.07,.54,.74,1.05);
             position: relative;
             background-color: 'black'!important;
         }
