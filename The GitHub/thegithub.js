@@ -49,7 +49,7 @@ for(i=0;i<maincontentarray.length;i++){
 //------------------------------------------MOBILE END-----------------------------------------------------------//
 
 
-let whenloaded = function(){
+
         
 var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
@@ -436,8 +436,8 @@ if(pressedskipintro!==true){
 }, 2500);
 };
 };
- home(); 
-};
+  
+
 let about=function(){
 navigation.style.backgroundColor = '#7b827c';   
 
