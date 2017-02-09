@@ -436,7 +436,8 @@ if(pressedskipintro!==true){
 }, 2500);
 };
 };
- home();   
+ home(); 
+};
 let about=function(){
 navigation.style.backgroundColor = '#7b827c';   
 
