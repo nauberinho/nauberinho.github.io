@@ -1,8 +1,4 @@
-
-
-
-
-        
+    
 var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
     workbtn = document.getElementById('workbtn'),
@@ -489,10 +485,7 @@ pressedabout = true;
         btnarray[i].style.backgroundColor = 'none';
         btnarray[i].style.opacity =  '1';
         btnarray[i].style.borderRadius =  '0%';
-
-
         //futurebtn.style.right =  '32.5vw';
-
         };
         
         setTimeout(function(){
@@ -633,7 +626,7 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
         }, 20);
     };
 
-        let wordarray=[];
+ let wordarray=[];
         
  function wordForWord(){
     if(pressedsummaryonce!==true){
@@ -1168,7 +1161,7 @@ let watchproject = document.createElement('A');
     
 };
 
-}//--------------------------------------------------------------------------------
+
      
 let pressedcontactonce = false;
 function contact(){
@@ -1373,10 +1366,6 @@ function resetClasses() {
 };
      
      
-
-
-           
-           
-    
-           
-           
+function whenloaded(){
+home();
+};            
