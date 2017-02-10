@@ -1373,10 +1373,8 @@ function resetClasses() {
 };
      
      
-
-
-           
-           
-    
-           
+function whenloaded(){
+home()
+};
+       
            
