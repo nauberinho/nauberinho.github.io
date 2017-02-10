@@ -1168,7 +1168,7 @@ let watchproject = document.createElement('A');
     
 };
 
-//--------------------------------------------------------------------------------
+
      
 let pressedcontactonce = false;
 function contact(){
@@ -1374,7 +1374,7 @@ function resetClasses() {
      
      
 function whenloaded(){
-home()
+home();
 };
        
            
