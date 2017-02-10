@@ -1,8 +1,4 @@
-
-
-
-
-        
+    
 var contactbtn = document.getElementById('contactbtn'),
     aboutbtn = document.getElementById('aboutbtn'),
     workbtn = document.getElementById('workbtn'),
@@ -1375,6 +1371,4 @@ function resetClasses() {
      
 function whenloaded(){
 home();
-};
-       
-           
+};            
