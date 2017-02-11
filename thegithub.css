@@ -3,11 +3,6 @@ hmtl{
     overflow: hidden;
 }
 
-
-
-      
-      
-        
         .homebtn:focus{}
 
 @keyframes background{
@@ -528,7 +523,7 @@ position: absolute;
   and (max-width: 568px) {
       
       .mobilemessage{
-           position:fixed;
+         position:fixed;
         width: 100%;
         height:100%;
         background-color: #6e1c2a;
@@ -536,7 +531,10 @@ position: absolute;
         display:block;
         z-index: 1000;
         opacity:1;
-        transform: scale(1)
+        transform: scale(1);
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 2vw;
+          padding: 30vw 40vw;
       }
       
                 .computerdevices{
