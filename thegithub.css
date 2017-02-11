@@ -128,10 +128,10 @@ hmtl{
         }
         
         .work{
-             background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0; transition:  2s cubic-bezier(1,-0.23,.95,.63);
+             background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0; transition:  1s cubic-bezier(1,-0.23,.95,.63);
         }
         
-        .contact{ background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0; transition:  2s cubic-bezier(1,-0.23,.95,.63);
+        .contact{ background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0; transition:  1s cubic-bezier(1,-0.23,.95,.63);
         }
         
         .colwhite{
