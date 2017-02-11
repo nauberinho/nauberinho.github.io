@@ -335,14 +335,14 @@ hmtl{
 }
 
 .aboutmouseover{
-   filter: brightness(1.15);
+   filter: brightness(1.2);
    
    
     
 }
 
 .aboutmouseleave{
-   filter: brightness(0.9);
+   filter: brightness(0.98);
    
     
 }
