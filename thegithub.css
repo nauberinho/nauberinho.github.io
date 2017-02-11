@@ -524,7 +524,7 @@ position: absolute;
 
 
 
-@media (min-width: 0px) 
+@media screen and(min-width: 0px) 
   and (max-width: 568px) {
       
       .mobilemessage{
