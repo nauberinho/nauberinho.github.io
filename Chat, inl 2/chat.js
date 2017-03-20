@@ -31,10 +31,10 @@ window.addEventListener('load', function (event) {
         scrollelement.scrollTop = scrollelement.scrollHeight;
     }
 
-    //function deleteUsers() {
+    /*function deleteUsers() {
         firebase.database().ref('users/').set({});
         console.log('Users deleted')
-    };
+    };*/
    
     function getUser() {
         let useridValue = document.getElementById('getuserid').value;
@@ -424,13 +424,13 @@ window.addEventListener('load', function (event) {
         })
     }
 
-    //function deleteMessages() {
+    /*function deleteMessages() {
         firebase.database().ref('Messages/').set(0);
         console.log('Messages deleted')
         while (messageDiv.hasChildNodes()) {
             messageDiv.removeChild(messageDiv.lastChild);
         }
-    };
+    };*/
 
     function DisplaySessionUser() {
         let sessionUser = localStorage.getItem('sessionUser');
@@ -471,9 +471,9 @@ window.addEventListener('load', function (event) {
     //deleteusersbtn.addEventListener('click', deleteUsers);
     signOutbtn.addEventListener('click', signOut);
     getOnlineUsersbtn.addEventListener('click', getOnlineUsers);
-    //deletemessagesbtn.addEventListener('click', function () {
+    /*deletemessagesbtn.addEventListener('click', function () {
         deleteMessages();
-    })
+    })*/
     messageInput.addEventListener('keydown', function (event) {createMessage(event)});
     
     //--------------------------------------------------------------------------------
