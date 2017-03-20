@@ -1,0 +1,385 @@
+::-webkit-scrollbar {
+    width: 7px;
+    transition: 0.3s ease;
+    border-left: 2px solid rgb(218, 239, 223);
+}
+
+::-webkit-scrollbar-track {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+}
+
+::-webkit-scrollbar-thumb {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    border-left: 1px solid rgb(218, 239, 223);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    transition: 0.3s ease;
+    background-color: rgb(218, 239, 223);
+    border-left: #2d333d;
+}
+
+::-webkit-scrollbar-track:hover {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    border-left: 1px solid rgb(218, 239, 223);
+}
+
+.material-icons {
+    padding: 0;
+}
+
+body {
+    background-color: #2d333d;
+    background-image: -webkit-gradient(linear, 0 0, 60%, from(white), to(rgba(166, 216, 178, 0.5)));
+    background-image: -webkit-linear-gradient(right, rgba(91, 116, 155, 0.5), transparent);
+    background-image: -moz-linear-gradient(left, rgba(166, 216, 178, 0.5), transparent);
+    background-image: -o-linear-gradient(left, rgba(166, 216, 178, 0.5), transparent);
+}
+
+@media screen and (min-width: 800px) {
+    
+    .from-span {
+        font-size: 1w;
+    font-weight: 700;
+}
+    #interactivediv {
+        width: 50vw;
+        left: 25vw;
+    }
+    #menusession {
+        font-size: 1.3vw;
+    }
+    #getonlineusersbtn {
+        font-size: 1.1vw;
+    }
+    #signoutbtn {
+        font-size: 1.1vw;
+    }
+    .newMessage {
+        font-size: 1vw;
+        padding: 0.3vw 0vw 0.3vw 1vw;
+    }
+    #messageinput {
+        font-size: 2vw;
+    }
+    #showonlineusers {
+        font-size: 0.8vw;
+    }
+    .message-span {
+        width: 30vw;
+    }
+}
+
+.user-span {
+    display: inline-block;
+    width: 62%;
+    color: #e8eaed;
+}
+
+.sessionuser-span {
+    display: inline-block;
+    width: 62%;
+    color: #a6d8b2;
+}
+
+.stars-span {
+    display: inline-block;
+    padding: 0 0 0 2%;
+    color: #a6d8b2;
+    width: 30%;
+}
+
+.online-circle{
+    
+    font-size: 1.4em;
+     color: green;
+    
+}
+
+.offline-mark{
+    
+    font-size: 0.8em;
+     color: #af4f2b;
+    
+}
+
+#showonlineusers {
+    width: 33.9%;
+}
+
+@media screen and (max-width: 799px) {
+    #interactivediv {
+        width: 100vw;
+        left: 0;
+    }
+    #menusession {
+        font-size: 3vw;
+    }
+    #getonlineusersbtn {
+        font-size: 3vw;
+    }
+    #signoutbtn {
+        font-size: 3vw;
+    }
+    .newMessage {
+        padding: 1.5vw 0 0 0;
+        font-size: 4vw;
+    }
+    
+        .from-span {
+        font-size: 0.5w;
+    font-weight: 700;
+}
+    #messageinput {
+        font-size: 4.4vw;
+    }
+    #showonlineusers {
+        font-size: 2.5vw;
+    }
+    .message-span {
+        width: 64vw;
+    }
+    .sessionuser-span {
+        display: inline-block;
+        width: 100%;
+        color: #a6d8b2;
+    }
+    
+        .user-span {
+        display: inline-block;
+        width: 100%;
+        color: #e8eaed;
+    }
+    
+
+    .stars-span {
+        display: none;
+        padding: 0 0 0 5%;
+        color: white;
+        width: 40%;
+    }
+    
+.online-circle{
+    
+    font-size: 1.45em;
+     color: green;
+    
+}
+
+.offline-mark{
+    
+    font-size: 0.75em;
+     color: #af4f2b;
+    
+}
+    #showonlineusers {
+        width: 34%;
+    }
+}
+
+#signupdiv {
+    position: absolute;
+    border: 2px solid black;
+}
+
+#logindiv {
+    position: absolute;
+    border: 2px solid black;
+    top: 10vh;
+}
+
+#interactivediv {
+    position: absolute;
+    top: 5vh;
+    height: 95vh;
+}
+
+#menudiv {
+    position: absolute;
+    top: -5%;
+    width: 100%;
+    height: 5%;
+    left: -0%;
+    font-family: 'Fira Sans Condensed', sans-serif, 'Slabo 27px', serif;
+    background-color: #2d333d;
+    color: #a6d8b2;
+}
+
+#menusession {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    font-family: 'Fira Sans Condensed', sans-serif, 'Slabo 27px', serif;
+    padding: 0.5em 0 0 0;
+    z-index: 0;
+    background-color: #2d333d;
+    color: #a6d8b2;
+}
+
+#menuspan {
+    position: absolute;
+    left: 50%;
+    width: 30%;
+    height: 100%;
+    color: #a6d8b2;
+    z-index: 100;
+}
+
+#signoutbtn {
+    position: absolute;
+    top: 20%;
+    left: 90%;
+    border: 2px solid black;
+    cursor: pointer;
+    font-family: 'Fira Sans Condensed', sans-serif, 'Slabo 27px', serif;
+    background-color: #2d333d;
+    color: #a6d8b2;
+    border: none;
+    transition: 0.3s ease;
+}
+
+#deletemessagesbtn {
+    width: 10vw;
+}
+
+#getonlineusersbtn {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    cursor: pointer;
+    font-family: 'Fira Sans Condensed', sans-serif, 'Slabo 27px', serif;
+    background-color: #2d333d;
+    color: #a6d8b2;
+    border: none;
+    border-left: 0.4px;
+    transition: 0.3s ease;
+}
+
+#getonlineusersbtn:hover,
+#signoutbtn:hover {
+    color: white;
+    transform: scale(1.3)
+}
+
+#showonlineusers {
+    position: absolute;
+    left: 66%;
+    top: 100%;
+    height: 0vh;
+    border-left: 1px solid #c7ced8;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    background-color: #2d333d;
+    transition: 0.3s ease;
+}
+
+#messagediv {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #2d333d;
+    font-family: 'Slabo 27px', serif;
+}
+
+#messageinput {
+    position: absolute;
+    background-color: #a6d8b2;
+    color: #2d333d;
+    left: 0%;
+    width: 98%;
+    height: 10%;
+    bottom: 0;
+    font-family: 'Slabo 27px', serif;
+    border: none;
+    padding: 0 0 0 2%;
+    overflow: hidden;
+    outline: none;
+}
+
+.newMessage {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgba(249, 249, 249, 0.0);
+    color: #e8eaed;
+    border-bottom: 0.03px solid #a6d8b2;
+    background-image: -webkit-gradient(linear, 0 0, 60%, from(white), to(grey));
+    background-image: -webkit-linear-gradient(right, rgba(166, 216, 178, 0.5), transparent);
+    background-image: -moz-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    background-image: -o-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+}
+
+#deletemessages {
+    border: 5px solid black;
+    position: absolute;
+    bottom: 60vh;
+}
+
+.likesDiv {
+    position: relative;
+    display: block;
+    vertical-align: top;
+    width: 8%;
+    height: 100%;
+    left: 10%;
+    margin: 0;
+    cursor: pointer;
+    color: #2d333d;
+    transition: 0.3s ease;
+}
+
+.dislikesDiv {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 8%;
+    height: 100%;
+    left: 15%;
+    cursor: pointer;
+    color: #2d333d;
+    transition: 0.3s ease;
+}
+
+.dislikesDiv:hover,
+.likesDiv:hover {
+    color: #a6d8b2;
+}
+
+.dislikesDiv:focus,
+.dislikesDiv:active,
+.likesDiv:focus,
+.likesDiv:active {
+    transform: scale(1.5)
+}
+
+.message-span {
+    display: inline-block, flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    word-wrap: break-word;
+}
+
+.from-span {
+    font-weight: 700;
+}
+
+btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #a6d8b2;
+}
+
+.fromsession-span {
+    font-weight: 700;
+    color: #a6d8b2;
+}

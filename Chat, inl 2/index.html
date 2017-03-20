@@ -1,0 +1,91 @@
+<!doctype html>
+<!--
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Learn how to use the Firebase platform on the Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Friendly Chat">
+    <meta name="theme-color" content="#303F9F">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Friendly Chat">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <meta name="msapplication-navbutton-color" content="#303F9F">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- App Styling -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="signupin.css"> </head>
+
+<body>
+    <div class='container'>
+        <div id='signupdiv'>
+            <input type="text" placeholder='email' id='signupemail' class='signupdivchild signupdivinput'>
+            <input type="password" placeholder='password' id='signuppassword' class='signupdivchild signupdivinput'>
+            <input type="password" placeholder='confirm password' id='signuppassword2' class='signupdivchild signupdivinput'>
+            <input type="text" placeholder='username' id='username' class='signupdivchild signupdivinput'>
+            <input type="text" placeholder='firstname' id='firstname' class='signupdivchild signupdivinput'>
+            <input type="text" placeholder='surname' id='surname' class='signupdivchild signupdivinput'>
+            <div id='createaccountbtn'>Create
+                <br>
+                <br>
+                <br> account</div>
+                
+                            <div id='createaccountbtnmobile'>Create
+            account</div>
+        </div> <span class='or-span'>or</span>
+        <div id='logindiv'>
+            <input type="text" placeholder='email' value='nauber@hotmail.com' id='loginemail' class='logindivchild'>
+            <input type="password" placeholder='password' value='nauber' id='loginpassword' class='logindivchild'>
+            <div id='loginbtn'>Log In</div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBfOSRVfk_hejxUUvdzbkrg-1YyBUs_FfY"
+            , authDomain: "mychat-2645f.firebaseapp.com"
+            , databaseURL: "https://mychat-2645f.firebaseio.com"
+            , storageBucket: "mychat-2645f.appspot.com"
+            , messagingSenderId: "982936881079"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src='signup.js'></script>
+</body>
+
+</html>
