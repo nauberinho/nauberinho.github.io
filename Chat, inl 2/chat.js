@@ -468,10 +468,10 @@ window.addEventListener('load', function (event) {
     
     
 //---3.---------------------EVENTLISTENERS------------------------------------------//
-    deleteusersbtn.addEventListener('click', deleteUsers);
+    //deleteusersbtn.addEventListener('click', deleteUsers);
     signOutbtn.addEventListener('click', signOut);
     getOnlineUsersbtn.addEventListener('click', getOnlineUsers);
-    deletemessagesbtn.addEventListener('click', function () {
+    //deletemessagesbtn.addEventListener('click', function () {
         deleteMessages();
     })
     messageInput.addEventListener('keydown', function (event) {createMessage(event)});
