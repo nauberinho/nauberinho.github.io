@@ -31,7 +31,7 @@ window.addEventListener('load', function (event) {
         scrollelement.scrollTop = scrollelement.scrollHeight;
     }
 
-    function deleteUsers() {
+    //function deleteUsers() {
         firebase.database().ref('users/').set({});
         console.log('Users deleted')
     };
@@ -424,7 +424,7 @@ window.addEventListener('load', function (event) {
         })
     }
 
-    function deleteMessages() {
+    //function deleteMessages() {
         firebase.database().ref('Messages/').set(0);
         console.log('Messages deleted')
         while (messageDiv.hasChildNodes()) {
