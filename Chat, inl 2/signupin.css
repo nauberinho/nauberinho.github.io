@@ -1,0 +1,201 @@
+body {
+    background-color: #2d333d;
+    background-image: -webkit-gradient(linear, 0 0, 60%, from(white), to(grey));
+    background-image: -webkit-linear-gradient(right, rgba(91, 116, 155, 0.5), transparent);
+    background-image: -moz-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    background-image: -o-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    overflow: hidden;
+    font-family: 'Slabo 27px', serif;
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        border: 2px solid white;
+        height: 100vh;
+        width: 100vw;
+    }
+    #signupdiv {
+        top: 24%;
+        width: 20vw;
+        left: 18vw;
+        height: 55%;
+        /*border: 2px solid #e8eaed;
+            border-radius: 10px;*/
+    }
+    #logindiv {
+        top: 35%;
+        width: 20vw;
+        left: 58vw;
+        height: 27.5%;
+        /*border: 2px solid #e8eaed;
+            /*border-radius: 10px;*/
+    }
+    .logindivchild {
+        font-size: 1.7vw;
+    }
+    .signupdivchild {
+        font-size: 1.7vw;
+    }
+    .or-span {
+        top: 48%;
+        position: absolute;
+        color: rgb(166, 216, 178);
+        font-size: 2vw;
+        left: 47.2vw;
+    }
+    #createaccountbtn {
+        font-size: 3.2vw;
+        padding: 3vw 0 3vw 0;
+        text-align: center;
+    }
+    #createaccountbtnmobile {
+        display: none;
+    }
+    #loginbtn {
+        font-size: 3.2vw;
+        padding: 1.85vw 0 1.2vw 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+    #signupdiv {
+        width: 100vw;
+        left: 0vw;
+        height: 65%;
+    }
+    #logindiv {
+        width: 100vw;
+        height: 35%;
+        top: 65%;
+    }
+    .logindivchild {
+        font-size: 4vw;
+    }
+    .signupdivchild {
+        font-size: 4vw;
+    }
+    #createaccountbtn {
+        display: none;
+    }
+    #createaccountbtnmobile {
+
+        font-size: 6vw;
+        padding: 20% 20% 0vw 32%;
+    }
+    #loginbtn {
+        font-size: 6vw;
+        padding: 7.5vw 0 0vw 0;
+    }
+}
+
+#signupdiv {
+    background-image: -webkit-gradient(linear, 5 0, 30%, from(black), to(black));
+    background-image: -webkit-linear-gradient(right, rgba(166, 216, 178, 0.5), transparent);
+    background-image: -moz-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    background-image: -o-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    position: absolute;
+    overflow: hidden;
+}
+
+.signupdivchild {
+    font-family: 'Slabo 27px', serif;
+    display: inline-block;
+    height: 11.3%;
+    width: 100%;
+    border: none;
+    margin-top: -2%;
+    background: none;
+    border-bottom: 1px solid #e8eaed;
+    color: #e8eaed;
+    padding: 0 0 0 1vw;
+    outline: none;
+}
+
+.signupdivchild:hover,
+.signupdivchild:active,
+.signupdivchild:focus {
+    border-bottom: 1px solid rgb(166, 216, 178);
+}
+
+#createaccountbtn {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 30%;
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    color: #e8eaed;
+}
+
+#createaccountbtn:hover {
+    background: none;
+    color: rgb(166, 216, 178)
+}
+
+#createaccountbtnmobile {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 30%;
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    color: #e8eaed;
+}
+
+#createaccountbtnmobile:hover {
+    background: none;
+    color: rgb(166, 216, 178)
+}
+
+#logindiv {
+    background-image: -webkit-gradient(linear, 5 0, 30%, from(black), to(black));
+    background-image: -webkit-linear-gradient(right, rgba(166, 216, 178, 0.5), transparent);
+    background-image: -moz-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    background-image: -o-linear-gradient(left, rgba(239, 243, 249, 0.5), transparent);
+    position: absolute;
+    overflow: hidden;
+}
+
+.logindivchild {
+    font-family: 'Slabo 27px', serif;
+    display: inline-block;
+    height: 35%;
+    width: 100%;
+    border: none;
+    margin-top: -2%;
+    background: none;
+    border-bottom: 1px solid #e8eaed;
+    color: #e8eaed;
+    padding: 0 0 0 1vw;
+    outline: none;
+}
+
+.logindivchild:hover,
+.logindivchild:active,
+.logindivchild:focus {
+    border-bottom: 1px solid rgb(166, 216, 178);
+}
+
+#loginbtn {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    color: #e8eaed;
+}
+
+#loginbtn:hover {
+    background: none;
+    color: rgb(166, 216, 178)
+}
