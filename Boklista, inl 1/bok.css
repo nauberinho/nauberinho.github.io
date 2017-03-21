@@ -10,8 +10,8 @@
  
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 3px blue; 
-    background-color: blue;
+    -webkit-box-shadow: inset 0 0 3px #f4f7fc; 
+    background-color: #f4f7fc;
 }
 
 body{
@@ -33,22 +33,22 @@ body{
 
 
 
-.titleandAuthor{
+.titleAndAuthor{
 
     position: absolute;
-    height: 100%;
-    background-color:  white;
     list-style-type: none;
+    display: inline-block, flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    text-align:left;
+    transition: 0.3s ease;
+
     
 }
 
-.titleandAuthor:hover{
 
-    cursor: pointer;
-    background-color:  white;
-
-    
-}
 
 .new-input{
     height: 100%;
@@ -79,10 +79,18 @@ body{
 
 @media screen and (min-width: 611px) {
     
+    .titleAndAuthor{
+
+    width: 60vw;
+
+        
+    }
+    
     .books-li{
     display: -webkit-flex;
     display: flex;
-    height: 2em;
+    flex-direction: row;
+    min-height: 5vh;
     width: 100vw;    
     border-bottom: 1px solid white;
     margin-left: -3vw;
@@ -149,10 +157,18 @@ body{
 
 @media screen and (max-width: 610px) {
     
+        .titleAndAuthor{
+
+    width: 70vw;
+
+        
+    }
+    
         .books-li{
     display: -webkit-flex;
     display: flex;
-    height: 2em;
+    flex-direction:row;
+    min-height: 6vw;
     width: 100vw;    
     border-bottom: 1px solid white;
     margin-left: -10vw;
@@ -171,7 +187,7 @@ body{
     z-index: 10;
     overflow-y: scroll;
     text-align: center;
-    font-size: 1em;
+    font-size: 3vw;
     overflow-x: hidden;
 }
     
