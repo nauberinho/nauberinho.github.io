@@ -1,15 +1,17 @@
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
  
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px white; 
-    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 0px white; 
+    border-radius: 0px;
+    background-color: black;
 }
  
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px white; 
+    -webkit-box-shadow: inset 0 0 3px blue; 
+    background-color: blue;
 }
 
 body{
@@ -29,12 +31,7 @@ body{
 }
 
 
-.books-li{
-    display: -webkit-flex;
-    display: flex;
-    height: 2em;
-    width: 100vw;    
-}
+
 
 .titleandAuthor{
 
@@ -81,6 +78,17 @@ body{
 }
 
 @media screen and (min-width: 611px) {
+    
+    .books-li{
+    display: -webkit-flex;
+    display: flex;
+    height: 2em;
+    width: 100vw;    
+    border-bottom: 1px solid white;
+    margin-left: -3vw;
+    padding: 0 0 0 1.5vw;
+}
+    
 .list-div{
     
     position: absolute;
@@ -99,7 +107,7 @@ body{
     
     .addfromotherdiv{
     position: absolute;
-    top: 0;
+    top: 0vh;
     display: block;
     width: 33.3%;
     left: 33.3%;
@@ -111,7 +119,7 @@ body{
 
 .addbookdiv{
     position: absolute;
-    top: 0;
+    top: 0vh;
     display: block;
     width: 33.3%;
     height: 100%; 
@@ -129,13 +137,33 @@ body{
     margin-top: 0;
 }
     
+    .searchbooksspan{
+    position: absolute;
+
+    top: 45.6%;
+    left: 41.2%;  
+    
+}
+    
 }
 
 @media screen and (max-width: 610px) {
+    
+        .books-li{
+    display: -webkit-flex;
+    display: flex;
+    height: 2em;
+    width: 100vw;    
+    border-bottom: 1px solid white;
+    margin-left: -10vw;
+    padding: 0 0 0 1.5vw;
+}
+    
 .list-div{
     
+    
+    
     position: absolute;
-    outline: 3px solid black;
     width: 100vw;
     height: 60vh;
     left: 0;
@@ -145,7 +173,6 @@ body{
     text-align: center;
     font-size: 1em;
     overflow-x: hidden;
-    
 }
     
 .addfromotherdiv{
@@ -161,24 +188,40 @@ body{
     height: 100%; 
     margin: 0vw;
 }
-
-.searchdiv{
-      display: inline-block;
+    
+    .searchdiv{
+    position: absolute;
+    left: 0%;
+    display: block;
     width: 100%;
     height: 100%;
     margin: 0;
+    margin-top: 0;
+    overflow:hidden;
 }
+    
+    .searchbooksspan{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 45.6%;
+    left: 41.2%;  
+    
+}
+    
+    
     
 }
 
+/*--------------------------------------------------------------------------------*/
+
 .input-div{
     position: absolute;
-    border: 3px solid black;
     width: 100vw;
     height: 40vh;
     left: 0;
     top: 60vh;
-    z-index: 200;
+    z-index: 0;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -190,6 +233,7 @@ body{
     margin: 0;
     background-color: #bdc3c7;
     border: none;
+    border-bottom: 1px solid white;
 }
 
 .addbookinput:focus{
@@ -198,11 +242,14 @@ filter: brightness(0.5)
 
 .addbookfromotherinput{
     display: inline-block;
-    height:49%;
+    top:4vh;
+    height:50%;
     width: 100%;
     margin: 0;
     background: none;
     border: none;
+    border-bottom:1px solid white;
+    padding: 0% 0 0 0;
 }
 
 .addfromotherdiv input, .addbookdiv input {
@@ -219,6 +266,7 @@ filter: brightness(0.5)
             
 background-color: #95a5a6;
 text-align: center;
+    cursor: pointer;
 }
 
 
@@ -226,6 +274,7 @@ text-align: center;
 .addbookdiv{
 background-color: #7f8c8d;
 text-align: center;
+    cursor: pointer;
 }
 
 .searchdiv{
@@ -238,16 +287,32 @@ input{
     color: white;
     font-weight: 700;
     font-size: 1em;
+    border-bottom: 1px solid white;
+    outline: none;
 }
 
 
 #divoveraddbook, #divoveraddfromother{
-    border: 2px solid pink;
+
     height: 100%;
     position: absolute;
     width: 100%;
     color: #2e3b4f;
     transition: 0.5s ease;
+    overflow:hidden;
+    z-index: 201;
+    
+}
+
+#addfromAPI, #addbook{
+     cursor: pointer;
+    transition: 0.4s ease;
+    
+}
+
+#addfromAPI:hover, #addbook:hover{
+    
+    background-color: #2c3e50;
     
 }
 
@@ -266,5 +331,19 @@ input{
 #divoveraddbook:hover, #divoveraddfromother:hover, .searchdiv:hover{
     filter: brightness(150%);
    color:  #607493;
+        
+}
+
+#searchbooks{
+    transition: 0.3s ease;
+    cursor: pointer;
     
 }
+
+.addfromotherspan{
+    
+    position: relative;
+    top: 45%;
+    
+}
+

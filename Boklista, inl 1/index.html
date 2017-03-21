@@ -30,9 +30,9 @@
     
     
     <div class='addbookdiv'>
-       <div id='divoveraddbook'><br><h3>Add books</h3><br><br>Add your own list of books as much as you like.</div>
-        <input type="text" value= "Harry Potter" id='inputtitle' class='addbookinput'>
-        <input type="text" value= "Harry Potter" id='inputauthor' class='addbookinput'>
+       <div id='divoveraddbook'><br><h3>Add books</h3><br><br>Add your books, as much as you like.</div>
+        <input type="text" placeholder='Title' value= "" id='inputtitle' class='addbookinput'>
+        <input type="text" placeholder='Author 'value= "" id='inputauthor' class='addbookinput'>
         <input type='text' id='addbook' class='addbookinput' readonly='readonly' value='Add your book'></input>
 
     </div>
@@ -41,14 +41,14 @@
     
     <div class='addfromotherdiv'>
         <div id='divoveraddfromother'><br><h3>Add books from other sources</h3><br><br>Be inspired and search books outside your book zone.</div>
-        <input type="text" value= "Ronaldinho" id='inputotherAPI' class='addbookfromotherinput'>
+        <input type="text" placeholder='Keyword' id='inputotherAPI' class='addbookfromotherinput'>
 
-        <div id='addfromAPI' class='addbookfromotherinput'>Add book from API</div>
+        <div id='addfromAPI' class='addbookfromotherinput' readonly='readonly'><span class='addfromotherspan'>Add books from API</span></div>
     
     </div>
     
     <div class='searchdiv'>
-    <div id='searchbooks' class='searchinput'>Search books</div>
+    <div id='searchbooks' class='searchinput' readonly='readonly'><span class='searchbooksspan'>View books</span></div>
     </div>
 
 </div>
