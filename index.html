@@ -1148,293 +1148,292 @@ pressedaboutonce=true;
 };
     
 let pressedworkonce = false;
-let work=function(){
-    
+function work(){
     navigation.style.backgroundColor = '#7b827c';
     
     pressedwork = true;
 
      if(pressedhome == true|| pressedabout == true){
  
-         let degreebackstring = degrees.toString();
+         let degreebackstring = degrees.toString()
          let degreetostring = (degrees - 20).toString();
-         let skewstring = 'skewY(' + degreetostring + 'deg)';
-         console.log(skewstring);
-         let skewback = 'skewY(' + degreebackstring  + 'deg)';
-         console.log(skewstring);
+         let skewstring = 'skewY(' + degreetostring + 'deg)'
+         console.log(skewstring)
+         let skewback = 'skewY(' + degreebackstring  + 'deg)'
+         console.log(skewstring)
          
     pressedabout = false;
     pressedhome = false;
     pressedcontact = false;
-        backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees);
+        backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(60deg)'
          }, 200);
     };
     
     if(pressedcontact == true){
-             let degreebackstring = degrees.toString();
+             let degreebackstring = degrees.toString()
          let degreetostring = (degrees + 20).toString();
-         let skewstring = 'skewY(' + degreetostring + 'deg)';
-         console.log(skewstring);
-         let skewback = 'skewY(' + degreebackstring  + 'deg)';
-         console.log(skewstring);
+         let skewstring = 'skewY(' + degreetostring + 'deg)'
+         console.log(skewstring)
+         let skewback = 'skewY(' + degreebackstring  + 'deg)'
+         console.log(skewstring)
          
     pressedabout = false;
     pressedhome = false;
     pressedcontact = false;
-        backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees);
+        backgroundTransition(homebtn, 'url(background.png)', 3, skewstring, skewback, degrees)
          setTimeout(function(){
-             //logoframe.style.transform = 'rotateZ(.60deg)';
+             //logoframe.style.transform = 'rotateZ(.60deg)'
          }, 200);
     };
       
     
     if(pressedworkonce!==true){
-    workremoveadd.style.position = 'absolute';
-    workremoveadd.style.width = '0vw';
-    workremoveadd.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)';
-    workremoveadd.style.left = '14vw';
+    workremoveadd.style.position = 'absolute'
+    workremoveadd.style.width = '0vw'
+    workremoveadd.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)'
+    workremoveadd.style.left = '14vw'
     setTimeout(function(){
-        workremoveadd.style.width = '70vw';
+        workremoveadd.style.width = '70vw'
     }, 1000);
-    workremoveadd.style.height = '33vw';
-    workremoveadd.style.top = '15vh';
-    workremoveadd.style.overflow = 'hidden';
-    //workremoveadd.style.borderLeft='2px solid #b9beb8';
-    //workremoveadd.style.borderRight='2px solid #b9beb8;   
+    workremoveadd.style.height = '33vw'
+    workremoveadd.style.top = '15vh'
+    workremoveadd.style.overflow = 'hidden'
+    //workremoveadd.style.borderLeft='2px solid #b9beb8'
+    //workremoveadd.style.borderRight='2px solid #b9beb8'    
 
-    let workarray = [];
-    let workrightarray = [];
-    let workimagearray = [];
-    let textdivarray = [];
-    let workrighttextarray=[' A javascript focused project in which canvas is explored. The criterias was that it had to feature a circle, a rectangle, a triangle, a clear and a ‘export to JSON’ tool.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Bootstrap ', ' A school project with the idea of getting familiar with the process of planning a project with the client as well as learning relevant graphic design tools. <br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>• Balsamique<br>• Bootstrap', "Learning about API's, I did a 'search your place'- app by connecting the users wish to google.<br><br><br><br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>", 'A school assignment with the goal of learning about forms and button.<br><br><br><br><br>• HTML5<br>• CSS3 '];
-    let backgroundimagearray = ['url(canvasBW.png)', 'url(caseimageMGC.png)', 'url(caseimagegoogleapi.png)', 'url(formsandbuttons.png)'];
-    let childrenappended;
+    let workarray = []
+    let workrightarray = []
+    let workimagearray = []
+    let textdivarray = []
+    let workrighttextarray=[' A project where I got to learn about Firebase, working with its´ Authorization- and Real Time Database tools. Main features are the chat-, the "see who is online"- and the "like a comment" features.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Flexbox <br>• Firebase ', ' An app with features that enables the user to add books to a list of books, adding books from the Google Books API and removing books from the list.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Flexbox <br>• Ajax<br>• Google Books API ', ' A javascript focused project in which canvas is explored. The criterias was that it had to feature a circle, a rectangle, a triangle, a clear and a ‘export to JSON’ tool.<br><br><br>• HTML5 <br>• CSS3<br>• Javascript<br>• Bootstrap ', ' A school project with the idea of getting familiar with the process of planning a project with the client as well as learning relevant graphic design tools. <br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>• Balsamique<br>• Bootstrap', "Learning about API's, I did a 'search your place'- app by connecting the users wish to google.<br><br><br><br><br>• HTML5<br>• CSS3 <br>• Javascript<br>• Photoshop<br>", 'A school assignment with the goal of learning about forms and button.<br><br><br><br><br>• HTML5<br>• CSS3 ']
+    let backgroundimagearray = ['url(mychat.png)', 'url(booklist.png)', 'url(canvasBW.png)', 'url(caseimageMGC.png)', 'url(caseimagegoogleapi.png)', 'url(formsandbuttons.png)']
+let childrenappended;
     if(childrenappended!==true){
-    
+        
 function createCase(casename){
-        casename = document.createElement('DIV');
-        casename.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)';
-        casename.style.opacity = '1';
-        workarray.push(casename);
-        workremoveadd.appendChild(casename);
+        casename = document.createElement('DIV')
+        casename.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)'
+        casename.style.opacity = '1'
+        workarray.push(casename)
+        workremoveadd.appendChild(casename)
     };
     
-    for(i=1;i<=4;i++){
-        let casename = 'case' + i.toString;
-    createCase(casename);
+    for(i=1;i<=6;i++){
+        let casename = 'case' + i.toString
+    createCase(casename)
         };
         
     function createCaseImage(caseimagename, caseToAppend, backgroundimage){
-            caseimagename = document.createElement('DIV');
-            caseToAppend.appendChild(caseimagename);
-            workimagearray.push(caseimagename);
-            caseimagename.style.backgroundImage = backgroundimage;
-            caseimagename.style.position = 'absolute';
-            caseimagename.style.transition = '1s ease';
-            caseimagename.style.height = '100%';
-            caseimagename.style.width = '100%';
-            caseimagename.style.backgroundRepeat = 'no-repeat';
-            caseimagename.style.backgroundSize = '100%';
-            caseimagename.style.zIndex = '300';
-            caseimagename.style.filter= 'brightness(0.45) blur(3px)';
+            caseimagename = document.createElement('DIV')
+            caseToAppend.appendChild(caseimagename)
+            workimagearray.push(caseimagename)
+            caseimagename.style.backgroundImage = backgroundimage
+            caseimagename.style.position = 'absolute'
+            caseimagename.style.transition = '1s ease'
+            caseimagename.style.height = '100%'
+            caseimagename.style.width = '100%'
+            caseimagename.style.backgroundRepeat = 'no-repeat'
+            caseimagename.style.backgroundSize = '100%'
+            caseimagename.style.zIndex = '300'
+            caseimagename.style.filter= 'brightness(0.45) blur(3px)'
     };
     
     for(i=0;i<workarray.length;i++){
-    let caseimagename = 'caseimage' + (i+1).toString;
-            createCaseImage(caseimagename, workarray[i], backgroundimagearray[i]);
+    let caseimagename = 'caseimage' + (i+1).toString
+            createCaseImage(caseimagename, workarray[i], backgroundimagearray[i])
 
         };
     
     function createWorkRight(name, workrighttext, caseToAppend){
-        name = document.createElement('DIV');
-        name.className='workright';
-        name.style.borderBottom='2px solid #6e1c2a';
-        name.style.borderLeft='2px solid #6e1c2a';
-        name.style.borderTop='2px solid #6e1c2a';
-        name.style.borderRight='2px solid #6e1c2a';
-        name.style.backgroundColor='rgb(185, 190, 184)';
-        name.innerHTML = workrighttext;
-        name.style.color='#40473e';
-        name.style.fontSize='0.95vw';
-        name.style.fontSWeight='700';
-        name.style.textAlign='left';
-        name.style.fontFamily="'Open Sans Condensed', sans-serif";
-        name.style.padding='4vh 3vw';
-        name.style.backgroundRepeat = 'no-repeat';
-        name.style.position = 'absolute';
-        name.style.width = '16vw';
-        name.style.height = '100%';
-        name.style.right = '0';
-        name.style.top = '0';
-        name.style.zIndex = '301';
-        workrightarray.push(name);
-        caseToAppend.appendChild(name);
+        name = document.createElement('DIV')
+        name.className='workright'
+        name.style.borderBottom='2px solid #6e1c2a'
+        name.style.borderLeft='2px solid #6e1c2a'
+        name.style.borderTop='2px solid #6e1c2a'
+        name.style.borderRight='2px solid #6e1c2a'
+        name.style.backgroundColor='rgb(185, 190, 184)'
+        name.innerHTML=workrighttext
+        name.style.color='#40473e'
+        name.style.fontSize='0.95vw'
+        name.style.fontSWeight='700'
+        name.style.textAlign='left'
+        name.style.fontFamily="'Open Sans Condensed', sans-serif"
+        name.style.padding='4vh 3vw'
+        name.style.backgroundRepeat = 'no-repeat'
+        name.style.position = 'absolute'
+        name.style.width = '16vw'
+        name.style.height = '100%'
+        name.style.right = '0'
+        name.style.top = '0'
+        name.style.zIndex = '301'
+        workrightarray.push(name)
+        caseToAppend.appendChild(name)
     };
         
         for(i=0; i<workrighttextarray.length;i++){
-            let itoString = (i+1).toString();
-            let workrightname  = 'workright' + itoString;
-            createWorkRight(workrightname, workrighttextarray[i], workarray[i]);
+            let itoString = (i+1).toString()
+            let workrightname  = 'workright' + itoString
+            createWorkRight(workrightname, workrighttextarray[i], workarray[i])
         };
         
-let linkarray = ['Lab 3/lab3.html', '#', 'Javascript 2/project1.html', '#'];
+let linkarray = ['Chat, inl 2', 'Boklista, inl 1', 'Lab 3/lab3.html', '#', 'Javascript 2/project1.html', '#']
 
     function createwatchproject(workrightToAppend, linkarrayindex){
-let watchproject = document.createElement('A');
-    watchproject.innerHTML='see it live';
-    watchproject.className = 'watchproject';
-    watchproject.href=linkarrayindex;
-    workrightToAppend.appendChild(watchproject);
+let watchproject = document.createElement('A')
+    watchproject.innerHTML='see it live'
+    watchproject.className = 'watchproject'
+    watchproject.href=linkarrayindex
+    workrightToAppend.appendChild(watchproject)
 };
 
     for(i=0;i<linkarray.length;i++){
-    createwatchproject(workrightarray[i], linkarray[i]);
+    createwatchproject(workrightarray[i], linkarray[i])
 };
     
-    textarray = ["Picasso's Legacy: a canvas project", 'From wireframe to mockup: The Music Gear Company', 'Interactive map: connecting API with user', 'Forms and buttons: just as it sounds', '', '', '', ''];
+    textarray = ["MyChat: authorization and realtime database", "TheBooklist: adding and removing books", "Picasso's Legacy: a canvas project","Picasso's Legacy: a canvas project",'From wireframe to mockup: The Music Gear Company', 'Interactive map: connecting API with user', 'Forms and buttons: just as it sounds', '', '', '', '']
     
     function createCaseText(nameelement, text, parentdiv){
-        nameelement = document.createElement('DIV');
-        nameelement.style.position='absolute';
-        nameelement.style.transition='0.5s ease';
-        nameelement.innerHTML = text;
-        nameelement.style.left = '7vw';
-        nameelement.style.color = '#e8e5e5';
-        nameelement.style.width='30vw';
-        nameelement.style.height='0';
-        nameelement.style.top='11vw';
-        nameelement.style.fontFamily="'Open Sans Condensed', sans-serif";
-        nameelement.style.fontSize='1.5vw';
-        nameelement.style.zIndex='500';
-        textdivarray.push(nameelement);
-        parentdiv.appendChild(nameelement);
+        nameelement = document.createElement('DIV')
+        nameelement.style.position='absolute'
+        nameelement.style.transition='0.5s ease'
+        nameelement.innerHTML = text
+        nameelement.style.left = '7vw'
+        nameelement.style.color = '#e8e5e5'
+        nameelement.style.width='30vw'
+        nameelement.style.height='0'
+        nameelement.style.top='11vw'
+        nameelement.style.fontFamily="'Open Sans Condensed', sans-serif"
+        nameelement.style.fontSize='1.5vw'
+        nameelement.style.zIndex='500'
+        textdivarray.push(nameelement)
+        parentdiv.appendChild(nameelement)
     };
-    
 
     function makeElementDarker(imageelement, textelement){
         imageelement.addEventListener('mouseover', function(){
-            imageelement.style.filter='brightness(1.0) blur(0px)';
-            textelement.zIndex='';
-            textelement.style.left='-200vw';
+            imageelement.style.filter='brightness(1.0) blur(0px)'
+            textelement.zIndex=''
+
+                textelement.style.left='-200vw'       
         });
     };
     
     function makeElementBrighter(imageelement, textelement){
         imageelement.addEventListener('mouseleave', function(){
             imageelement.style.filter='brightness(0.45) blur(3px)';
-            textelement.style.left='7vw';
+            textelement.style.left='7vw'
             
-                textelement.zIndex='500';
-            textelement.style.opacity='1';
+                textelement.zIndex='500'
+            textelement.style.opacity='1'
       
         });
     };
         
     for(i=0;i<workarray.length;i++){
-        createCaseText('casetext' + i.toString(), textarray[i], workarray[i]);
+        createCaseText('casetext' + i.toString(), textarray[i], workarray[i])
 
     };
     
     for(i=0;i<workimagearray.length;i++){
-        makeElementDarker(workimagearray[i], textdivarray[i]);
+        makeElementDarker(workimagearray[i], textdivarray[i])
 
     };
     
-        for(i=0;i<workimagearray.length;i++){
+    for(i=0;i<workimagearray.length;i++){
 
-        makeElementBrighter(workimagearray[i], textdivarray[i]);
-        console.log(workimagearray[i]);
+        makeElementBrighter(workimagearray[i], textdivarray[i])
+        console.log(workimagearray[i])
     };
     
-    console.log(workarray);
+    console.log(workarray)
     
     let leftvalue = -61;
-    let leftvaluearray = [];
+    let leftvaluearray = []
     
     for(i=0;i<workarray.length; i++){
     
-    leftvalue += 66;
-    leftvaluearray.push(leftvalue);
+    leftvalue += 66
+    leftvaluearray.push(leftvalue)
     
-    newleftvalue = leftvalue.toString() + 'vw';
+    newleftvalue = leftvalue.toString() + 'vw'
     
-    workarray[i].className='col-xs-4';
-    workarray[i].style.position = 'absolute';
-    workarray[i].style.top = '4vh';
-    workarray[i].style.outline='3.5px solid #b9beb8';
-    workarray[i].style.height = '85%';
-    workarray[i].style.width = '60vw';
-    workarray[i].style.padding = '0 0';
+    workarray[i].className='col-xs-4'
+    workarray[i].style.position = 'absolute'
+    workarray[i].style.top = '4vh'
+    workarray[i].style.outline='3.5px solid #b9beb8'
+    workarray[i].style.height = '85%'
+    workarray[i].style.width = '60vw'
+    workarray[i].style.padding = '0 0'
     
-    workarray[i].style.backgroundSize = "100%";
-    workarray[i].style.opacity='1';
-    workarray[i].style.left=newleftvalue;
+    workarray[i].style.backgroundSize = "100%"
+    workarray[i].style.opacity='1'
+    workarray[i].style.left=newleftvalue
     
-    workarray[i].style.transition='1.5s ease';
-    workarray[i].style.float='left';
+    workarray[i].style.transition='1.5s ease'
+    workarray[i].style.float='left'
     
     };
     
-    let workleftarrow = document.getElementById('workleftarrow');
+    let workleftarrow = document.getElementById('workleftarrow')
     
-    let workrightarrow = document.getElementById('workrightarrow');
+    let workrightarrow = document.getElementById('workrightarrow')
        
         let leftclicks = 0;
         let rightclicks = 0;
         
         workleftarrow.addEventListener('click', function(){
              
-        var leftvalue1 = 0;
+        var leftvalue1 = 0
         
-        if(rightclicks>0 && leftclicks<4){
+        if(rightclicks>0 && leftclicks<6){
             
-            leftclicks++;
-            rightclicks--;
+            leftclicks++
+            rightclicks--
             
             for(i=0;i<workarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
-                    leftvaluearray[i]+=66;
-                    console.log('det här är leftvaluearray: ' + leftvaluearray);
-                    leftvalue1 = leftvaluearray[i];
-                let newleftvalue1 = leftvalue1.toString() + 'vw';
+                    leftvaluearray[i]+=66
+                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
 
-                workarray[i].style.left=newleftvalue1;
+                workarray[i].style.left=newleftvalue1
                 };
                 
-                workarray[i].style.left=newleftvalue1;
+                workarray[i].style.left=newleftvalue1
             };
         };
-            console.log(rightclicks, leftclicks);
+            console.log(rightclicks, leftclicks)
     });
 
     
     workrightarrow.addEventListener('click', function(){
-         var leftvalue1 = 0;
+         var leftvalue1 = 0
                
-        if(leftclicks<=3 && rightclicks<3){
-         rightclicks++;
+        if(leftclicks<=5 && rightclicks<5){
+         rightclicks++
          
          if(leftclicks !== 0){
-         leftclicks--;
+         leftclicks-- 
          };
-         console.log(rightclicks, leftclicks);
-         if(leftclicks<=4 && rightclicks<=3){
+         console.log(rightclicks, leftclicks)
+         if(leftclicks<=6 && rightclicks<=5){
             for(i=0;i<workarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
-                    leftvaluearray[i]-=66;
-                    console.log('det här är leftvaluearray: ' + leftvaluearray);
-                    leftvalue1 = leftvaluearray[i];
-                let newleftvalue1 = leftvalue1.toString() + 'vw';
+                    leftvaluearray[i]-=66
+                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
 
-                workarray[i].style.left=newleftvalue1;
+                workarray[i].style.left=newleftvalue1
                 };
 
 
-                workarray[i].style.left=newleftvalue1;
+                workarray[i].style.left=newleftvalue1
 
             };
          };
@@ -1442,11 +1441,9 @@ let watchproject = document.createElement('A');
     });
 
         pressedworkonce = true;
-        childrenappended=true;
 
 };
 };
-    
 };
 
 //A Comment
