@@ -7,20 +7,22 @@ hmtl{
  {
       
       .mobilemessage{
-        position:fixed;
-        width: 0%;
-        height: 0%;
-        background-color: #6e1c2a;
-        color: white;
+
         display:none;
-        z-index: 1000;
-        opacity:1;
-        transform: scale(1);
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 4vh;
-          padding: 30vw 40vw;
-          text-align:center;
+
       }
+     
+     .made-in{
+         
+         position: fixed;
+         bottom: 0;
+        width: 100%;
+         text-align:center;
+         font-size: 0.7vw;
+         z-index: 200;
+         padding: 0 0 0 -2vw;
+         
+     }
       
                 .computerdevices{
         position:fixed;
@@ -128,10 +130,10 @@ hmtl{
         }
         
         .work{
-             background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0; transition:  1s cubic-bezier(1,-0.23,.95,.63);
+             background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 200%; top:0; transition:  2s cubic-bezier(1,-0.23,.95,.63);
         }
         
-        .contact{ background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0; transition:  1s cubic-bezier(1,-0.23,.95,.63);
+        .contact{ background-size: 100%; color: white; height: 100vh; width: 100vw; position: absolute; left: 300%; top: 0; transition:  2s cubic-bezier(1,-0.23,.95,.63);
         }
         
         .colwhite{
@@ -144,7 +146,7 @@ hmtl{
 
         #menu{
         position:fixed;
-        left:15vw;
+        left:18vw;
         } 
         
         .hiddenspan, .scroll{
@@ -201,7 +203,7 @@ hmtl{
         }
         
         #scrolls{
-            transition: 2s cubic-bezier(.07,.54,.74,1.05);
+            transition: 1s cubic-bezier(.07,.54,.74,1.05);
             position: relative;
             background-color: 'black'!important;
         }
@@ -214,14 +216,7 @@ hmtl{
             
         };
         
-        #homemoon{
-            position: absolute;
-            top: 500px;
-            margin: auto;
-            transition: 4s cubic-bezier(.83,.69,.56,1.56);
-            
-            
-        }
+
 
 #homemoon{
     animation: rotate 15s linear infinite;
@@ -242,7 +237,7 @@ hmtl{
         #hometext{
             position: absolute;
             top: 20vh;
-            left: 27.4vw;
+            left: 29.4vw;
             width: 45vw;
             height: 45vh;
             border: none;
@@ -262,7 +257,7 @@ hmtl{
             .homemaindiv{
             position: absolute;
             top: 7vh;
-            left: 50vw;
+            left: 53vw;
             width: 1vw;
             height: 45vh;
             border-bottom: 1px solid rgb(188, 188, 188);
@@ -335,14 +330,14 @@ hmtl{
 }
 
 .aboutmouseover{
-   filter: brightness(1.2);
+   filter: brightness(1.15);
    
    
     
 }
 
 .aboutmouseleave{
-   filter: brightness(0.98);
+   filter: brightness(0.9);
    
     
 }
@@ -375,7 +370,7 @@ hmtl{
             }
      
      .homebtns{
-    filter:brightness(0.95);
+    filter:brightness(0.8);
 }
 
 .homebtns:hover{
@@ -405,8 +400,8 @@ position: absolute;
     left:-30.5vw;
     width: 20vw;
     height:30vw;
-    transition: 1.5s ease;
-    background-image: url(profilbild.png);
+    transition: 1s ease;
+    background-image: url(js_html_css.png);
     background-repeat:no-repeat;
     background-size:100%;
 }
@@ -417,7 +412,7 @@ position: absolute;
     left:-30.5vw;
     width: 30vw;
     height:40vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(studies2.png);
     background-repeat:no-repeat;
     background-size:100%;
@@ -430,7 +425,7 @@ position: absolute;
     left:-30.5vw;
     width: 30vw;
     height:40vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(studies3.png);
     background-repeat:no-repeat;
     background-size:100%;   
@@ -442,7 +437,7 @@ position: absolute;
     left:-30.5vw;
     width: 30vw;
     height:45vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(me1.png);
     background-repeat:no-repeat;
     background-size:100%;    
@@ -454,7 +449,7 @@ position: absolute;
     left:-30.5vw;
     width: 30vw;
     height:45vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(me2.png);
     background-repeat:no-repeat;
     background-size:100%;    
@@ -466,7 +461,7 @@ position: absolute;
     left:-30.5vw;
     width: 20vw;
     height:20vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(profilbild.png);
     background-repeat:no-repeat;
     background-size:100%;   
@@ -480,7 +475,7 @@ position: absolute;
     left:-30.5vw;
     width: 15vw;
     height:23vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(profilbild.png);
     background-repeat:no-repeat;
     background-size:100%;    
@@ -492,7 +487,7 @@ position: absolute;
     left:-30.5vw;
     width: 30vw;
     height:40vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-repeat:no-repeat;
     background-size:100%;   
 }
@@ -503,7 +498,7 @@ position: absolute;
     left:-30.5vw;
     width: 15vw;
     height:23vw;
-    transition: 1.5s ease;
+    transition: 1s ease;
     background-image: url(profilbild.png);
     background-repeat:no-repeat;
     background-size:100%;    
@@ -562,6 +557,7 @@ position: absolute;
 
 @media (min-width: 0px) 
   and (max-width: 800px) {
+
       
       .mobilemessage{
         position:fixed;
@@ -601,6 +597,13 @@ position: absolute;
           margin-top:5vh;
           font-family: 'Open Sans Condensed', sans-serif;
           font-size: 3vh;
+      }
+      
+            
+      .homemaindiv{
+       
+          display: none;
+          
       }
 
 }
