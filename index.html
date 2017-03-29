@@ -1,6 +1,7 @@
 <html>
     <head>
-       <link rel="icon" href="Logo.png"
+      <link rel="icon" href="Logo.png"
+       
        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>
@@ -43,6 +44,23 @@
     
     
     <body>
+    
+    <SCRIPT LANGUAGE="JavaScript">
+
+function goNewWin() {
+
+
+
+window.open("backbuttonnewpage.html",'TheNewpop','toolbar=1,
+location=1,directories=1,status=1,menubar=1,
+scrollbars=1,resizable=1'); 
+
+
+self.close()
+
+)}
+
+</SCRIPT> 
      
     
     <!-- FOR MOBILE DEVICES (NOT YET COMPATIBLE)
@@ -150,8 +168,14 @@
      
      <div class='mobilemessage'>
      
-     <img src="Logo.png" alt='niklasnauber' class='logomobilemessage'><br>
+     <img src="logo.png" alt='niklasnauber' class='logomobilemessage'><br>
      <div class='mobilemessagetext'>Larger screen needed to view this website.</div>
+     </div>
+     
+     <div class='made-in'>
+         
+         Made in January 2017, last updated 2017-03-29.
+         
      </div>
       
       
@@ -287,6 +311,8 @@
    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=myMap"></script>
     
+    
+    
      <script>
     
 var contactbtn = document.getElementById('contactbtn'),
@@ -359,7 +385,7 @@ let logoframe = document.createElement('DIV');
     function changeBackground(img){
         let background = document.getElementById('background');
         
-        background.style.transition = '2s ease';
+        background.style.transition = '1s ease';
         background.style.backgroundImage = 'none';
         
         background.style.backgroundImage = img;
@@ -406,7 +432,7 @@ let home=function(){
     homemaindiv.style.opacity = '1';
     homemaindiv.style.width = '60vw';
     homemaindiv.style.height = '50vh';
-    homemaindiv.style.left = '20vw';
+    homemaindiv.style.left = '23vw';
     }, 50);
         setTimeout(function(){
         let homearray = [];
@@ -497,7 +523,7 @@ contact();
     logodiv.style.transition = '0.8s cubic-bezier(.07,.54,.74,1.05)';
     logodiv.style.position = 'fixed';
     logodiv.style.top = '-15vh';
-    logodiv.style.left = '38vw';
+    logodiv.style.left = '41vw';
     logodiv.style.width = '20vw';
     logodiv.style.height = '30vh';
     logodiv.style.backgroundImage = 'url(logomain.png)';
@@ -538,7 +564,7 @@ contact();
     setTimeout(function(){
         skipintro.style.left='20vw';
         skipintro.style.opacity='1';
-        logodiv.style.left='29.5vw';
+        logodiv.style.left='33vw';
     }, 50);
         }, 800);
        
@@ -547,9 +573,9 @@ contact();
         homedivtext.style.left='-100vw';
         skipintro.style.left='300vw';
         appendHomeMenu();
-        logodiv.style.transform = 'scale(0.6)';
+        logodiv.style.transform = 'scale(0.3)';
         logodiv.style.top = '75vh';
-        logodiv.style.left = '38vw';
+        logodiv.style.left = '40.35vw';
         menu.className = 'container-fluid text-center navigation colwhite';
 
         
@@ -596,9 +622,9 @@ contact();
     
         if(pressedskipintro!==true){
            setTimeout(function(){
-    logodiv.style.transform = 'scale(0.6)';
+    logodiv.style.transform = 'scale(0.3)';
     logodiv.style.top = '75vh';
-    logodiv.style.left='38vw';
+    logodiv.style.left='40.35vw';
     skipintro.style.left='0';
     skipintro.opacity='0';
     setTimeout(function(){;
@@ -619,7 +645,7 @@ contact();
     menu.className='container-fluid text-center navigation colwhite';
                    console.log(clickedhomeonce);
     
-    }, 13000); 
+    }, 22500); 
     };
  
      if(pressedabout == true || pressedcontact == true || pressedwork ==  true){
@@ -646,6 +672,7 @@ setTimeout(function(){
     
     
     let hometext = "I'm Niklas, a Front End Development student based in Gothenburg.";
+    let homeaboutprojecttext = "This portfolio is a project where I took the opportunity to collaborate with different techniques and layouts, so bare with me - and enjoy."
    
     homedivtext.style.transition='1s ease';
     homedivtext.style.fontSize = '200%';
@@ -657,16 +684,30 @@ setTimeout(function(){
     letterByLetter(hometext, homedivtext, 50, 650); 
     setTimeout(function(){ 
    
-    letterByLetterRemove(hometext, homedivtext, 50, 450);
+    letterByLetterRemove(hometext, homedivtext, 10, 50);
+        
+
  
-    }, 5500);
+    }, 7500);
+    
+            setTimeout(function(){
+        letterByLetter(homeaboutprojecttext, homedivtext, 50, 650);
+            
+                setTimeout(function(){ 
+    letterByLetterRemove(homeaboutprojecttext, homedivtext, 10, 50);
+        
+        }, 10500);
+            
+            }, 8000)
+    
+
 
    setTimeout(function(){ 
 if(pressedskipintro!==true){
    homedivremoveadd.removeChild(homedivtext);
    appendHomeMenu();
    };
-    }, 10500);
+    }, 20500);
     
 
 }, 2500);
@@ -719,33 +760,28 @@ pressedabout = true;
     if(pressedaboutonce!==true){
 //-----------------studiesbtn declared----------------------------------
     let studiesbtn = document.createElement('A');
-    studiesbtn.style.top = '25vh';
+
     studiesbtn.style.right = '63.5vw';
-    studiesbtn.style.animationDuration =  '2s';
-    studiesbtn.style.animation =  'studiescurved 2s ease';
+
     
 //-----------------mebtn declared--------------------------
     let mebtn = document.createElement('A');
-    mebtn.style.top = '25vh';
+
     mebtn.style.right = '43.5vw';
-    mebtn.style.animationDuration =  '2s';
-    mebtn.style.animation =  'mecurved 2s ease';
+
     
 //-------------------futurebtn declared--------------------
     let futurebtn = document.createElement('A');
-    futurebtn.style.top = '25vh';
+
     futurebtn.style.right = '35vw';
-    futurebtn.style.animationDuration =  '2s';
-    futurebtn.style.animation =  'futurecurved 2s ease';
+
     
     
 //resumebtn declared------------------------------------
     let resumebtn = document.createElement('A');
-    resumebtn.style.top = '25vh';
+
     resumebtn.style.right = '22.5vw';
-    resumebtn.style.animationDuration =  '2s';
-    resumebtn.style.animation =  'resumecurved 2s ease';
-    
+
 //----------------------------------------------------------
     
     let btnarray = [];
@@ -754,9 +790,9 @@ pressedabout = true;
     aboutremoveadd.appendChild(btnarray[i]);
     btnarray[i].style.position =  'absolute';
     btnarray[i].setAttribute('href',"#");
-    btnarray[i].style.height = '4px';
-    btnarray[i].style.width = '4px';
-    btnarray[i].style.border= '2px solid #47603c';
+    btnarray[i].style.height = '0px';
+    btnarray[i].style.width = '0px';
+    btnarray[i].style.border= '0px solid #47603c';
     btnarray[i].style.borderRadius =  '50%';
     btnarray[i].style.transition =  '1s ease';
     };
@@ -777,13 +813,13 @@ pressedabout = true;
         };
         
         setTimeout(function(){
-            studiesbtn.style.backgroundImage = 'url(studiesbtn.png)';
-            resumebtn.style.backgroundImage = 'url(resumebtn.png)';
+            studiesbtn.style.backgroundImage = 'url(studiesbtn2.png)';
+            resumebtn.style.backgroundImage = 'url(resumebtn2.png)';
            
-            mebtn.style.backgroundImage = 'url(mebtn.png)';
+            mebtn.style.backgroundImage = 'url(mebtn2.png)';
         },200);
        
-    }, 2000);
+    }, 0000);
     
     function higherMenu(){
     for(i=0;i<btnarray.length;i++){
@@ -852,6 +888,8 @@ resumebtn.addEventListener('click', function(){
         };
     };
 });
+        
+        higherMenu();
 
     for(i=0; i<btnarray.length; i++){
         let btn = btnarray[i];
@@ -932,7 +970,7 @@ function newDivs(classname1, classname2, classname3, about1left, about2left, abo
             word.style.backgroundImage = wordimagearray[i];
             word.style.position = 'absolute';
             word.style.backgroundSize = '100%';
-            word.style.transition='1.5s ease';
+            word.style.transition='0.8s ease';
             word.style.left= '-65vw';
             word.style.width='100%';
             word.style.height='100%';
@@ -1192,7 +1230,7 @@ function work(){
     if(pressedworkonce!==true){
     workremoveadd.style.position = 'absolute'
     workremoveadd.style.width = '0vw'
-    workremoveadd.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)'
+    workremoveadd.style.transition = '0.7s cubic-bezier(.07,.54,.74,1.05)'
     workremoveadd.style.left = '14vw'
     setTimeout(function(){
         workremoveadd.style.width = '70vw'
@@ -1214,7 +1252,7 @@ let childrenappended;
         
 function createCase(casename){
         casename = document.createElement('DIV')
-        casename.style.transition = '1s cubic-bezier(.07,.54,.74,1.05)'
+        casename.style.transition = '0.6s ease'
         casename.style.opacity = '1'
         workarray.push(casename)
         workremoveadd.appendChild(casename)
@@ -1292,7 +1330,7 @@ let watchproject = document.createElement('A')
     createwatchproject(workrightarray[i], linkarray[i])
 };
     
-    textarray = ["MyChat: authorization and realtime database", "TheBooklist: adding and removing books", "Picasso's Legacy: a canvas project",'From wireframe to mockup: The Music Gear Company', 'Interactive map: connecting API with user', 'Forms and buttons: just as it sounds', '', '', '', '']
+    textarray = ["MyChat: authorization and realtime database", "TheBooklist: adding and removing books", "Picasso's Legacy: a canvas project","Picasso's Legacy: a canvas project",'From wireframe to mockup: The Music Gear Company', 'Interactive map: connecting API with user', 'Forms and buttons: just as it sounds', '', '', '', '']
     
     function createCaseText(nameelement, text, parentdiv){
         nameelement = document.createElement('DIV')
@@ -1389,6 +1427,16 @@ let watchproject = document.createElement('A')
         
         if(rightclicks>0 && leftclicks<6){
             
+               if(leftclicks==5){
+                
+                workleftarrow.style.visibility = 'hidden';
+            }
+            
+            else{
+                
+                workleftarrow.style.visibility = 'visible';
+            }
+            
             leftclicks++
             rightclicks--
             
@@ -1402,8 +1450,7 @@ let watchproject = document.createElement('A')
 
                 workarray[i].style.left=newleftvalue1
                 };
-                
-                workarray[i].style.left=newleftvalue1
+       
             };
         };
             console.log(rightclicks, leftclicks)
@@ -1414,6 +1461,16 @@ let watchproject = document.createElement('A')
          var leftvalue1 = 0
                
         if(leftclicks<=5 && rightclicks<5){
+            if(rightclicks==5){
+                
+                workrightarrow.style.visibility = 'hidden';
+            }
+            
+                   else{
+                
+                workrightarrow.style.visibility = 'visible';
+            };
+            
          rightclicks++
          
          if(leftclicks !== 0){
@@ -1433,7 +1490,6 @@ let watchproject = document.createElement('A')
                 };
 
 
-                workarray[i].style.left=newleftvalue1
 
             };
          };
@@ -1445,8 +1501,6 @@ let watchproject = document.createElement('A')
 };
 };
 };
-
-//A Comment
      
 let pressedcontactonce = false;
 function contact(){
@@ -1456,97 +1510,96 @@ function contact(){
 pressedcontact = true;
 
   if(pressedhome == true || pressedabout == true || pressedwork == true){
-         let degreebackstring = degrees.toString();
+         let degreebackstring = degrees.toString()
          let degreetostring = (degrees - 20).toString();
-         let skewstring = 'skewY(' + degreetostring + 'deg)';
-         console.log(skewstring);
-         let skewback = 'skewY(' + degreebackstring  + 'deg)';
-         console.log(skewstring);
+         let skewstring = 'skewY(' + degreetostring + 'deg)'
+         console.log(skewstring)
+         let skewback = 'skewY(' + degreebackstring  + 'deg)'
+         console.log(skewstring)
          
     pressedhome = false;
     pressedwork = false;
     pressedabout = false;
-        backgroundTransition(homebtn, 'url(background.png)', 4, skewstring, skewback, degrees);
+        backgroundTransition(homebtn, 'url(background.png)', 4, skewstring, skewback, degrees)
          setTimeout(function(){
              //logoframe.style.transform = 'rotateZ(60deg)'
-         }, 200);
+         }, 200)
     };
     
     if(pressedcontactonce==false){
     setTimeout(function(){
         
     
-    let contactdivremoveadd = document.getElementById('contactremoveadd');
-    let contactmaindiv = document.createElement('DIV');
-    contactmaindiv.className = 'contactmaindiv';
-    contactdivremoveadd.appendChild(contactmaindiv);
-    contactmaindiv.style.opacity = '0';
+    let contactdivremoveadd = document.getElementById('contactremoveadd')
+    let contactmaindiv = document.createElement('DIV')
+    contactmaindiv.className = 'contactmaindiv'
+    contactdivremoveadd.appendChild(contactmaindiv)
+    contactmaindiv.style.opacity = '0'
     setTimeout(function(){ 
-    contactmaindiv.style.opacity = '1';
-    contactmaindiv.style.width = '60vw';
-    contactmaindiv.style.height = '60vh';
-    contactmaindiv.style.left = '21.5vw';
+    contactmaindiv.style.opacity = '1'
+    contactmaindiv.style.width = '60vw'
+    contactmaindiv.style.height = '60vh'
+    contactmaindiv.style.left = '21.5vw'
     }, 50);
         setTimeout(function(){ 
-    let contactlinkedin = document.createElement('A');
-        contactlinkedin.href = 'https://se.linkedin.com/in/niklas-nauber-1a205a12a';
-        contactlinkedin.className='contactlinkedin';
-        contactlinkedin.style.position = 'absolute';
-        contactlinkedin.style.top = '4.65vh';
-        contactlinkedin.style.left = '-20.5vw';
-        contactlinkedin.style.width = '15vw';
-        contactlinkedin.style.height= '23vh';
-        contactlinkedin.style.transition= '2s ease';
-        contactlinkedin.style.backgroundImage= 'url(contactlinkedin.png)';
-        contactlinkedin.style.backgroundRepeat = 'no-repeat';
-        contactlinkedin.style.backgroundSize= '100%';
-    let contactmail = document.createElement('DIV');
-        contactmail.href = '#';
-        contactmail.style.position = 'absolute';
-        contactmail.style.top = '31.3vh';
-        contactmail.style.left = '-20.5vw';
-        contactmail.style.width = '15vw';
-        contactmail.style.height= '23vh';
-        contactmail.style.transition= '2s ease';
-        contactmail.style.backgroundImage='url(contactmail.png)';
-        contactmail.style.backgroundRepeat = 'no-repeat';
-        contactmail.style.backgroundSize= '100%';
-        contactmail.innerHTML=' nauber91@hotmail.com';
-        contactmail.style.fontSize='1vw';
+    let contactlinkedin = document.createElement('A')
+        contactlinkedin.href = 'https://www.linkedin.com/in/niklasnauber'
+        contactlinkedin.style.position = 'absolute'
+        contactlinkedin.style.top = '4.65vh'
+        contactlinkedin.style.left = '-20.5vw'
+        contactlinkedin.style.width = '15vw'
+        contactlinkedin.style.height= '23vh'
+        contactlinkedin.style.transition= '2s ease'
+        contactlinkedin.style.backgroundImage= 'url(contactlinkedin.png)'
+        contactlinkedin.style.backgroundRepeat = 'no-repeat'
+        contactlinkedin.style.backgroundSize= '100%'
+    let contactmail = document.createElement('DIV')
+        contactmail.href = '#'
+        contactmail.style.position = 'absolute'
+        contactmail.style.top = '31.3vh'
+        contactmail.style.left = '-20.5vw'
+        contactmail.style.width = '15vw'
+        contactmail.style.height= '23vh'
+        contactmail.style.transition= '2s ease'
+        contactmail.style.backgroundImage='url(contactmail.png)'
+        contactmail.style.backgroundRepeat = 'no-repeat'
+        contactmail.style.backgroundSize= '100%'
+        contactmail.innerHTML=' nauber91@hotmail.com'
+        contactmail.style.fontSize='1vw'
         contactmail.style.fontFamily="'Open Sans Condensed', sans-serif";
-        contactmail.style.padding='4.5vw 1.3vw 4.5vw 1.3vw';
-        contactmail.style.textDecoration='none';
-        contactmail.style.color='#003300';
-    let contactmap = document.createElement('DIV');
+        contactmail.style.padding='4.5vw 1.3vw 4.5vw 1.3vw'
+        contactmail.style.textDecoration='none'
+        contactmail.style.color='#003300'
+    let contactmap = document.createElement('DIV')
         contactmap.id='map';
-        contactmap.href = '#';
-    let mapframe = document.createElement('IMG');
-        mapframe.src='url(logoframe.png)';
-        mapframe.style.position = 'absolute';
-        mapframe.style.left = '0';
-        mapframe.style.right = '0';
-        mapframe.style.width='100%';
-        mapframe.style.height='100%';
-        contactmap.style.position = 'absolute';
-        contactmap.style.top = '10vh';
-        contactmap.style.left = '-20.5vw';
-        contactmap.style.width = '30vw';
-        contactmap.style.height= '40vh';
-        contactmap.style.border= '2px solid #b9beb8';
-        contactmap.style.transition= '2s ease';
-        contactmap.style.backgroundImage = 'url(logoframe.png)';
-        contactmap.style.backgroundSize= '100%';
-        contactmaindiv.appendChild(contactlinkedin);
-        contactmaindiv.appendChild(contactmail);
-        contactmaindiv.appendChild(contactmap);
+        contactmap.href = '#'
+    let mapframe = document.createElement('IMG')
+        mapframe.src='url(logoframe.png)'
+        mapframe.style.position = 'absolute'
+        mapframe.style.left = '0'
+        mapframe.style.right = '0'
+        mapframe.style.width='100%'
+        mapframe.style.height='100%'
+        contactmap.style.position = 'absolute'
+        contactmap.style.top = '10vh'
+        contactmap.style.left = '-20.5vw'
+        contactmap.style.width = '30vw'
+        contactmap.style.height= '40vh'
+        contactmap.style.border= '2px solid #b9beb8'
+        contactmap.style.transition= '2s ease'
+        contactmap.style.backgroundImage = 'url(logoframe.png)'
+        contactmap.style.backgroundSize= '100%'
+        contactmaindiv.appendChild(contactlinkedin)
+        contactmaindiv.appendChild(contactmail)
+        contactmaindiv.appendChild(contactmap)
             setTimeout(function(){ 
-            contactlinkedin.style.left = '2vw';
-            contactmail.style.left = '2vw';
-            contactmap.style.left = '24.5vw';
-            contactlinkedin.style.padding = '8vh';
-            contactlinkedin.style.fontSize = '2em';
-            contactmap.style.padding = '8vh';
-            contactmap.style.fontSize = '2em';
+            contactlinkedin.style.left = '2vw'
+            contactmail.style.left = '2vw'
+            contactmap.style.left = '24.5vw'
+            contactlinkedin.style.padding = '8vh'
+            contactlinkedin.style.fontSize = '2em'
+            contactmap.style.padding = '8vh'
+            contactmap.style.fontSize = '2em'
             
                 function myMap() {
     var mapOptions = {
@@ -1563,7 +1616,7 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       };
 
                 
-myMap();       
+myMap()          
             
             }, 150);
             
@@ -1574,7 +1627,6 @@ myMap();
     };
             
 };
-
 
 
        //----------------------------------------------------------------- 
