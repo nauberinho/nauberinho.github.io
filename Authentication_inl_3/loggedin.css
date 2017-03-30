@@ -1,0 +1,39 @@
+.displayuser{
+    position:absolute;
+    left: 25%;
+    top: 10vh;
+    width: 50vw;
+    height: 30vw;
+    border: 2px solid black;    
+}
+
+.logoutbtn{
+    
+    position: absolute;
+    bottom: -5vw;
+    left: 0%;
+    z-index: 200;
+    height: 5vw;
+    width: 10vw;
+    
+}
+
+#profileimage{
+    
+    border: 2px solid black;
+    position: absolute;
+    height: 35%;
+    width: 18%;
+}
+
+#userinfo{
+    
+    position: absolute;
+    border: 1px solid blue;
+    height: 64%;
+    top: 35%;
+    width: 100%;
+    font-size: 2vw;
+    text-align: center;
+    
+}
