@@ -14,7 +14,17 @@
     left: 0%;
     z-index: 200;
     height: 5vw;
-    width: 10vw;
+    width: 20%;
+    
+}
+
+#changebackground{
+        position: absolute;
+    bottom: -5vw;
+    left: 20%;
+    z-index: 200;
+    height: 5vw;
+    width: 80%;
     
 }
 
@@ -29,11 +39,16 @@
 #userinfo{
     
     position: absolute;
-    border: 1px solid blue;
     height: 64%;
-    top: 35%;
+    top: 45%;
     width: 100%;
     font-size: 2vw;
     text-align: center;
+    
+}
+
+button{
+    
+    font-size: 1.4vw;
     
 }

@@ -55,14 +55,15 @@ let userImage = document.getElementById('profileimage')
 let userInfo = document.getElementById('userinfo')
 function displayUser (){
     
-    if(sessionUser.displayName===null){
+    if(sessionUser.displayName){
         
+        userInfo.innerHTML = sessionUser.displayName
         
-        userInfo.innerHTML = "No name found, are you sure you've got a name?"
         
     }
-
-    userInfo.innerHTML = sessionUser.displayName
+else{
+    userInfo.innerHTML = "No name found, are you sure you've got a name?"
+};
     let imageurl = sessionUser.photoURL;
   userImage.src= imageurl;
 
@@ -72,3 +73,34 @@ function displayUser (){
 }
 
 displayUser()
+
+let body = document.getElementsByTagName('body')[0];
+let changeBackgroundBtn = document.getElementById('changebackground');
+
+let backgroundcolors = ['blue', 'green', 'orange', 'black', 'lightblue']
+
+function changeBackground(){
+    
+    let newColor = backgroundcolors[Math.floor(Math.random() * backgroundcolors.length)]
+    
+    if(newColor!=body.style.backgroundColor){
+        
+        if(newColor=='black'){
+            
+            body.style.color='white';
+        }
+    
+    body.style.backgroundColor= newColor;
+        
+    }
+    
+    else{
+        
+        changeBackground();
+        
+    }
+    
+    
+};
+
+changeBackgroundBtn.addEventListener('click', changeBackground)
