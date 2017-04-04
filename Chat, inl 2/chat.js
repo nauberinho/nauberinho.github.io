@@ -279,7 +279,7 @@ window.addEventListener('load', function (event) {
             let messageid;
             let message;
             firebase.database().ref('/Messages/').once('value').then(function (snapshot) {
-                messageid = Object.keys(snapshot.val()).length;
+                messageid = Object.keys(snapshot.val()).length + 1;
                 //console.log('id: ' + messageid);
                 message = {
                     id: messageid
