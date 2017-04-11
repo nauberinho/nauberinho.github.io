@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="filter.css">
+    <meta charset="UTF-8">
+    <title>Firebase filter</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+</head>
+<body>
+  <button id='removeproductsbtn'>Remove Products</button>
+   
+   <div class='product-div'>
+     Sort your view: <select id='filterselect'>
+  <option value="price">Price, lowest first </option>
+  <option value="name">Name </option>
+</select>
+         View: <select id='viewselect'>
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30">30</option>
+</select>
+     
+      <div class='input-div'>
+          
+          <input id='productnameinput'type="text" placeholder='Product name'>
+          <input id='productpriceinput'type="text" placeholder='Product price'>
+          <button class='addproduct' id='addproductbtn'>Add product</button>
+      </div>
+      
+      <div class='columns'><span class='product-name'> &nbsp Product name</span><span class='product-price'>Price</span></div>
+      
+      <ul id='ul'>
+          
+          
+          <li>H</li>
+      </ul>
+      
+           <div class='arrows'>
+     <div class='arrowleft'><i class="material-icons">keyboard_arrow_left</i></div>
+     <div class='arrowright'><i class="material-icons">keyboard_arrow_left</i></div>
+     
+     </div>
+       
+   </div>
+     
+
+      
+      <!----------------------FIREBASE SCRIPT-------------------------->
+       <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAEGQvX-n987GSUAO6qRDuBZmiLpwQ--RM",
+    authDomain: "product-filtering.firebaseapp.com",
+    databaseURL: "https://product-filtering.firebaseio.com",
+    projectId: "product-filtering",
+    storageBucket: "product-filtering.appspot.com",
+    messagingSenderId: "470925874299"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src='filter.js'></script>
+</body>
+</html>
