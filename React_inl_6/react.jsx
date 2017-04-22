@@ -83,7 +83,7 @@ class App extends React.Component {
       };
     
     addLi(){ 
-        const newObjectsArray = this.state.objectsArr.map((product) =>                               
+        const newObjectsArray = this.state.objectsArr.map((product) =>                             
             <li className='object-li' data-index = {product.key.toString()} key={product.key} onClick={this.fillForm} >
                     <input className='list-input none-editable-li' data-index = {product.key.toString()} key1={product.key} onKeyDown={()=>addObject}readOnly='true'  value={product.product} onClick={this.fillForm}/>
                     <input className='list-input none-editable-li' data-index = {product.key.toString()} key2={product.key} readOnly='true'  value={product.price} onClick={this.fillForm}/>
@@ -118,9 +118,15 @@ class App extends React.Component {
     };
     
     deleteObject(e){
-         var newList = this.state.objectsArr.filter(function(obj){
-                
+         let eventindex = e.target.getAttribute('data-index');
+         var newList = this.state.objectsArr.filter(function(obj){   
              return obj.key != e.target.getAttribute('data-index');   
+         })
+         newList.forEach(function(obj){
+             var index = newList.indexOf(obj)+1
+             if(eventindex > index){
+                obj.key = index;
+             }
          })
          this.setState({objectsArr: newList})
     };
