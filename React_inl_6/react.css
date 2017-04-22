@@ -23,6 +23,29 @@ input{
     font-weight: 700;
 }
 
+input::placeholder{
+    
+    font-size: 1em;
+    color: white;
+    size: 1em;
+    
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 1em;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 1em;
+    color: pink
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 1em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 1em;
+}
+
+@media screen and (min-width: 301px) {
 .app-container{
     position: absolute;
     display:flex;
@@ -32,6 +55,21 @@ input{
     left: 35vw;
     height: 400px;
     top: 50px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    
+    .app-container{
+    position: absolute;
+    display:flex;
+    flex-direction: row;
+    border: 2px solid black;
+    width: 98vw;
+    left: 35vw;
+    height: 400px;
+    top: 50px;
+    }
 }
 
 .form-container{
@@ -65,11 +103,11 @@ input{
 #addButton{
     position:absolute;
     width: 33%;
-    height: 120%;
+    height: 116%;
     right: -33%;
     font-family: 'Abel', sans-serif;
     background-color: grey;
-    border: 1px solid white;
+    border: none;
     color: white;
     font-weight: 700;
     cursor: pointer;
@@ -84,11 +122,12 @@ input{
     height: 10%;
     color: black;
     cursor: pointer;
+    background-color: white;
 }
 
 .edit-symbol{
- color:black;
-    font-size: 2em;
+ color:#755125;
+font-size: 2em;
 }
 .done-button{
     color: green;
@@ -106,7 +145,25 @@ input{
     cursor: pointer;
     outline: none;
     border: none;
+    transition: 0.3s ease;
     
+}
+
+.edit-button:hover{
+    
+    background-color: #755125;
+    color: white;
+}
+
+.done-button:hover{
+    
+    background-color: green;
+    color: white;
+}
+
+.edit-button:hover .edit-symbol{
+    
+    color: white;
 }
 
 .done-div{
