@@ -123,9 +123,8 @@ class App extends React.Component {
              return obj.key != e.target.getAttribute('data-index');   
          })
          newList.forEach(function(obj){
-             var index = newList.indexOf(obj)+1
-             if(eventindex > index){
-                obj.key = index;
+             if(eventindex < obj.key){
+                obj.key = obj.key--;
              }
          })
          this.setState({objectsArr: newList})
@@ -180,8 +179,8 @@ class AddForm extends React.Component {
     render(){     
         return(     
                 <div className='form-container'>
-                    <input onChange={this.props.updateNewObject} value={this.props.productInputValue} onKeyUp={this.props.addObject} type="text" id='product'></input>
-                    <input onChange={this.props.updateNewObject} value={this.props.priceInputValue} onKeyUp={this.props.addObject} type="text" id='price'></input>
+                    <input placeholder='Type product name' onChange={this.props.updateNewObject} value={this.props.productInputValue} onKeyUp={this.props.addObject} type="text" id='product'></input>
+                    <input placeholder='Type price' onChange={this.props.updateNewObject} value={this.props.priceInputValue} onKeyUp={this.props.addObject} type="text" id='price'></input>
                     <button id='addButton'  onClick={this.props.addObject}>Add Object</button>
                 </div>
              );
@@ -192,7 +191,7 @@ class MyList extends React.Component{
     render(){
         return(
             <div className='list-container'>
-               <div className='categories'><div className='categories-child'> Product name</div><div className='categories-child'>Price</div></div>
+               <div className='categories'><div className='categories-child'>Product name</div><div className='categories-child'>Price</div></div>
                 {this.props.addLi()}
             </div>
         );
