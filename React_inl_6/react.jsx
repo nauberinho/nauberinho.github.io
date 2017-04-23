@@ -112,26 +112,27 @@ class App extends React.Component {
     };
     
     fillForm(e){
+        console.log(e.target)
          let array = this.state.objectsArr;
+        console.log(array)
          this.setState({productInputValue: array[Number(e.target.getAttribute('data-index'))-1].product}); 
          this.setState({priceInputValue: array[Number(e.target.getAttribute('data-index'))-1].price});
     };
     
     deleteObject(e){
          let eventindex = e.target.getAttribute('data-index');
-         var newList = this.state.objectsArr.filter(function(obj){   
+         console.log(eventindex);
+         var newList = this.state.objectsArr.filter(function(obj){  
              return obj.key != e.target.getAttribute('data-index');   
-         })
-         newList.forEach(function(obj){
-             if(eventindex < obj.key){
-                obj.key = obj.key--;
-             }
-         })
-         this.setState({objectsArr: newList})
+         });
+     
+        console.log(newList);
+        this.setState({objectsArr: newList});
+        console.log(this.state.objectsArr);
     };
-    
+            
     modeToEdit(){
-         this.setState({mode: 'edit'})
+         this.setState({mode: 'edit'});
     };
     
     modeToDisplay(){
@@ -149,17 +150,11 @@ class App extends React.Component {
             
     render(){
         if(this.state.mode=='display'){
-        
                 return(
-
                     <div className='app-container'>
-
                         <AddForm priceInputValue={this.state.priceInputValue}  productInputValue={this.state.productInputValue} addObject={this.addObject} updateNewObject={this.updateNewObject}/>
-
                         <MyList addLi={this.addLi}/>
-
                         <EditButton modeToEdit={this.modeToEdit}/>
-
                     </div>
 
                 )
