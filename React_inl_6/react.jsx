@@ -33,7 +33,8 @@ class App extends React.Component {
             mode: 'display',
             productInputValue: '',
             priceInputValue:'',
-            temporaryList: []  
+            temporaryList: [],
+            filteredList: []
         };
         this.updateNewObject = this.updateNewObject.bind(this);
         this.addObject = this.addObject.bind(this);
@@ -89,7 +90,7 @@ class App extends React.Component {
                     <input className='list-input none-editable-li' data-index = {product.key.toString()} key2={product.key} readOnly='true'  value={product.price} onClick={this.fillForm}/>
             </li> 
         );                             
-        return <ul>{newObjectsArray}</ul>
+        return <ul>{newObjectsArray}</ul>;
     };
     
     addEditableLi(){
@@ -120,15 +121,20 @@ class App extends React.Component {
     };
     
     deleteObject(e){
-         let eventindex = e.target.getAttribute('data-index');
-         console.log(eventindex);
-         var newList = this.state.objectsArr.filter(function(obj){  
+        let eventindex = e.target.getAttribute('data-index');
+        this.setState({eventindex: eventindex})
+        var newList;
+        if(this.state.filteredList.length>0){  
+            newList=this.state.filteredList;
+        }else{
+            newList=this.state.objectsArr;
+        };
+        let finalList= newList.filter(function(obj){  
              return obj.key != e.target.getAttribute('data-index');   
-         });
-     
-        console.log(newList);
-        this.setState({objectsArr: newList});
-        console.log(this.state.objectsArr);
+        });
+        e.target.parentNode.className = 'object-li to-delete'
+        e.target.innerHTML = '<i class="material-icons">settings_backup_restore</i>'
+        this.setState({filteredList: finalList});
     };
             
     modeToEdit(){
@@ -136,13 +142,24 @@ class App extends React.Component {
     };
     
     modeToDisplay(){
+        if(this.state.filteredList.length>0){
+            let filteredList = this.state.filteredList;
+            let i=0;
+             for(let i=0; i<filteredList.length; i++){
+                filteredList[i].key=i+1;
+            }
+         this.setState({objectsArr: this.state.filteredList})
+         this.setState({filteredList: []})
+        }
         if(this.state.temporaryList.length>0){
             let newList = this.state.ObjectsArr;
             if(newList!=undefined){
                 for(let i=0;i<this.state.temporaryList.length; i++){
                     newList[this.state.temporaryList[i].key-1] = this.state.temporaryList[i];
-                }
-                this.setState({objectsArr: newList})
+                };
+                
+                this.setState({objectsArr: newList});
+                this.setState({temporaryList: []});
             }
         }
         this.setState({mode: 'display'})
@@ -156,7 +173,6 @@ class App extends React.Component {
                         <MyList addLi={this.addLi}/>
                         <EditButton modeToEdit={this.modeToEdit}/>
                     </div>
-
                 )
             }else if(this.state.mode=='edit'){
                 return(
