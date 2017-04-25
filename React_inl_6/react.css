@@ -298,3 +298,19 @@ ul{
     
 }
 
+.to-delete{
+    
+    background-color: orange;
+    color: white;
+}
+
+.to-delete:hover{
+    
+    background-color: orange;
+    color: white;
+}
+
+input>i{
+    font-size: 1em;
+    
+}
