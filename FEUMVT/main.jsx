@@ -159,7 +159,7 @@ class Quizz extends React.Component{
   }
 }
 
-class currentQuestion extends React.Component{
+class CurrentQuestion extends React.Component{
     render(){
         return(
         <div className='current-question-div'>
