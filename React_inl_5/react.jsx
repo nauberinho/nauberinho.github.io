@@ -5,15 +5,7 @@ class Counter extends React.Component {
       text: props.text,
       tal1: props.tal1,
       tal2: props.tal2,
-      operator: props.operator,
-      buttons: [
-          button1: {
-          clicks: 0,
-          class: ''
-          }
-          
-          
-      ]
+      operator: props.operator
     };
     this.onKeyPress = this.onKeyPress.bind(this);
     this.calculator1 = this.calculator1.bind(this);
