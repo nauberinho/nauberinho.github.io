@@ -5,13 +5,21 @@ class Counter extends React.Component {
       text: props.text,
       tal1: props.tal1,
       tal2: props.tal2,
-     operator: props.operator
+      operator: props.operator,
+      buttons: [
+          button1: {
+          clicks: 0,
+          class: ''
+          }
+          
+          
+      ]
     };
     this.onKeyPress = this.onKeyPress.bind(this);
     this.calculator1 = this.calculator1.bind(this);
     this.calculator2 = this.calculator2.bind(this);
     this.changeOperator=this.changeOperator.bind(this);
-      this.returnOperation=this.returnOperation.bind(this);
+    this.returnOperation=this.returnOperation.bind(this);
   }
   
   onKeyPress(event) {
@@ -87,6 +95,7 @@ class ChangeState extends React.Component {
     this.state = {
         button1class: props.button1class,
         button2class: props.button2class,
+        button3class: 'not-active',
         text: props.text
     };
     this.changeClass = this.changeClass.bind(this);
@@ -110,24 +119,29 @@ class ChangeState extends React.Component {
             this.setState({button2class: 'active'})
             this.setState({text: 'Button 2 är aktiv'})
             
+        }
+        
+        else if(event.target.id=='button3'){
+            this.setState({button1class: 'not-active'})
+            this.setState({button2class: 'not-active'})
+            this.setState({button3class: 'active'})
+            this.setState({text: 'Button 3 är aktiv'})
         };
         
         console.log('button1: ' + this.state.button1class +  ', button2: ' + this.state.button2class)
         
     }
     
-      render() {
-    return (
-      <div className='section-three'>
-<button className={this.state.button1class} id='button1' onClick={this.changeClass}></button>
-    <button id='button2' onClick={this.changeClass} className={this.state.button2class}></button>
-     <div>Text: {this.state.text}</div>
-      </div>
-    );
-  }
-    
-    
-    
+        render() {
+            return (
+              <div className='section-three'>
+                <button className={this.state.button1class} id='button1' onClick={this.changeClass}></button>
+                <button id='button2' onClick={this.changeClass} className={this.state.button2class}></button>
+                <button id='button3' onClick={this.changeClass} className={this.state.button3class}></button>
+                <div>Text: {this.state.text}</div>
+              </div>
+            );
+          }
 }
 
 ReactDOM.render(
