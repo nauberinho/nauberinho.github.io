@@ -103,7 +103,7 @@ class ChangeState extends React.Component {
             newclicksList[event.target[data-index]]++
             this.setState({button1class: 'active'})
             this.setState({button2class: 'not-active'})
-            this.setState({button3class: 'not-active'}))
+            this.setState({button3class: 'not-active'})
             if(Math.max(newclicksList) == newclicksList[event.target[data-index]]){                                  
                 this.setState({button1class: 'most-clicked'})
             }
