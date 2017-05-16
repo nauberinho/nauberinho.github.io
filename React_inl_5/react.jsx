@@ -31,8 +31,8 @@ class App extends React.Component {
                  key:0
                  },
             mode: 'display',
-            productInputValue: undefined,
-            priceInputValue:undefined,
+            productInputValue: '',
+            priceInputValue:'',
             temporaryList: [],
             filteredList: []
         };
