@@ -14,19 +14,19 @@ class Counter extends React.Component {
     this.returnOperation=this.returnOperation.bind(this);
   }
   
-  onKeyPress(event) {
-    this.setState({text: event.target.value});
+    onKeyPress(event) {
+        this.setState({text: event.target.value});
   }
   
-  calculator1(event) {
+    calculator1(event) {
   
-  this.setState({tal1: parseInt(event.target.value)});
+        this.setState({tal1: parseInt(event.target.value)});
 
   }
     
-      calculator2(event) {
+    calculator2(event) {    
   
-  this.setState({tal2: parseInt(event.target.value)});
+        this.setState({tal2: parseInt(event.target.value)});
 
   }
     
@@ -59,22 +59,18 @@ class Counter extends React.Component {
 
     return (
       <div>
-      <div className='section-one'>
-       <input type='text' onKeyUp={this.onKeyPress} placeholder='Skriv något'/>
-        <div>Text: {this.state.text}</div>
+            <div className='section-one'>
+                <input type='text' onKeyUp={this.onKeyPress} placeholder='Skriv något'/>
+                <div>Text: {this.state.text}</div>
             </div>
-            
             <div className='section-two'>
-        <button value='+' onClick={this.changeOperator}>Addition</button>
-        <button value='-' onClick={this.changeOperator}>Subtraction</button>
-        <button value='*' onClick={this.changeOperator}>Multiplication</button>
-        <button value='/' onClick={this.changeOperator}>Division</button>
-        
-      <input id='tal1' type='text' onKeyUp={this.calculator1} placeholder='tal1'/>
-      <input id='tal2' type='text' onKeyUp={this.calculator2} placeholder='tal2'/>
-       
-       
-        <div>Summa: {this.returnOperation(this.state.operator, this.state.tal1, this.state.tal2)}</div>
+                <button value='+' onClick={this.changeOperator}>Addition</button>
+                <button value='-' onClick={this.changeOperator}>Subtraction</button>
+                <button value='*' onClick={this.changeOperator}>Multiplication</button>
+                <button value='/' onClick={this.changeOperator}>Division</button>
+                <input id='tal1' type='text' onKeyUp={this.calculator1} placeholder='tal1'/>
+                <input id='tal2' type='text' onKeyUp={this.calculator2} placeholder='tal2'/>
+                <div>Summa: {this.returnOperation(this.state.operator, this.state.tal1, this.state.tal2)}</div>
             </div>
       </div>
     );
@@ -85,65 +81,51 @@ class ChangeState extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        button1class: props.button1class,
-        button2class: props.button2class,
-        button3class: 'not-active',
+        button1: {clicks: 0, class: props.button1class},
+        button2: {clicks: 0, class: props.button2class},
+        button3: {clicks: 0, class: 'not-active'},
         text: props.text,
-        clicks: [0,0,0]
     };
     this.changeClass = this.changeClass.bind(this);
-
   }
     
-    changeClass(event){
-        
-        console.log(event.target.class)
-        let newclicksList = this.state.clicks;
-        if(event.target.id=='button1'){
-            newclicksList[event.target[data-index]]++
-            this.setState({button1class: 'active'})
-            this.setState({button2class: 'not-active'})
-            this.setState({button3class: 'not-active'})
-            if(Math.max(newclicksList) == newclicksList[event.target[data-index]]){                                  
-                this.setState({button1class: 'most-clicked'})
-            }
-            this.setState({text: 'Button 1 är aktiv'})
+    changeClass(e){
+        let newButton = this.state[e.target.id];
+        newButton.clicks++
+        this.setState({[e.target.id]: newButton})
+        let list = [];
+        list.push(this.state.button1, this.state.button2, this.state.button3);
+        let clicks = [];    
+        for(let i=0; i<list.length; i++){
+            clicks.push(list[i].clicks);
         }
-        
-        else if(event.target.id=='button2'){
-            newclicksList[event.target[data-index]]++
-            this.setState({button1class: 'not-active'})
-            this.setState({button2class: 'active'})
-            this.setState({button3class: 'not-active'})
-            if(Math.max(newclicksList) == newclicksList[event.target[data-index]]){                                  
-                this.setState({button2class: 'most-clicked'})
-            }
-            this.setState({text: 'Button 2 är aktiv'})
+        var maxIndex = clicks.indexOf(Math.max.apply( Math, clicks));
+        let number = maxIndex+1;
+        let mostActiveButton = this.state['button' + number];
+        for(let i=0; i<clicks.length; i++){
+            let button;
+            let num = i+1;
+            button = this.state['button' + num], button.class = 'not-active', this.setState({['button' + num]: button})
         }
-        
-        else if(event.target.id=='button3'){
-            newclicksList[event.target[data-index]]++
-
-            this.setState({button1class: 'not-active'})
-            this.setState({button2class: 'not-active'})
-            this.setState({button3class: 'active'})
-            if(Math.max(newclicksList) == newclicksList[event.target[data-index]]){                                  
-                this.setState({button3class: 'most-clicked'})
-            }
-            this.setState({text: 'Button 3 är aktiv'})
-        };
-        
-        console.log('button1: ' + this.state.button1class +  ', button2: ' + this.state.button2class)
-        
+        newButton.class='active';
+        mostActiveButton.class='most-clicked';
+        this.setState({[e.target.id]: newButton})
+        this.setState({['button' + (maxIndex+1)]: mostActiveButton})
+        let amount;        
+        let score;
+        this.state[e.target.id].clicks > 1 ? amount = ' gånger.' : amount = ' gång.';
+        this.state[e.target.id].class == 'most-clicked' ?   score = ' Den har flest klick av alla knappar.'  : score = ' Det finns andra knappar som har fler klick.';     
+        let text = 'Du klickade på ' + e.target.id + ' som har klickats på ' + this.state[e.target.id].clicks + amount + score;
+        this.setState({text: text})
     }
-    
         render() {
             return (
               <div className='section-three'>
-                <button data-index={0} className={this.state.button1class} id='button1' onClick={this.changeClass}></button>
-                <button data-index={1} id='button2' onClick={this.changeClass} className={this.state.button2class}></button>
-                <button data-index={2} id='button3' onClick={this.changeClass} className={this.state.button3class}></button>
-                <div>Text: {this.state.text}</div>
+                    <button></button>
+                    <button data-index={0} className={this.state.button1.class} id='button1' onClick={this.changeClass}></button>
+                    <button data-index={1} id='button2' onClick={this.changeClass} className={this.state.button2.class}></button>
+                    <button data-index={2} id='button3' onClick={this.changeClass} className={this.state.button3.class}></button>
+                    <div>Text: {this.state.text}</div>
               </div>
             );
           }

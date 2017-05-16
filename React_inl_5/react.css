@@ -1,19 +1,27 @@
 button{
     
     height: 30px;
+    background:none;
+    border: 1px solid black;
     
 }
 
 .active{
+    
+    background-color: green;
+    color: white;
+    
+}
+
+.not-active{
     
     background-color: white;
     color: black;
     
 }
 
-.not-active{
-    
-    background-color: black;
+.most-clicked{
+    background-color: red;
     color: white;
     
 }
@@ -30,5 +38,13 @@ position: relative;
     
     top: 300px;
     border: 1px solid blue;
+    
+}
+
+.section-one>input, .section-one>div{
+    
+    border:1px solid blue;
+    height: 50px;
+    font-size: 2em;
     
 }
