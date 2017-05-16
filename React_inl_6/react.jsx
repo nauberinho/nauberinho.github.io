@@ -104,7 +104,7 @@ class App extends React.Component {
     };
     
     updateObject(e){
-        let temporaryList = this.state.temporaryList;
+        let temporaryList = this.state.objectsArr;
         if(temporaryList.includes(this.state.objectsArr[e.target.getAttribute('data-index')-1])!=true){
             temporaryList.push(this.state.objectsArr[e.target.getAttribute('data-index')-1]);
         };
