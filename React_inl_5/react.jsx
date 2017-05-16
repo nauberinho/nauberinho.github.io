@@ -121,7 +121,6 @@ class ChangeState extends React.Component {
         render() {
             return (
               <div className='section-three'>
-                    <button></button>
                     <button data-index={0} className={this.state.button1.class} id='button1' onClick={this.changeClass}></button>
                     <button data-index={1} id='button2' onClick={this.changeClass} className={this.state.button2.class}></button>
                     <button data-index={2} id='button3' onClick={this.changeClass} className={this.state.button3.class}></button>
