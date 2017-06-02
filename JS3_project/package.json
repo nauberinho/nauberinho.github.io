@@ -20,5 +20,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://nauberinho.github.io/QuestionSimulator"
+  "homepage": "https://nauberinho.github.io/JS3_project/"
 }
