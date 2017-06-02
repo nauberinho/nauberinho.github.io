@@ -192,7 +192,8 @@ class SignIn extends React.Component{
       this.state = {
           email: 'hannes@hotmail.com',
           password: 'hannes',
-          answer: ' '
+          answer: ' ', 
+          online: false
       }
       this.signIn = this.signIn.bind(this);
       this.updateState = this.updateState.bind(this);
@@ -232,12 +233,13 @@ class SignUp extends React.Component{
       constructor(props) {
       super(props);
       this.state = {
-          user:{
-          email: undefined,
-          username: undefined,
-          password: undefined,
-          confirmedPassword: undefined,
-          answer: undefined
+          user:
+          {
+          email: '',
+          username: '',
+          password: '',
+          confirmedPassword: '',
+          answer: ''
           }
       }
       this.writeUserData = this.writeUserData.bind(this);
@@ -245,22 +247,43 @@ class SignUp extends React.Component{
       this.updateState = this.updateState.bind(this);
   }
 writeUserData(email, username, answer) {
-    let object = {
+    console.log('in writeuserdata')
+        let object = {
           username: username
         , email: email
         , userMessage: ''
-        , answer: answer
-    
+        , userProfile: {
+            
+            firstname: '',
+            surname: '',
+            activity: 0,
+            online: false,
+            team: '',
+            city: '',
+            position: '',
+            favplayer: '',
+            favdribble: '',
+            favarena: '',
+            username: username,
+            favlineup: '',
+            imageUrl: ''
+          }
+        , userMedia: {
+            mediaImages: [''],
+            mediaVideos: ['']
+        }, 
+            answer: answer
 };
     firebase.database().ref('users/' + username).set(object);
 }
 createUser() {
-    if(this.state.password == this.state.confirmedPassword){
+    console.log('in userdata')
+    if(this.state.user.password == this.state.user.confirmedPassword){
         var self = this;
         var email = this.state.user.email;
         var username = this.state.user.username;
         var password = this.state.user.password;
-        var answer = this.state.answer;
+        var answer = this.state.user.answer;
         firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
             self.writeUserData(email, username, answer);
             self.props.logIn(email, password);
@@ -268,9 +291,11 @@ createUser() {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(error.message)
         });
         
     };
+    
 }
     
 updateState(e){
@@ -302,7 +327,7 @@ updateState(e){
             <input className='signup-input' id='confirmedPassword' onKeyUp={this.updateState} placeholder='Confirm your password' type="text"/>
             <span className='signup-span'>'I never was, am always to be. No one ever saw me, nor ever will. And yet I am the confidence of all, To live and breathe on this terrestrial ball. What am I?'</span>
             <input className='signup-input' id='answer' onKeyUp={this.updateState} placeholder='Your answer' type="text"/>
-            <button className='signup-input' onClick={this.createUser} id='true'>Sign Up</button>
+            <button className='signup-input signup-button' onClick={this.createUser} id='true'>Sign Up</button>
             </div>
         
         )

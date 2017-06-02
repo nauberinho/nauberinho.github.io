@@ -129,6 +129,11 @@ input{
     
 }
 
+.signup-button{
+    
+    z-index: 100;
+}
+
 .signout-button{
     
     position: absolute;
