@@ -1,0 +1,527 @@
+/*General------------------------------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 7px;
+    transition: 0.3s ease;
+    border-left: 2px solid rgb(218, 239, 223);
+}
+
+::-webkit-scrollbar-track {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+}
+
+::-webkit-scrollbar-thumb {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    border-left: 3px solid rgb(218, 239, 223);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    transition: 0.3s ease;
+    background-color: rgb(218, 239, 223);
+    border-left: #2d333d;
+}
+
+::-webkit-scrollbar-track:hover {
+    transition: 0.3s ease;
+    background-color: #2d333d;
+    border-left: 3px solid rgb(218, 239, 223);
+}
+
+body{
+    margin-top: 0;
+    font-size: 100%;
+    font-family: 'Kotta One', serif;
+    align-content: center;
+}
+
+#container{
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 700px;
+    height: 90vh;
+    align-content: center;
+}
+
+input{
+    
+    font-family: 'Kotta One', serif;
+}
+.session-div{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+    width: 100%;
+}
+
+.session-username{
+    position: relative;
+    width: 65%;
+    font-size: 110%;
+    font-weight: 700;
+    padding: 0.5% 0 0 5%;
+}
+
+.company-name{
+    font-size: 100%;
+    position: absolute;
+    right: 5%;
+    font-weight: 700;
+    color: darkgoldenrod;
+}
+
+
+#signup, #signin{
+    
+    width: 100%;
+    height: 44vh;
+    background-color: rgba(142, 113, 55, 0.7);
+    color: #e8e4de;
+    transition: 0.3s ease;
+    border-bottom: 1px solid #e8e4de;
+    font-size: 200%;
+}
+
+#signup:hover, #signin:hover{
+    
+    background-color: #e8e4de;
+    color: darkgoldenrod;
+    border-bottom: 1px solid #e8e4de;
+    
+}
+
+.signin-input, .signup-input{
+    
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(142, 113, 55, 0.7);
+    color: #e8e4de;
+    transition: 0.3s ease;
+    border-bottom: 1px solid #e8e4de;
+    font-size: 200%;
+    
+}
+.signup-span{
+    
+    width: 100%;
+    background-color: white;
+    color: rgba(142, 113, 55, 0.7);
+    transition: 0.3s ease;
+    border-bottom: 1px solid #e8e4de;
+    font-size: 200%;
+    
+}
+
+.signin-input:hover, .signup-input:hover{
+   background-color: #e8e4de;
+    color: darkgoldenrod;
+    border-bottom: 1px solid #e8e4de;
+    
+}
+
+.signup-button{
+    
+    z-index: 100;
+}
+
+.signout-button{
+    
+    position: absolute;
+    right: 0;
+    
+}
+
+.simulate-button{
+    
+    position: absolute;
+    top: 2vh;
+    right: 2%;
+    
+}
+
+.filter-div{
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6vh;
+    right: 2%;
+
+}
+.filter-button{
+color: #8E7137;
+
+}
+
+.question-text{
+    
+    font-size: 150%;
+    color: darkgoldenrod;
+}
+
+.questions-container{
+    position: relative;
+    top: 20%;
+    min-height: 90vh;
+
+}
+
+.right-answer{
+    margin-top: 0;
+    font-size: 100%;
+    color: #71a547;
+}
+
+.filter-input{
+    outline: none;
+    border: none;
+    font-family: 'Kotta One', serif;
+    font-weight: 700;
+    margin-top: 2vh;
+    border-bottom: 1px solid rgb(145, 95, 24);
+
+
+}
+
+.wrong-answer{
+    margin-top: 0;
+    font-size: 100%;
+    color: #ba5043;
+    
+}
+
+button{
+    cursor: pointer;
+    font-size: 70%;
+    font-family: 'Kotta One', serif;
+    font-weight: 700;
+    background: none;
+    border: none;   
+    transition: 0.3s ease;
+    outline: none;
+    
+}
+
+
+button:hover{
+    
+
+    transform: scale(1.05)
+}
+
+.edit-div{
+    position: absolute;
+    display: inline;
+    width: auto;
+    height: auto;
+    z-index: 9;
+    right:0;
+    text-align: right;
+}
+.editbutton, .cancelbutton{
+    width: 100%;
+    background: none;
+    border: none;
+    list-style-type: none;
+}
+
+input[type=file]{
+    
+background-color: white !important;
+    
+}
+
+/*ProfileComponent---------------------------------------------------*/
+
+#profile-component {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 240px;
+    padding: 0;
+    margin-bottom: 1%;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+} 
+
+.profile-image-div{
+    width: 30%;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid blue;
+    
+}
+
+#profile_image{
+    margin: auto;
+    max-width: 135px;
+    max-height: 170px;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+}
+
+.upload-div{
+    margin: 0%;
+    padding: 1%;
+    display: inline;
+    flex-direction: column;
+    width: 100%;
+    //border: 1px solid orange;
+}
+
+
+#filebutton, #uploadButton{
+    display: inline;
+    width: 50%;
+    background: none;
+    font-family: 'Kotta One', serif;
+    font-weight: 700;
+    border: none;
+}
+
+.general-info-ul{
+    display: block;
+    display:flex;
+    flex-direction:column;
+    margin: auto 0 auto 2%;
+    list-style-type: none;
+    width: 30%;
+    padding: 0;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.general-info-li{
+    display: flex, inline-block; 
+    flex-direction: column;
+    height: 17%;
+    width: 100%;
+    font-size: 100%;
+    -webkit-box-shadow: 0 1px 1px -1px grey;
+   -moz-box-shadow: 0 1px 1px -1px grey;
+    box-shadow: 0 1px 1px -1px grey;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.general-info-li:hover{
+   background-color: rgb(249, 247, 244)
+}
+
+
+.general-info-span{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    font-size: 70%;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    padding: 0 0 0 1%;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: default;
+}
+
+.general-info-input{
+    display: block;
+    width: 100%;
+    height: 30%;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    background: none;
+    margin-left: 1.5%;
+    font-size: 70%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/*----------------------------------------------------------------------------------------*/
+
+/*MessageComponent--------------------------------------------------------------------------*/
+
+.user-message-container{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 5%;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+    
+}
+
+.user-message-span{
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 2%;
+    left: 2%;
+    font-size: 70%;
+    font-weight: 700;
+    color: lightgrey;
+    
+    
+}
+
+.user-message-input{
+    display: inline-block;
+    position: relative;
+    left: 5%;
+    border: none;
+    background: none;
+    outline: none;
+    height: 50%;
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 135%;
+    font-weight: 500;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(145, 95, 24);
+    
+    
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*MediaComponent--------------------------------------------------------------------------*/
+
+.media-component{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0px;
+    height: 150px;
+    width: 100%;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+    
+}
+
+.media-images, .media-videos{
+
+    height: 100%;
+    width: 48%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-box-shadow: 0 4px 4px -2px grey;
+   -moz-box-shadow: 0 4px 4px -2px grey;
+        box-shadow: 0 4px 4px -2px grey;
+    
+}
+
+.media-images{
+    margin-left: 1%;
+    
+}
+
+.media-videos{
+    margin-right: 1%;
+}
+
+.media-image-edit-div, .media-video-edit-div{
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#imagefile, #videofile{
+    
+    width: 50%;
+    
+}
+    
+.media-image, .media-video{
+    
+    max-height: 70px; max-width: 70px;    
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+.media-image-container, .media-video-container{ 
+    POSITION: RELATIVE;
+    display: inline-block;
+    max-height: 70px; max-width: 70px; 
+    border: 1px solid lightgrey;
+    border-radius: 5%;
+    transition: 0.3s ease;
+    margin: 1%;
+}
+
+.media-remove-button{
+    position: absolute;
+    display: inline;
+    height: 10%; width: 10%;
+    color: black;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+
+.media-image-container:hover, media-video-container:hover{
+    
+    transform: scale(1.25);
+    z-index: 10;
+
+}
+
+
+
+/*----------------------------------------------------------------------------------------*/
+
+#profil{
+
+
+}
+
+#quote{
+
+
+}
+
+
+
+#statistik{
+
+}
+
+#mitt_lag{
+
+
+}
+
+#kalender{
+
+
+}
+
+.components{
+
+
+}
+
+#media bilder{
+
+}

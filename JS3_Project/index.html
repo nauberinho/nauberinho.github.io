@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QuestionSimulator</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"/>-->
+	
+	<link rel="shortcut icon" href="">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Kotta+One|Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+
+<div id="container">
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDUCOt7Q25HnArcLBAIuwLfZ6Sm3Yq_uBQ",
+    authDomain: "questionsimulator.firebaseapp.com",
+    databaseURL: "https://questionsimulator.firebaseio.com",
+    projectId: "questionsimulator",
+    storageBucket: "questionsimulator.appspot.com",
+    messagingSenderId: "103508674459"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/babel" src="/main.jsx"></script>
+
+
+</body>
+</html>
