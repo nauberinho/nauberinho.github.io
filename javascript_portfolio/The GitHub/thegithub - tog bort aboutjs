@@ -1,0 +1,1278 @@
+
+    //window.addEventListener('onload', function(event){
+//---------------------PRE STYLES WHEN PAGE LOADED----------------------------
+        
+ 
+
+       
+
+        let aboutsymbols = document.getElementsByClassName('aboutsymbol')
+       
+        for(i=0;i<aboutsymbols.length;i++){
+            aboutsymbols[i].style.top = '0vh'
+            aboutsymbols[i].style.opacity = '0'
+            aboutsymbols[i].style.border = '2px solid black'
+            aboutsymbols[i].style.width = '15vw'
+        }
+
+    function changeBackground(img){
+        let background = document.getElementById('background')
+        
+        background.style.backgroundImage = 'none'
+        
+        background.style.backgroundImage = img
+    }
+
+
+
+        
+        
+
+       //----------------------------------------------------------------- 
+    function focusonload () {
+    document.getElementsByClassNameById('focusonload')[0].focus();
+};
+        
+        var letterByLetter = function(string, element, interval, timestart) {
+            let text = ''
+            let time = timestart;
+            
+            function doSetTimeout (text, time){
+                setTimeout(function(){ element.innerHTML = text}, time);
+            }
+            
+            for(let i=0;i<=string.length;i++){
+                let j = string.charAt(i)
+                
+                text += j
+                
+                time += interval
+                doSetTimeout(text,time)
+}
+        }
+        
+        
+    let upperleft = document.getElementById('niklasnauber')
+ 
+    var contactbtn = document.getElementById('contactbtn'),
+    aboutbtn = document.getElementById('aboutbtn'),
+    workbtn = document.getElementById('workbtn'),
+    homebtn = document.getElementById('homebtn'),
+    slide = document.getElementById('scrolls').style;
+        
+//--------------------WHEN HOMEBUTTON IS CLICKED----------------------------
+        
+homebtn.addEventListener('click', function(){
+    
+    changeBackground('url(background.png)')
+    
+    let homedivtext = document.getElementById('hometext')
+    let hometext = "Click the moon to bring life to space."
+    homedivtext.style.color = '#293344';
+    homedivtext.style.margin =  "50vh 0vw 50vh 0vw";
+    homedivtext.style.fontSize = '200%'
+    homedivtext.style.backgroundColor = 'rgba(0,0,0,0)'
+    //homediv.style.boxShadow = '5px 5px 10px #282f3a'
+    homedivtext.style.borderRadius = '5px'
+    homedivtext.style.textShadow = '1px 2px grey'
+    
+
+    
+    letterByLetter(hometext, homedivtext, 50, 850)
+    
+    let mouseoverbool = false;
+    
+ 
+    
+    //--------------------WHEN CLICKING ON HOMEMOON----------------------------
+    
+
+    
+    homedivtext.innerHTML = ''
+    
+    let astronauttextdiv = document.getElementById('astronauttext')
+    let astronauttext = "I am Niklas. I'm on a mission."
+    
+    let codeworldtextdiv = document.getElementById('codeworldtext')
+    let codeworldtext = "I'm trying to reach the world of Front End."
+    
+    astronauttextdiv.style.color = '#293344';
+    astronauttextdiv.style.margin =  "50vh 0vw 50vh 0vw";
+    astronauttextdiv.style.fontSize = '200%'
+    astronauttextdiv.style.backgroundColor = 'rgba(0,0,0,0)'
+    //homediv.style.boxShadow = '5px 5px 10px #282f3a'
+    astronauttextdiv.style.borderRadius = '5px'
+    astronauttextdiv.style.textShadow = '1px 2px grey'
+    
+    codeworldtextdiv.style.color = '#293344';
+    codeworldtextdiv.style.margin =  "50vh 0vw 50vh 0vw";
+    codeworldtextdiv.style.fontSize = '200%'
+    codeworldtextdiv.style.backgroundColor = 'rgba(0,0,0,0)'
+    //homediv.style.boxShadow = '5px 5px 10px #282f3a'
+    codeworldtextdiv.style.borderRadius = '5px'
+    codeworldtextdiv.style.paddingRight =  "0px";
+    codeworldtextdiv.style.textShadow = '1px 2px grey'
+
+    letterByLetter(astronauttext, astronauttextdiv, 50, 1150)
+    
+    
+    
+    setTimeout(function(){ 
+        
+    
+    letterByLetter(codeworldtext, codeworldtextdiv, 50, 1150)
+    
+    }, 3500);
+        
+    setTimeout(function(){ 
+        
+    
+    letterByLetter('Use the menu to start journey.', homedivtext, 50, 1150)
+    
+    }, 5500);
+        
+    setTimeout(function(){ 
+   
+    homedivtext.style.opacity='0'
+    codeworldtextdiv.style.opacity='0'
+    astronauttextdiv.style.opacity='0'
+    
+    }, 8000);
+        
+    });
+        
+    
+ 
+
+//---------------------------------WHEN ABOUTBUTTON IS CLICKED------------------
+
+aboutbtn.addEventListener('click', function(){
+    
+    let aboutremoveadd = document.getElementsByClassName('aboutremoveadd')[0]
+    
+    let curveddiv = document.createElement('A')
+    aboutremoveadd.appendChild(curveddiv)
+    curveddiv.style.position =  'absolute'
+    curveddiv.setAttribute('href',"#")
+    curveddiv.style.height = '4px'
+    curveddiv.style.width = '4px'
+    curveddiv.style.top = '50vh'
+    curveddiv.style.right = '50vw'
+    curveddiv.style.backgroundColor = 'blue'
+    curveddiv.style.animationDuration =  '2s';
+    curveddiv.style.animationName =  'curvedin';
+    curveddiv.style.animationDuration =  '5s';
+    curveddiv.style.borderRadius =  '50%';
+    
+    
+   
+    
+    background.style.transition = '0.7s ease'
+    background.style.transform = 'skewY(170deg)';
+    
+    
+    aboutbtn.className += ' active';
+            
+    setTimeout(function(){ 
+        background.style.transition = '2s ease'
+    background.style.transform = 'skewY(0deg)';
+    
+    setTimeout(function(){ 
+    background.style.transform = 'skewY(0deg)';
+    goTo(2)
+    changeBackground('url(backgroundabout.png)')
+    
+                         },700)
+    
+            
+                         },700)
+        
+
+    
+    let letterbyletterbool = true
+    let aboutastronauttext = document.getElementById('aboutastronauttext')
+    let abouttext = "Click me to find out about who I am and what I do."
+    aboutastronauttext.style.color = '#293344';
+    aboutastronauttext.style.margin =  "75vh 0vw 75vh 0vw";
+    aboutastronauttext.style.fontSize = '100%'
+    aboutastronauttext.style.backgroundColor = 'white'
+    //homediv.style.boxShadow = '5px 5px 10px #282f3a'
+    aboutastronauttext.style.borderRadius = '5px'
+    aboutastronauttext.style.height = '2em'
+    //aboutastronauttext.style.border= '1px solid white'
+    
+    if(letterbyletterbool==true){
+        letterByLetter(abouttext, aboutastronauttext, 50, 850)
+        letterbyletterbool = false;
+    }
+    
+        for(i=0;i<aboutsymbols.length;i++){
+            aboutsymbols[i].style.transition = '2s ease'
+            aboutsymbols[i].style.opacity = '1'
+            aboutsymbols[i].style.border = '0px solid black'
+            aboutsymbols[i].style.backgroundColor = 'rgba(0,0,0,0)'
+            aboutsymbols[i].style.border = '2px solid blue'
+            aboutsymbols[i].style.color = 'blue'
+            aboutsymbols[i].innerHTML = 'MENU'
+        }
+        
+
+        
+        aboutastronauttext.innerHTML = ''
+        
+        let aboutastronautdiv = document.getElementsByClassName('aboutastronautdiv')[0]
+        
+        let contentdiv1 = document.createElement('DIV');
+            contentdiv1.className='col-xs-4'
+            contentdiv1.style.position = 'absolute'
+            contentdiv1.style.top = '20vh'
+            contentdiv1.style.width = '25vw'
+            contentdiv1.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            contentdiv1.style.left = '0vw'
+            contentdiv1.style.border = '2px solid black';
+        
+        let contentdiv2 = document.createElement('DIV');
+            contentdiv2.className='col-xs-4'
+            contentdiv2.style.position = 'absolute'
+            contentdiv2.style.top = '20vh'
+            contentdiv2.style.width = '25vw'
+            contentdiv2.style.height = '5vh'
+            contentdiv2.style.height = '5vh'
+            contentdiv2.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            contentdiv2.style.left = '-25vw'
+            contentdiv2.style.border = '2px solid black';
+        
+        let contentdiv3 = document.createElement('DIV');
+            contentdiv3.className='col-xs-4'
+            contentdiv3.style.position = 'absolute'
+            contentdiv3.style.top = '20vh'
+            contentdiv3.style.width = '25vw'
+            contentdiv3.style.height = '5vh'
+            contentdiv3.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            contentdiv3.style.left = '-50vw'
+            contentdiv3.style.border = '2px solid black';
+            
+        let removeeducationsdivs = function(){
+                contentdiv1.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                contentdiv2.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                contentdiv3.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                
+                contentdiv3.style.left='-50vw'
+                setTimeout(function(){
+                contentdiv3.style.top='20vh'
+            }, 200)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(contentdiv3)
+            }, 400)
+                  
+                  setTimeout(function(){
+                      contentdiv2.style.left='-25vw'
+                  }, 600)
+                setTimeout(function(){
+                contentdiv2.style.top='20vh'
+            }, 800)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(contentdiv2)
+            }, 1000)
+                  
+                  setTimeout(function(){
+                      contentdiv1.style.left='-0vw'
+                  }, 1200)
+                setTimeout(function(){
+                contentdiv1.style.top='20vh'
+            }, 1400)
+                setTimeout(function(){
+                aboutremoveadd.removeChild(contentdiv1)
+            }, 1600)
+                
+                setTimeout(function(){
+                    pressededucation = false
+                }, 1800)
+        }
+        
+        let addEducationDivs = function(content){
+            aboutremoveadd.appendChild(contentdiv1)
+            aboutremoveadd.appendChild(contentdiv2)
+            aboutremoveadd.appendChild(contentdiv3)
+
+           
+
+            setTimeout(function(){ 
+                
+                contentdiv1.style.top = '40vh'
+                          
+
+            }, 50)
+            
+            setTimeout(function(){ 
+                contentdiv1.style.left = '65vw'
+            }, 400)
+
+            
+            letterByLetter(content, contentdiv1, 30, 400)
+            letterByLetter(content, contentdiv2, 30, 800)
+            letterByLetter(content, contentdiv3, 30, 1200)
+            
+            setTimeout(function(){ 
+                
+                contentdiv2.style.top = '40vh'   
+            }, 800)
+            
+            setTimeout(function(){ 
+                contentdiv2.style.left = '10vw'
+            }, 1200)
+            
+        
+        
+         setTimeout(function(){ 
+                
+                contentdiv3.style.top = '40vh'
+                         
+                
+            }, 1600)
+         
+         setTimeout(function(){
+                contentdiv3.style.left = '-45vw'
+            }, 2000)
+        }
+            
+        let personadiv1 = document.createElement('DIV');
+            personadiv1.className='col-xs-4'
+            personadiv1.style.position = 'relative'
+            personadiv1.style.top = '20vh'
+            personadiv1.style.width = '25vw'
+            personadiv1.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            personadiv1.style.left = '25vw' 
+        
+        let personadiv2 = document.createElement('DIV');
+            personadiv2.className='col-xs-4'
+            personadiv2.style.position = 'relative'
+            personadiv2.style.top = '20vh'
+            personadiv2.style.width = '25vw'
+            personadiv2.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            personadiv2.style.left = '0vw'
+        
+        let personadiv3 = document.createElement('DIV');
+            personadiv3.className='col-xs-4'
+            personadiv3.style.position = 'relative'
+            personadiv3.style.top = '20vh'
+            personadiv3.style.width = '25vw'
+            personadiv3.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            personadiv3.style.left = '-25vw'
+            
+        let addPersonaDivs = function (content){
+
+
+            aboutremoveadd.appendChild(personadiv1)
+            aboutremoveadd.appendChild(personadiv2)
+            aboutremoveadd.appendChild(personadiv3)
+
+            
+
+            setTimeout(function(){ 
+                
+                personadiv1.style.top = '40vh'
+                          
+
+            }, 50)
+            
+            setTimeout(function(){ 
+                personadiv1.style.left = '65vw'
+            }, 400)
+
+            let contenttext1 = 'Life is like a box of chocolate.'
+            letterByLetter(contenttext1, personadiv1, 30, 400)
+            letterByLetter(contenttext1, personadiv2, 30, 800)
+            letterByLetter(contenttext1, personadiv3, 30, 1200)
+            
+            setTimeout(function(){ 
+                
+                personadiv2.style.top = '40vh'        
+      
+            }, 800)
+            
+            setTimeout(function(){ 
+                personadiv2.style.left = '10vw'
+            }, 1200)
+            
+         setTimeout(function(){ 
+                personadiv3.style.left = '45vw'         
+
+            }, 1600)
+         
+         setTimeout(function(){
+                personadiv3.style.top = '40vh'
+            }, 2000)
+         
+        };
+        
+        let removePersonaDivs = function(){
+                personadiv1.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                personadiv2.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                personadiv3.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                
+                
+                personadiv3.style.top='20vh'
+                setTimeout(function(){
+                personadiv3.style.left='-25vw'
+            }, 200)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(personadiv3)
+            }, 400)
+                  
+                  setTimeout(function(){
+                      personadiv2.style.left='0vw'
+                  }, 600)
+                setTimeout(function(){
+                personadiv2.style.top='20vh'
+            }, 800)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(personadiv2)
+            }, 1000)
+                  
+                  setTimeout(function(){
+                      personadiv1.style.left='25vw'
+                  }, 1200)
+                setTimeout(function(){
+                personadiv1.style.top='20vh'
+            }, 1400)
+                setTimeout(function(){
+                aboutremoveadd.removeChild(personadiv1)
+            }, 1600)
+                
+                setTimeout(function(){
+                    pressedpersona = false
+                }, 1800)
+        }
+            
+        let nextdiv1 = document.createElement('DIV');
+            nextdiv1.className='col-xs-4'
+            nextdiv1.style.position = 'relative'
+            nextdiv1.style.top = '20vh'
+            nextdiv1.style.width = '25vw'
+            nextdiv1.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            nextdiv1.style.left = '47vw' 
+        
+        let nextdiv2 = document.createElement('DIV');
+            nextdiv2.className='col-xs-4'
+            nextdiv2.style.position = 'relative'
+            nextdiv2.style.top = '20vh'
+            nextdiv2.style.width = '25vw'
+            nextdiv2.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            nextdiv2.style.left = '22vw'
+        
+        let nextdiv3 = document.createElement('DIV');
+            nextdiv3.className='col-xs-4'
+            nextdiv3.style.position = 'relative'
+            nextdiv3.style.top = '20vh'
+            nextdiv3.style.width = '25vw'
+            nextdiv3.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            nextdiv3.style.left = '-7vw'
+            
+        let addNextDivs = function (content){
+
+
+            aboutremoveadd.appendChild(nextdiv1)
+            aboutremoveadd.appendChild(nextdiv2)
+            aboutremoveadd.appendChild(nextdiv3)
+
+
+            setTimeout(function(){ 
+                
+                nextdiv1.style.top = '40vh'
+                          
+                
+            }, 50)
+            
+            setTimeout(function(){ 
+                nextdiv1.style.left = '65vw'
+            }, 400)
+
+            let contenttext1 = 'BOBBA'
+            letterByLetter(contenttext1, nextdiv1, 30, 400)
+            letterByLetter(contenttext1, nextdiv2, 30, 800)
+            letterByLetter(contenttext1, nextdiv3, 30, 1200)
+            
+            setTimeout(function(){ 
+                nextdiv2.style.left = '10vw'        
+                
+            }, 800)
+            
+            setTimeout(function(){ 
+                nextdiv2.style.top = '40vh'
+            }, 1200)
+            
+         setTimeout(function(){ 
+                nextdiv3.style.left = '-45vw'         
+               
+            }, 1600)
+         
+         setTimeout(function(){
+                nextdiv3.style.top = '40vh'
+            }, 2000)
+         
+        };
+        
+        let removeNextDivs = function(){
+                nextdiv1.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                nextdiv2.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                nextdiv3.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                
+                
+                nextdiv3.style.top='20vh'
+                setTimeout(function(){
+                nextdiv3.style.left='-7vw'
+            }, 200)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(nextdiv3)
+            }, 400)
+                  
+                  setTimeout(function(){
+                      nextdiv2.style.left='22vw'
+                  }, 600)
+                setTimeout(function(){
+                nextdiv2.style.top='20vh'
+            }, 800)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(nextdiv2)
+            }, 1000)
+                  
+                  setTimeout(function(){
+                      nextdiv1.style.left='47vw'
+                  }, 1200)
+                setTimeout(function(){
+                nextdiv1.style.top='20vh'
+            }, 1400)
+                setTimeout(function(){
+                aboutremoveadd.removeChild(nextdiv1)
+            }, 1600)
+                
+                setTimeout(function(){
+                    pressedwhatsnext = false
+                }, 1800)
+        }
+        
+        let resumediv1 = document.createElement('DIV');
+            resumediv1.className='col-xs-4'
+            resumediv1.style.position = 'relative'
+            resumediv1.style.top = '20vh'
+            resumediv1.style.width = '25vw'
+            resumediv1.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            resumediv1.style.left = '47vw' 
+        
+        let resumediv2 = document.createElement('DIV');
+            resumediv2.className='col-xs-4'
+            resumediv2.style.position = 'relative'
+            resumediv2.style.top = '20vh'
+            resumediv2.style.width = '25vw'
+            resumediv2.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            resumediv2.style.left = '22vw'
+        
+        let resumediv3 = document.createElement('DIV');
+            resumediv3.className='col-xs-4'
+            resumediv3.style.position = 'relative'
+            resumediv3.style.top = '20vh'
+            resumediv3.style.width = '25vw'
+            resumediv3.style.transition = '0.4s cubic-bezier(.65,.52,1,.89)'
+            resumediv3.style.left = '-7vw'
+            
+        let addResumeDivs = function (content){
+
+
+            aboutremoveadd.appendChild(resumediv1)
+            aboutremoveadd.appendChild(resumediv2)
+            aboutremoveadd.appendChild(resumediv3)
+
+
+            setTimeout(function(){ 
+                
+                resumediv1.style.top = '40vh'
+                          
+                resumediv1.style.border = '1px solid white'
+            }, 50)
+            
+            setTimeout(function(){ 
+                resumediv1.style.left = '65vw'
+            }, 400)
+
+            let contenttext1 = "You never know what you're gonna get."
+            letterByLetter(contenttext1, resumediv1, 30, 400)
+            letterByLetter(contenttext1, resumediv2, 30, 800)
+            letterByLetter(contenttext1, resumediv3, 30, 1200)
+            
+            setTimeout(function(){ 
+                resumediv2.style.left = '10vw'        
+
+            }, 800)
+            
+            setTimeout(function(){ 
+                resumediv2.style.top = '40vh'
+            }, 1200)
+            
+         setTimeout(function(){ 
+                resumediv3.style.left = '-45vw'         
+                
+            }, 1600)
+         
+         setTimeout(function(){
+                resumediv3.style.top = '40vh'
+            }, 2000)
+         
+        };
+        
+        let removeResumeDivs = function(){
+                resumediv3.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                resumediv2.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                resumediv1.style.transition='0.2s cubic-bezier(.65,.52,1,.89)'
+                
+                
+                resumediv3.style.top='20vh'
+                setTimeout(function(){
+                resumediv3.style.left='-7vw'
+            }, 200)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(resumediv3)
+            }, 400)
+                  
+                  setTimeout(function(){
+                      resumediv2.style.left='22vw'
+                  }, 600)
+                setTimeout(function(){
+                resumediv2.style.top='20vh'
+            }, 800)
+                  setTimeout(function(){
+                aboutremoveadd.removeChild(resumediv2)
+            }, 1000)
+                  
+                  setTimeout(function(){
+                      resumediv1.style.left='47vw'
+                  }, 1200)
+                setTimeout(function(){
+                resumediv1.style.top='20vh'
+            }, 1400)
+                setTimeout(function(){
+                aboutremoveadd.removeChild(resumediv1)
+            }, 1600)
+                
+                setTimeout(function(){
+                    pressedresume = false
+                }, 1800)
+        }
+
+
+        
+        aboutremoveadd.style.border = '2px solid green'
+        aboutremoveadd.style.height = '100%'
+        aboutremoveadd.style.width = '100%'
+       
+        
+        let educationsymbol = document.getElementById('educationsymbol')
+        educationsymbol.style.backgroundColor = "white"
+        educationsymbol.style.height = "4vh"
+       
+       
+        
+        let profilesymbol = document.getElementById('profilesymbol')
+        profilesymbol.style.backgroundColor = "white"
+        profilesymbol.style.backgroundSize = '100%'
+        profilesymbol.style.height = "4vh"
+        
+       
+        
+        let nextsymbol = document.getElementById('nextsymbol')
+        nextsymbol.style.backgroundColor = "white"
+        nextsymbol.style.backgroundSize = '100%'
+        nextsymbol.style.height = "4vh"
+        
+        
+        let resumesymbol = document.getElementById('resumesymbol')
+        resumesymbol.style.backgroundColor = "white"
+        resumesymbol.style.backgroundSize = '100%'
+        resumesymbol.style.height = "4vh"
+        
+        
+      
+        
+        let removed = false;
+        
+        let pressededucation = false;
+        let pressedpersona = false;
+        let pressedwhatsnext = false;
+        let pressedresume = false;
+  //-------------------WHEN EDUCATION IS PRESSED-------------------------------
+        
+        educationsymbol.addEventListener('click', function(){
+              
+            pressededucation = true;
+            
+
+            
+            let contenttext1 = 'Run, Forrest, run!'
+            
+            if(pressedpersona==true){
+                removePersonaDivs()
+                setTimeout(function(){
+                    addEducationDivs(contenttext1)
+                }, 2000)
+            }
+            
+            if(pressedwhatsnext==true){
+                removeNextDivs()
+                setTimeout(function(){
+                    addEducationDivs(contenttext1)
+                }, 2000)
+            }
+            
+            if(pressedresume==true){
+                removeResumeDivs()
+                setTimeout(function(){
+                    addEducationDivs(contenttext1)
+                }, 2000)
+            }
+            
+            else if(removed == true && pressedpersona==false && pressedwhatsnext==false && pressedresume==false){
+                setTimeout(function(){
+                    addEducationDivs(contenttext1)
+                }, 0000)
+            }
+            
+            aboutastronauttext.innerHTML = ''
+ 
+            
+            
+            
+
+            
+        })
+    //--------------------------------------------------------------------------
+    //---------------------------WHEN PERSONA IS PRESSED------------------------
+        
+        profilesymbol.addEventListener('click', function(){
+            let profiletext = 'Life is like a box of chocolate.'
+            pressedpersona = true;
+          
+           
+            
+                    setTimeout(function(){
+                    
+                    addPersonaDivs(profiletext)
+                }, 0000)
+            
+            
+
+            if(pressededucation==true){
+                
+                removeeducationsdivs()
+
+                 setTimeout(function(){
+                    addPersonaDivs(profiletext)
+                }, 2000)
+            }
+            
+            else if(pressedwhatsnext==true){
+                
+                removeNextDivs()
+
+                 setTimeout(function(){
+                    addPersonaDivs(profiletext)
+                }, 2000)
+            }
+            
+            else if(pressedresume==true){
+                removeResumeDivs()
+                setTimeout(function(){
+                    addPersonaDivs()
+                }, 2000)
+            }
+            
+            else if(removed == true && pressededucation == false && pressedresume == false && pressedwhatsnext == false){
+                    setTimeout(function(){
+                    
+                    addPersonaDivs(profiletext)
+                }, 0000)
+            }
+            
+        })
+        
+//----------------------------WHEN NEXTBTN IS PRESSED------------------------
+            
+            nextsymbol.addEventListener('click', function(){
+            let nexttext = 'BOBBA.'
+            pressedwhatsnext = true;
+          
+           
+            
+                    setTimeout(function(){
+                    addNextDivs()
+                }, 0000)
+                    
+            
+
+            if(pressededucation==true){
+                
+                removeeducationsdivs()
+
+                 setTimeout(function(){
+                    pressededucation = false
+                    addNextDivs('HI')
+                }, 2000)
+            }
+                
+            else if(pressedpersona==true){
+                removePersonaDivs()
+                
+                    setTimeout(function(){
+                    pressedpersona = false
+                    addNextDivs('HI')
+                }, 2000)
+            }
+            
+                
+            else if(pressedresume==true){
+                removeResumeDivs()
+                setTimeout(function(){
+                    addNextDivs()
+                }, 2000)
+            }
+            
+            else if(removed == true && pressededucation == false && pressedpersona == false && pressedresume == false){
+                    setTimeout(function(){
+                    addNextDivs()
+                }, 0000)
+            } 
+                
+            
+        })
+                                        
+//-------------------------WHEN RESUMEBTN IS PRESSED-------------------------
+            
+            resumesymbol.addEventListener('click', function(){
+            let resumetext = "You never know what you're gonna get."
+            pressedresume = true;
+          
+            
+            
+                    setTimeout(function(){
+                    addResumeDivs()
+                }, 0000)
+                    
+            
+
+            if(pressededucation==true){
+                
+                removeeducationsdivs()
+
+                 setTimeout(function(){
+                    pressededucation = false
+                    addResumeDivs()
+                }, 2000)
+            }
+                
+            else if(pressedpersona==true){
+                removePersonaDivs()
+                
+                    setTimeout(function(){
+                    pressedpersona = false
+                    addResumeDivs()
+                }, 2000)
+            }
+                
+            else if(pressedwhatsnext==true){
+                removeNextDivs()
+                
+                    setTimeout(function(){
+                    pressedwhatsnext = false
+                    addResumeDivs()
+                }, 2000)
+            }
+            
+            else if(removed == true && pressededucation == false && pressedpersona == false && pressedresume == false){
+                    setTimeout(function(){
+                    addResumeDivs()
+                }, 0000)
+            } 
+                
+            
+        })
+            
+            
+
+        
+    });
+    
+
+
+//-----------------------------WHEN WORKBUTTON IS CLICKED------------------->
+
+let workspaceshipdiv = document.getElementsByClassName('workwork')[0]
+            workspaceshipdiv.style.position = 'relative'
+            workspaceshipdiv.style.top = '30vh'
+            //workspaceshipdiv.style.left = 'vw'
+            workspaceshipdiv.style.transition = '2s ease';
+            workspaceshipdiv.style.paddingBottom = '200px';
+           
+
+let workremoveadd = document.getElementById('workremoveadd')
+
+workbtn.addEventListener('click', function(){
+    
+    changeBackground('url(backgroundwork.png)')
+    
+    workremoveadd.style.width = '70vw'
+    workremoveadd.style.height = '50vh'
+    workremoveadd.style.position = 'absolute'
+    workremoveadd.style.top = '30vh'
+    workremoveadd.style.left = '15vw'
+    workremoveadd.style.overflow = 'hidden'
+    workremoveadd.style.borderLeft='2px solid white'
+    workremoveadd.style.borderRight='2px solid white'    
+    workremoveadd.style.align =  'right';
+
+    
+    
+    let workarray = []
+
+    let case1 = document.createElement('DIV')
+    case1.style.transition = '1s ease'
+    case1.style.opacity = '0'
+    case1.style.backgroundImage = "url(canvasBW.png)"
+    case1.style.borderRadius='3px'
+    workarray.push(case1)
+    let case2 = document.createElement('DIV')
+    case2.style.transition = '1s ease'
+    case2.style.opacity = '0'
+    case2.style.backgroundImage = "url(formsandbuttons.png)"
+    case2.style.borderRadius='3px'
+    workarray.push(case2)
+    let case3 = document.createElement('DIV')
+    case3.style.transition = '1s ease'
+    case3.style.opacity = '0'
+    case3.style.backgroundImage = "url(table.png)"
+    case3.style.borderRadius='3px'
+    workarray.push(case3)
+    let case4 = document.createElement('DIV')
+    case4.style.transition = '1s ease'
+    case4.style.opacity = '0'
+    case4.style.borderRadius='3px'
+    workarray.push(case4)
+    let case5 = document.createElement('DIV')
+    case5.style.transition = '1s ease'
+    case5.style.opacity = '0'
+    case5.style.borderRadius='3px'
+    workarray.push(case5)
+    let case6 = document.createElement('DIV')
+    case6.style.transition = '1s ease'
+    case6.style.opacity = '0'
+    case6.style.borderRadius='3px'
+    workarray.push(case6)
+    let case7 = document.createElement('DIV')
+    case7.style.transition = '1s ease'
+    case7.style.opacity = '0'
+    case7.style.borderRadius='3px'
+    workarray.push(case7)
+    let case8 = document.createElement('DIV')
+    case8.style.transition = '1s ease'
+    case8.style.opacity = '0'
+    case8.style.borderRadius='3px'
+    workarray.push(case8)
+    
+    console.log(workarray)
+    
+    let leftvalue = -62
+    let leftvaluearray = []
+    
+    for(i=0;i<workarray.length; i++){
+    
+    
+    leftvalue += 66
+    leftvaluearray.push(leftvalue)
+    console.log('det här är leftvaluearray: ' + leftvaluearray)
+    
+    newleftvalue = leftvalue.toString() + 'vw'
+    
+
+    workarray[i].className='col-xs-4'
+    workarray[i].style.position = 'absolute'
+    workarray[i].style.top = '4vh'
+    workarray[i].style.border='1px solid white'
+    workarray[i].style.height = '40vh'
+    workarray[i].style.width = '60vw'
+    workarray[i].style.padding = '0 0'
+    //workarray[i].style.backgroundImage = "url(canvasBW.png)";
+    workarray[i].style.backgroundSize = "100%"
+    workarray[i].style.opacity='0'
+    workarray[i].style.left=newleftvalue
+    console.log(leftvalue)
+    workarray[i].style.transition='2s ease'
+    workarray[i].style.float='left'
+    
+
+    }
+    
+    let workleftarrow = document.getElementById('workleftarrow')
+    
+    let workrightarrow = document.getElementById('workrightarrow')
+    
+    
+
+        
+        let leftclicks = 0;
+        let rightclicks = 0;
+        
+        workleftarrow.addEventListener('click', function(){
+            
+        var leftvalue1 = 0
+        
+        if(rightclicks>0 && leftclicks<7){
+            
+            leftclicks++
+            rightclicks--
+            
+            for(i=0;i<workarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]+=66
+                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                workarray[i].style.left=newleftvalue1
+                }
+                
+                workarray[i].style.left=newleftvalue1
+
+
+            }
+        }
+    })
+
+    
+    workrightarrow.addEventListener('click', function(){
+         var leftvalue1 = 0
+         
+         
+        
+        if(leftclicks<=7 && rightclicks<=7){
+         rightclicks++
+         
+         if(leftclicks !== 0){
+         leftclicks-- 
+         }
+         
+         if(leftclicks<=7 && rightclicks<=7){
+            for(i=0;i<workarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]-=66
+                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                workarray[i].style.left=newleftvalue1
+                }
+
+
+                workarray[i].style.left=newleftvalue1
+
+
+            }
+         };
+        }
+    })
+    
+
+    workremoveadd.removeChild(workspaceshipdiv)
+    
+    setTimeout(function(){
+
+    setTimeout(function(){
+        
+        case1.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case1)
+
+                }, 400)
+    
+    setTimeout(function(){
+
+        setTimeout(function(){
+        
+        case2.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case2)
+
+                }, 800)
+    
+        setTimeout(function(){
+
+        setTimeout(function(){
+        
+        case3.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case3)
+
+                }, 1200)
+        
+            setTimeout(function(){
+
+    
+        setTimeout(function(){
+        
+        case4.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case4)
+
+                }, 1600)
+            
+
+    
+    setTimeout(function(){
+
+    setTimeout(function(){
+        
+        case5.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case5)
+
+                }, 2000)
+    
+    setTimeout(function(){
+
+        setTimeout(function(){
+        
+        case6.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case6)
+
+                }, 2400)
+    
+        setTimeout(function(){
+
+        setTimeout(function(){
+        
+        case7.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case7)
+
+                }, 2800)
+        
+            setTimeout(function(){
+
+    
+        setTimeout(function(){
+        
+        case8.style.opacity = '0.5'
+        
+    }, 50)
+    workremoveadd.appendChild(case8)
+
+                }, 3200)
+
+    
+    function makeOpacityOne(element){
+        element.addEventListener('mouseover', function(){
+            let span = document.createElement('SPAN')
+            span.innerHTML = 'PASSION'
+            /*
+            element.appendChild(span)
+            span.style.position = 'fixed'
+            span.style.top = '50%'
+            */
+            element.style.opacity='1'
+            element.innerHTML='PASSION'
+            element.style.color='white'
+        })
+    }
+    
+    function makeOpacityTransparent(element){
+        element.addEventListener('mouseleave', function(){
+            element.style.opacity='0.5'
+            element.innerHTML=''
+        })
+    }
+    
+    for(i=0;i<workarray.length;i++){
+        makeOpacityOne(workarray[i])
+
+    }
+    
+    for(i=0;i<workarray.length;i++){
+
+        makeOpacityTransparent(workarray[i])
+    }
+    
+   
+            
+    case1.addEventListener('mouseover', function(){
+        
+            case1.backgroundImage = "url('canvascolor.png')"
+        
+    })
+    
+    
+    
+
+
+    
+    
+
+    
+    
+});
+
+//ANNANDAG JUL, 2016-----------------------------------------------------------------
+
+//---------------WHEN CONTACTBTN IS CLICKED---------------------
+contactbtn.addEventListener('click', function(){
+    
+    changeBackground('url(backgroundcontact.png)')
+})
+
+
+//-----------------------------WHEN SWITCHING PAGE------------------------
+
+
+function goTo(num) {
+    
+    
+    
+    resetClasses();
+    switch(num) {
+        case 1:
+            homebtn.className += ' active';
+            slide.left = '0';
+            break;
+        case 2:
+            aboutbtn.className += ' active';
+            slide.left = '-100vw';
+            break;
+        case 3:
+            workbtn.className += ' active';
+            slide.left = '-200vw';
+            break;
+        case 4:
+            contactbtn.className += ' active';
+            slide.left = '-300vw';
+            break;
+
+    };
+};
+    
+
+function resetClasses() {
+    homebtn.className = aboutbtn.className = workbtn.className = contactbtn.className = 'col-xs-3 navhover scroll';
+};
+
+
+        
+
+ 
+    //});
+ 
