@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Niklas Nauber Portfolio</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+    <link rel="stylesheet" href="./vuePortfolio/animate.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Droid+Sans+Mono|Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="./vuePortfolio/vuePortfolio.css">
+    <script src="./src/imports.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="text" placeholder="City">
+        </div>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Country code">
+        </div>
+        <div class="col-sm-4">
+            {{country}}: {{city}} {{weather}}
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+
+    var main = new Vue ({
+        el: '#mainElement',
+        data: {
+            focusClassName: 'project-not-in-focus',
+            projectInFocus: {},
+            menuTab: 1,
+
+        },
+        computed: {
+            focusClass: {
+                get: function () {
+                    return this.focusClassName;
+                },
+                set: function () {
+
+                    this.focusClassName = this.focusClassName;
+                }
+            }
+        },
+        methods: {
+            focusOnProject: function (event) {
+                console.log('focusing on: ' + this.projects[event.target.id].name)
+                this.projectInFocus = this.projects[event.target.id];
+                this.focusClassName = 'project-in-focus';
+            },
+            unFocus: function () {
+                this.projectInFocus = {};
+                this.focusClassName = 'project-not-in-focus';
+            }
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+
+
+</html>

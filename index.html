@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Niklas Nauber Portfolio</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+    <link rel="stylesheet" href="./vuePortfolio/animate.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Droid+Sans+Mono|Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="./vuePortfolio/vuePortfolio.css">
+
+    <script src="./src/imports.js"></script>
+</head>
+<body>
+
+    <div id="mainElement" class="main-div">
+
+
+        <div class="intro-div just-another-hand" id="introDiv">
+            <div class="menu-tabs">
+                <div class="menu-tab" v-bind:class="{'active': menuTab === 1}" @click="menuTab = 1"><div :class="{ 'animated': menuTab === 1, 'bounce': menuTab === 1}">Home</div></div>
+                <div class="menu-tab" v-bind:class="{'active': menuTab === 2 }" @click="menuTab = 2"><div :class="{ 'animated': menuTab === 2, 'bounce': menuTab === 2}">My Work</div></div>
+                <div class="menu-tab" v-bind:class="{'active': menuTab === 3 }" @click="menuTab = 3"><div :class="{ 'animated': menuTab === 3, 'bounce': menuTab === 3}">Contact</div></div>
+
+            </div>
+
+
+        <!--
+
+         <video class='intro-video' preload='auto' loop="loop" muted="muted" autoplay>
+
+                <source src="./media/video/4K_magical.mp4" type="video/mp4">
+            </video>-->
+
+        </div>
+
+        <div class='content-container about-container' :class="{containerActive: menuTab===1}">
+
+
+
+
+            <div class="about-content-div">N i k l a s &nbsp<span class="yellow-text">N a u b e r</span></div>
+            <div class="about-content-div2">Front <span class="yellow-text">End</span> Developer</div>
+            <div class="about-content-div3"><button class='home-button' @click="menuTab = 2">Watch my work</button><button class='home-button' @click="menuTab = 3">Contact me</button></div>
+
+
+        </div>
+
+        <div class='content-container work-container' :class="{containerActive: menuTab===2}">
+                <ul class="projects-ul">
+
+                    <div :class="focusClass">
+
+                        <div v-if="projectInFocus!=={}" class="project-in-focus-content">
+
+                            <div class="project-in-focus-title raleway">
+                                {{projectInFocus.name}} <span class="lightgrey-text">.</span>
+                            </div>
+
+                            <div class="product-in-focus-img-and-description">
+
+                                <img class="project-in-focus-img" :src="projectInFocus.imgSrc" alt="">
+
+                                <div class="project-in-focus-description-and-techs cutive-mono">
+
+                                    <div class="project-in-focus-description">{{projectInFocus.description}}</div>
+                                    <div class="product-in-focus-techs-and-button">
+                                    <div class="product-in-focus-techs">
+                                        <span class="yellow-text raleway">techniques. </span><br>
+                                        <ul>
+
+
+                                            <li v-for="tech in projectInFocus.techs">
+
+                                                {{tech}}
+
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="see-it-live athiti" >
+                                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                        <span class="yellow-text raleway">see it live.</span>
+                                    </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <button class="go-back-button" @click="unFocus()"><i class="fa fa-undo" aria-hidden="true"></i></button>
+
+                        </div>
+
+                    </div>
+
+
+                    <li class='project-li cutive-mono' v-for="project in projects" @click="(event) => {focusOnProject (event) }">
+
+                        <img class='project-img' :src="project.imgSrc" :alt="project.imgSrc">
+
+                        <div class="project-info">
+                            {{project.name}}
+
+                        </div>
+
+                        <div class='go-to-button'><i class="fa fa-chevron-right" aria-hidden="true"></i><div :id="project.id" class="cover-div"></div></div>
+
+
+                    </li>
+
+                </ul>
+        </div>
+
+        <div class='content-container contact-container' :class="{containerActive: menuTab===3}">
+
+            <div class="contact-content-div"><i class="fa fa-envelope-o contact-fa" aria-hidden="true"></i></div>
+            <div class="contact-content-div2"><i class="fa fa-github contact-fa" aria-hidden="true"></i></div>
+            <div class="contact-content-div3"><i class="fa fa-linkedin-square contact-fa" aria-hidden="true"></i></div>
+
+        </div>
+
+    </div>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+
+        var main = new Vue ({
+            el: '#mainElement',
+            data: {
+                focusClassName: 'project-not-in-focus',
+                projectInFocus: {},
+                menuTab: 1,
+                projects: [
+                    {
+                        imgSrc: 'vuePortfolio/src/media/chat.png',
+                        name: "Firebase Chat Application",
+                        description: 'A project where I got to learn about Firebase, working with its´ Authorization- and Real Time Database tools. Main features are the chat-, the "see who is online"- and the "like a comment"  features.',
+                        techs: ["JavaScript", "Html", "Css","Firebase"],
+                        id: 0
+                    },
+                    {
+                        imgSrc: "vuePortfolio/src/media/clockshop.png",
+                        name: "React/Redux clock shop",
+                        description: "A React in combination with Redux application, collaborating with the two frameworks through a small webshop, as well as a small admin section (add and change product).",
+                        techs: ["JavaScript", "React", "Redux","Css"],
+                        id: 1
+                    },
+                    {
+                        imgSrc: 'vuePortfolio/src/media/caseimagegoogleapi.png',
+                        name: "Niklas Nauber",
+                        description: "some description",
+                        techs: ["vue.js", "html", "css","vue.js", "html", "css"],
+                        id: 2
+                    },
+                    {
+                        imgSrc: "vuePortfolio/src/media/portfolio_javascript.png",
+                        name: "JavaScript portfolio",
+                        description: "A project with 1500 lines of plain JavaScript code, creating my first portfolio.",
+                        techs: ["JavaScript", "Html", "Css"],
+                        id: 3
+                    },
+                    {
+                        imgSrc: 'vuePortfolio/src/media/booklist.png',
+                        name: "Booklist with APIs",
+                        description: "An app with features that enables the user to add books to a list of books, adding books from the Google Books API and removing books from the list",
+                        techs: ["JavaScript", "Html", "Css"],
+                        id: 4
+                    },
+                    {
+                        imgSrc: 'vuePortfolio/src/media/booklist.png',
+                        name: "Booklist with APIs",
+                        description: "An app with features that enables the user to add books to a list of books, adding books from the Google Books API and removing books from the list",
+                        techs: ["JavaScript", "Html", "Css"],
+                        id: 5
+                    }
+                ]
+            },
+            computed: {
+                focusClass: {
+                    get: function () {
+                        return this.focusClassName;
+                    },
+                    set: function () {
+
+                        this.focusClassName = this.focusClassName;
+                    }
+                }
+
+
+
+            },
+            methods: {
+                introDivHeight: function (event) {
+
+                    window.onscroll = function () {
+                        var height = document.getElementById('introDiv').clientHeight;
+                        if (height >= 10) {
+                            height = height - document.body.scrollTop;
+                            console.log(height + ' = height')
+
+                        }
+
+                        console.log(document.body.height + ' = introDivheight')
+                        return height + px;
+
+                    }
+
+                },
+                focusOnProject: function (event) {
+                    console.log('focusing on: ' + this.projects[event.target.id].name)
+                    this.projectInFocus = this.projects[event.target.id];
+                    this.focusClassName = 'project-in-focus';
+                },
+                unFocus: function () {
+                    this.projectInFocus = {};
+                    this.focusClassName = 'project-not-in-focus';
+                }
+
+
+            }
+        })
+
+        document.getElementsByClassName('about-content-div')[0].className = document.getElementsByClassName('about-content-div')[0]
+                .className + ' animated fadeInRight';
+        document.getElementsByClassName('about-content-div2')[0].className = document.getElementsByClassName('about-content-div2')[0]
+                .className + ' animated fadeInLeft';
+        document.getElementsByClassName('home-button')[0].className = document.getElementsByClassName('home-button')[0]
+                .className + ' animated fadeInLeft';
+        document.getElementsByClassName('home-button')[1].className = document.getElementsByClassName('home-button')[1]
+                .className + ' animated fadeInRight';
+        document.getElementsByClassName('contact-content-div')[0].className = document.getElementsByClassName('about-content-div')[0]
+                .className + ' animated fadeInRight';
+        document.getElementsByClassName('contact-content-div2')[0].className = document.getElementsByClassName('about-content-div2')[0]
+                .className + ' animated fadeInLeft';
+        document.getElementsByClassName('contact-content-div3')[0].className = document.getElementsByClassName('about-content-div2')[0]
+                .className + ' animated fadeInUp';
+
+
+
+        document.getElementsByClassName('about-content-div')[0].className = document.getElementsByClassName('about-content-div')[0]
+                .className + ' animated fadeInRight';
+
+
+
+        var ctx = document.getElementById('myChart1').getContext('2d');
+        ctx.height = 50;
+        ctx.width = '50vw'
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'radar',
+
+            // The data for our dataset
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    backgroundColor: [
+                        'lightgrey'
+                    ],
+                    borderColor: 'lightgrey',
+                    data: [0, 10, 5, 2, 20, 30, 35]
+                }],
+
+            },
+
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                responsiveAnimationDuration: 300
+            },
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 0
+                }
+            },
+
+            legend: {
+                display: false
+            }
+
+        });
+
+
+        Chart.defaults.global.legend.display = false;
+        Chart.defaults.global.tooltips.enabled = false;
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>
