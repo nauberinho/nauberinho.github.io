@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css?family=Athiti|Slabo+27px" rel="stylesheet">
     <link rel="stylesheet" href="./vuePortfolio/vuePortfolio.css">
 
-    <script src="./src/imports.js"></script>
 </head>
 <body>
 
@@ -73,14 +72,14 @@
 
                                 <div class="project-in-focus-description-and-techs cutive-mono">
 
-                                    <div class="project-in-focus-description">{{projectInFocus.description}}</div>
+                                    <div class="project-in-focus-description raleway">{{projectInFocus.description}}</div>
                                     <div class="product-in-focus-techs-and-button">
                                     <div class="product-in-focus-techs">
                                         <span class="yellow-text raleway">techniques. </span><br>
                                         <ul>
 
 
-                                            <li v-for="tech in projectInFocus.techs">
+                                            <li class="raleway" v-for="tech in projectInFocus.techs">
 
                                                 {{tech}}
 
@@ -135,7 +134,6 @@
 
     </div>
 
-    <script src="jquery-3.2.1.min.js"></script>
     <script>
 
         var main = new Vue ({
@@ -262,7 +260,7 @@
 
 
 
-        var ctx = document.getElementById('myChart1').getContext('2d');
+        /*var ctx = document.getElementById('myChart1').getContext('2d');
         ctx.height = 50;
         ctx.width = '50vw'
         var chart = new Chart(ctx, {
@@ -307,7 +305,7 @@
         Chart.defaults.global.tooltips.enabled = false;
 
 
-
+*/
 
 
 

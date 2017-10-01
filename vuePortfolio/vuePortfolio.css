@@ -336,7 +336,7 @@ body {
         color #efdd51;
         z-index: 2000;
         flex-direction: column;
-        height: 90vh;
+        height: 70vh;
     }
 
     .contact-fa{
@@ -346,7 +346,7 @@ body {
 
     .contact-content-div{
         margin: auto;
-        margin-top: 35%;
+        margin-top: 20%;
         align-content: center;
         font-weight: 700;
         font-size: 2em;
@@ -693,13 +693,12 @@ margin: auto;
         color: #f7f7f7;
         font-size: 1.2em;
         bottom: 0%;
-        border: 1px solid white;
+
 
     }
     .product-in-focus-techs{
 
         width: 30%;
-        border: 1px solid white;
 
 
     }
@@ -889,7 +888,7 @@ button{
         height: 75%;
         width: 90%;
         overflow: hidden;
-        font-size: 0.5em;
+        font-size: 0.6em;
         margin: auto;
         /*background-color: rgba(46, 48, 46,0.99);*/
         padding: 3%;
@@ -900,7 +899,7 @@ button{
 
     .product-in-focus-techs{
 
-        font-size: 1em;
+        font-size: 0.85em;
         background-color: rgba(0,0,0,0);
         margin-top: 0%;
         margin-left: 12.5%;
@@ -923,7 +922,7 @@ button{
         position: relative;
         right: 10%;
         font-size: 3em;
-        top: 20%;
+        top: 5%;
         height: 30%;
         width: 45;
         color: #f7f7f7;
