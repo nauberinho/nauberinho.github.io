@@ -1,0 +1,164 @@
+
+
+img{
+    max-height: 20%;
+    max-width: 50%;
+
+}
+
+.header, .input, button-div{
+    min-height: 45px;
+    height: 10vh;
+
+}
+
+.header{
+    margin-top: 3%;
+
+    font-size: 1.1em;
+    COLOR: #6e1c2a;
+
+}
+
+.HEADER2{
+
+    color: #1b6d85;
+}
+
+.input input{
+display: inline-block;
+    height: 100%;
+    width: 45%;
+    border: none;
+    outline: none;
+    font-size: 1.3em;
+    border-bottom: 1px solid #873232;
+    transition: 0.3s ease;
+    padding-left: 2%;
+}
+
+.input input:active, .input input:focus {
+
+    border-bottom: 1px solid #1b6d85;
+
+}
+
+div{
+
+    margin: auto;
+    text-align: center;
+    align-content: center;
+}
+
+.column{
+
+
+}
+
+.content{
+    height:70.8vh;
+    min-height: 300px;
+    overflow: hidden;
+    color: #1b6d85;
+
+}
+
+@media (max-width: 500px) {
+    .header{
+
+    margin-top: 5%;
+
+}
+
+    .input{
+        margin-top: 10%;
+    }
+
+    .city{
+
+        margin-top: 19%;
+}
+
+    .text, .icon{
+
+
+        margin-top: 18%;
+
+
+    }
+
+}
+
+.city{
+    font-size: 1.5em;
+    height: 20%;
+    margin-top: 10%;
+
+}
+
+.text, .icon{
+
+    height: 30%;
+    margin-top: 10%;
+
+
+}
+
+
+
+
+
+
+.yellow-text{
+    color: #efdd51;
+
+}
+
+.red-text{
+    color: #ff544f;
+}
+
+.cutive-mono{
+
+    font-family: 'Cutive Mono', monospace;
+}
+
+.athiti, button{
+font-weight: 700;
+    font-family: 'Athiti', sans-serif;
+}
+
+button{
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid #873232;
+    transition: 0.3s ease;
+    height: 94%;
+    width: 30%;
+    cursor: pointer;
+    outline: none!important;
+    color: #6e1c2a;
+}
+
+button:hover{
+
+    border-bottom: 1px solid #244c63;
+
+}
+.droid-mono{
+    font-family: 'Droid Sans Mono', monospace;
+}
+
+.lightgrey-text{
+    color: #f7f7f7;
+}
+
+.just-another-hand{
+
+    font-family: 'Just Another Hand', cursive;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
