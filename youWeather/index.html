@@ -1,109 +1,157 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Authentic Weather</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <style>
-        body {
-            font-family:'Roboto',sans-serif;
-            letter-spacing:1.5px;}
-        input,button {
-            letter-spacing:1.5px;
-            font-family:'Roboto',sans-serif;
-            padding:20px;
-            font-weight:bolder;
-            font-size:20px;
-            background-color:#333;
-            color:#fff;
-            width:300px;
-            border:none;
-            outline:none;}
-        button {
-            color:#ccc;}
-        button:hover, input:hover {
-            cursor:pointer;
-            background-color:#222;
-            color:#fff;}
-        .firstinput {
-            border-top:5px solid #ff6700;}
-        #applicant {
-            font-family:'Roboto',sans-serif;
-            border-top:5px solid #ff6700;
-            background-color:#222;
-            color:#fff;
-            padding:20px;
-            font-weight:bolder;
-            font-size:20px;
-            width:300px;
-            height:150px;}
-        #app {
-            position:relative;
-            top:50px;
-            outline:3px solid #333;
-            padding:10px;
-            background-color:#222;
-            width:320px;
-            margin:auto;}
-        .app-outline {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>YouWeather - made by Niklas Nauber</title>
 
-            margin:auto;
-            width:500px;
-            height:500px;
-            background-size:cover;}
-    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+    <link rel="stylesheet" href="./style/animate.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Droid+Sans+Mono|Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/weatherApp.css">
+    <script src="./src/imports.js"></script>
 </head>
-<body>
-<div class="app-outline">
-    <div id="app">
-        <input type="text"
-               onkeydown="if (event.keyCode == 13) document.getElementById('donebtn').click()"
-               value=""
-               placeholder="City"
-               id="textvalue"
-               class="text-center firstinput"><br/>
-        <input type="text"
-               onkeydown="if (event.keyCode == 13) document.getElementById('donebtn').click()"
-               value=""
-               placeholder="Country code (se, en, us)"
-               id="codevalue"
-               class="text-center"><br/>
-        <button id="donebtn" onclick="init()">Display Weather</button>
-        <div id="applicant" class="text-center"></div>
+<body class="athiti">
+<div id='mainElement'class="container-fluid">
+    <div class="column">
+        <div class="col-lg-4 col-md-6 col-sm-12 centered header">
+            YouWeather - <SPAN CLASS="HEADER2">receive weather info from anywhere</SPAN>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 centered input raleway">
+            <input type="text" placeholder="Place" v-on:keyup="(event) => {saveCity (event) }">
+            <button class="get-button" @click="(event) => {getWeather()}">
+
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 col-sm-12 centered button-div">
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 centered content">
+
+
+            <div v-if="weather.defined===true" class="col-sm-12">
+                <div class="col-sm-12 city animated fadeInDown">{{weather.city}}</div>
+                <img class="icon animated fadeInDown":src="weather.icon" :alt="weather.icon">
+                <div class="col-sm-12 text animated fadeInUp">{{weather.text}}</div>
+                <div class="col-sm-12 text animated fadeInDown">{{weather.temp}} °C</div>
+                <div class="col-sm-12 text animated fadeInUp">{{weather.wind}} m/s</div>
+            </div>
+
+        </div>
     </div>
 </div>
+
 <script>
 
-    function init() {
+    var main = new Vue ({
+        el: '#mainElement',
+        data: function(){
+            return {
+                country: '',
+                city: '',
+                weather: {
+                    defined: false,
+                    city: "",
+                    humidity: 1,
+                    wind: 2,
+                    temp: 3,
+                    text: ''
 
-        var weatherRequest = new XMLHttpRequest();
 
-        let textvalue = document.getElementById('textvalue').value;
-        weatherRequest.open("GET",
-            "http://api.openweathermap.org/data/2.5/forecast/city?q="
-            + textvalue + "&305edf537e4f906b190dfda437dcdb84", true);
-        weatherRequest.send();
+                }
+            }
+        },
+        methods: {
+            saveCity: function(event){
+                this.city = event.target.value;
+                if(event.keyCode == 13){this.getWeather()};
 
-        function display() {
-            var data = JSON.parse(weatherRequest.responseText);
+            },
+            saveCountry: function(event){
+                this.country = event.target.value;
+                console.log(this.country)
+            },
 
-            let city = data.city.name;
-            let weather = data.list[0].weather[0].description;
-            let wind = data.list[0].wind.speed;
-            let temp = Math.round((data.list[0].main.temp - 273.15 )* 10)/10;
+            getWeather: function(event){
+                let country = this.country;
+                let city = this.city;
+                let url;
 
-            console.log(data.list[0].main.temp);
-            console.log(data);
-            document.getElementById('applicant').innerHTML =
-                city + '<br/>' + weather + '<br/>' + temp + 'C<br/>' + wind + 'm/s';}
+                if(country!=='') {
+                    url = "http://api.apixu.com/v1/current.json?key=484bd2a71f864ec2a78190751170110&q="
+                        + city
+                }
 
-        setTimeout(display,1000);
+                else{
+                    url = "http://api.apixu.com/v1/current.json?key=484bd2a71f864ec2a78190751170110&q="
+                        + city
 
-    }
+                }
+
+                var request = new XMLHttpRequest();
+
+                request.open("GET",url, true);
+                request.send();
+
+                request.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        setTimeout(function(){
+
+                            var data = JSON.parse(request.response);
+                            console.log(data)
+                            let dataCity = data.location.name;
+                            let dataHumidity = data.current.humidity;
+                            let dataWind = data.current.wind_kph;
+                            let dataTemp = data.current.temp_c;
+                            let dataText = data.current.condition.text;
+                            let dataIcon = data.current.condition.icon;
+
+                            main.weather = {
+                                defined: true,
+                                city: dataCity,
+                                humidity: dataHumidity,
+                                wind: ((dataWind * 1000) / 3600).toFixed(1),
+                                temp: dataTemp,
+                                text: dataText,
+                                icon: "http://" + dataIcon
+                            }
+
+                        }, 100)
+                        // Action to be performed when the document is read;
+                    }
+                };
+                }
+            }
+        })
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
 </body>
+
+
+
 </html>
