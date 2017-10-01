@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2895804-04eb-47b5-b7c6-999fae662746" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/assets/css/main.css" afterPath="$PROJECT_DIR$/JS3_Project/assets/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/firebase-debug.log" afterPath="$PROJECT_DIR$/JS3_Project/firebase-debug.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/index.html" afterPath="$PROJECT_DIR$/JS3_Project/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/main.jsx" afterPath="$PROJECT_DIR$/JS3_Project/main.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuePortfolio/vuePortfolio.css" afterPath="$PROJECT_DIR$/vuePortfolio/vuePortfolio.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +20,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="395">
@@ -35,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vuePortfolio.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vuePortfolio.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
@@ -64,6 +61,7 @@
       <find>fade</find>
       <find>border</find>
       <find>getC</find>
+      <find>contact</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -289,11 +287,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28581000" />
+    <option name="totallyTimeSpent" value="29187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -541,6 +538,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="338" column="17" lean-forward="false" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -548,14 +553,6 @@
           <folding>
             <marker date="1506898672147" expanded="true" signature="9384:9406" ph="{&quot;name&quot;: &quot;Booklist with APIs&quot;...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="338" column="17" lean-forward="false" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
