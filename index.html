@@ -91,10 +91,10 @@
 
                                     </div>
 
-                                    <div class="see-it-live athiti" >
+                                    <a class="see-it-live athiti" target="_blank" :href="projectInFocus.url">
                                         <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         <span class="yellow-text raleway">see it live.</span>
-                                    </div>
+                                    </a>
                                     </div>
 
 
@@ -109,7 +109,7 @@
                     </div>
 
 
-                    <li class='project-li cutive-mono' v-for="project in projects" @click="(event) => {focusOnProject (event) }">
+                    <div class='project-li cutive-mono' v-for="project in projects" @click="(event) => {focusOnProject (event) }" >
 
                         <img class='project-img' :src="project.imgSrc" :alt="project.imgSrc">
 
@@ -121,16 +121,16 @@
                         <div class='go-to-button'><i class="fa fa-chevron-right" aria-hidden="true"></i><div :id="project.id" class="cover-div"></div></div>
 
 
-                    </li>
+                    </div>
 
                 </ul>
         </div>
 
         <div class='content-container contact-container' :class="{containerActive: menuTab===3}">
 
-            <div class="contact-content-div"><i class="fa fa-envelope-o contact-fa" aria-hidden="true"></i></div>
-            <div class="contact-content-div2"><i class="fa fa-github contact-fa" aria-hidden="true"></i></div>
-            <div class="contact-content-div3"><i class="fa fa-linkedin-square contact-fa" aria-hidden="true"></i></div>
+            <a class="contact-content-div"><i class="fa fa-envelope-o contact-fa" aria-hidden="true"></i></a>
+            <a href="https://github.com/nauberinho" target="_blank"  class="contact-content-div2"><i class="fa fa-github contact-fa" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/niklasnauber" target="_blank" class="contact-content-div3"><i class="fa fa-linkedin-square contact-fa" aria-hidden="true"></i></a>
 
         </div>
 
@@ -151,42 +151,48 @@
                         name: "Firebase Chat Application",
                         description: 'A project where I got to learn about Firebase, working with its´ Authorization- and Real Time Database tools. Main features are the chat-, the "see who is online"- and the "like a comment"  features.',
                         techs: ["JavaScript", "Html", "Css","Firebase"],
-                        id: 0
+                        id: 0,
+                        url: "https://nauberinho.github.io/Authentication_inl_3/"
                     },
                     {
                         imgSrc: "vuePortfolio/src/media/clockshop.png",
                         name: "React/Redux clock shop",
                         description: "A React in combination with Redux application, collaborating with the two frameworks through a small webshop, as well as a small admin section (add and change product).",
                         techs: ["JavaScript", "React", "Redux","Css"],
-                        id: 1
+                        id: 1,
+                        url: "https://nauberinho.github.io/reduxshop/"
                     },
                     {
                         imgSrc: 'vuePortfolio/src/media/caseimagegoogleapi.png',
                         name: "Niklas Nauber",
                         description: "some description",
                         techs: ["vue.js", "html", "css","vue.js", "html", "css"],
-                        id: 2
+                        id: 2,
+                        url:""
                     },
                     {
                         imgSrc: "vuePortfolio/src/media/portfolio_javascript.png",
                         name: "JavaScript portfolio",
                         description: "A project with 1500 lines of plain JavaScript code, creating my first portfolio.",
                         techs: ["JavaScript", "Html", "Css"],
-                        id: 3
+                        id: 3,
+                        url: "https://nauberinho.github.io/javascript_portfolio/"
                     },
                     {
                         imgSrc: 'vuePortfolio/src/media/booklist.png',
                         name: "Booklist with APIs",
                         description: "An app with features that enables the user to add books to a list of books, adding books from the Google Books API and removing books from the list",
                         techs: ["JavaScript", "Html", "Css"],
-                        id: 4
+                        id: 4,
+                        url: "https://nauberinho.github.io/Boklista%2C%20inl%201"
                     },
                     {
-                        imgSrc: 'vuePortfolio/src/media/booklist.png',
-                        name: "Booklist with APIs",
+                        imgSrc: 'vuePortfolio/src/media/questionSimulator.png',
+                        name: "QuestionSimulator",
                         description: "An app with features that enables the user to add books to a list of books, adding books from the Google Books API and removing books from the list",
                         techs: ["JavaScript", "Html", "Css"],
-                        id: 5
+                        id: 5,
+                        url: "https://nauberinho.github.io/JS3_Project/"
                     }
                 ]
             },

@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Niklas Nauber Portfolio</title>
+    <title>Weather App - made by Niklas Nauber</title>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
-    <link rel="stylesheet" href="./vuePortfolio/animate.min.css">
+    <link rel="stylesheet" href="./style/animate.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,56 +25,101 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
+    <div class="column">
         <div class="col-sm-4">
-            <input type="text" placeholder="City">
+            <input type="text" placeholder="City" v-on:keyup="(event) => {saveCity (event) }">
         </div>
         <div class="col-sm-4">
-            <input type="text" placeholder="Country code">
+            <input type="text" placeholder="Country code" v-on:keyup="(event) => {saveCountry (event) }">
+        </div>
+
+        <div class="col-sm-4">
+            <button class="get-button" @click="(event) => {getWeather()}">
+                Get weather
+            </button>
         </div>
         <div class="col-sm-4">
-            {{country}}: {{city}} {{weather}}
+            <div v-if="weather!=={}" class="col-sm-12 animated fadeInRight">
+                Temperature:
+                {{weather.temp}}
+            {{weather.city}}
+            </div>
 
         </div>
     </div>
 </div>
 
-
-
-<script src="jquery-3.2.1.min.js"></script>
 <script>
 
     var main = new Vue ({
-        el: '#mainElement',
+        el: '.container-fluid',
         data: {
-            focusClassName: 'project-not-in-focus',
-            projectInFocus: {},
-            menuTab: 1,
-
-        },
-        computed: {
-            focusClass: {
-                get: function () {
-                    return this.focusClassName;
-                },
-                set: function () {
-
-                    this.focusClassName = this.focusClassName;
-                }
-            }
+            country: '',
+            city: '',
+            weather: {}
         },
         methods: {
-            focusOnProject: function (event) {
-                console.log('focusing on: ' + this.projects[event.target.id].name)
-                this.projectInFocus = this.projects[event.target.id];
-                this.focusClassName = 'project-in-focus';
+            saveCity: function(event){
+                this.city = event.target.value;
+                console.log(this.city)
             },
-            unFocus: function () {
-                this.projectInFocus = {};
-                this.focusClassName = 'project-not-in-focus';
+            saveCountry: function(event){
+                this.country = event.target.value;
+                console.log(this.country)
+            },
+
+            getWeather: function(event){
+                let country = this.country;
+                let city = this.city;
+                let url;
+
+                if(country!=='') {
+                    url = "http://api.apixu.com/v1/current.json?key=484bd2a71f864ec2a78190751170110&q="
+                        + city
+                }
+
+                else{
+                    url = "http://api.apixu.com/v1/current.json?key=484bd2a71f864ec2a78190751170110&q="
+                        + city
+
+                }
+
+                var request = new XMLHttpRequest();
+
+                request.open("GET",url, true);
+                request.send();
+
+                request.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        setTimeout(function(){
+
+                            var data = JSON.parse(request.response);
+                            console.log(data)
+                            let dataCity = data.location.name;
+                            let dataHumidity = data.current.humidity;
+                            let dataWind = data.current.wind_kph;
+                            let dataTemp = data.current.temp_c;
+
+                            this.weather = {
+                                city: dataCity,
+                                humidity: dataHumidity,
+                                wind: dataWind,
+                                temp: dataTemp
+                            }
+
+                            setTimeout(function(){
+
+                                console.log(this.weather)
+
+                            }, 1000)
+                        }, 1000)
+                        // Action to be performed when the document is read;
+                    }
+                };
+                }
             }
-        }
-    })
+        })
+
 
 
 

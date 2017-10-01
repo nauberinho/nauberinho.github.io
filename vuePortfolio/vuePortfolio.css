@@ -947,7 +947,10 @@ button{
 }
 
 
+a{
+    text-decoration: none;
 
+}
 .yellow-text{
     color: #efdd51;
 
