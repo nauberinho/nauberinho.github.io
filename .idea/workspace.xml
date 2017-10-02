@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2895804-04eb-47b5-b7c6-999fae662746" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/assets/css/main.css" afterPath="$PROJECT_DIR$/JS3_Project/assets/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/firebase-debug.log" afterPath="$PROJECT_DIR$/JS3_Project/firebase-debug.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/index.html" afterPath="$PROJECT_DIR$/JS3_Project/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS3_Project/main.jsx" afterPath="$PROJECT_DIR$/JS3_Project/main.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/youWeather/index.html" afterPath="$PROJECT_DIR$/youWeather/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/youWeather/style/weatherApp.css" afterPath="$PROJECT_DIR$/youWeather/style/weatherApp.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +25,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2725">
+            <state relative-caret-position="-2650">
               <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
               <folding>
                 <marker date="1506898672147" expanded="true" signature="9384:9406" ph="{&quot;name&quot;: &quot;Booklist with APIs&quot;...}" />
@@ -33,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/youWeather/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="94" column="32" lean-forward="false" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+            <state relative-caret-position="500">
+              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -46,8 +47,18 @@
       <file leaf-file-name="vuePortfolio.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8450">
+            <state relative-caret-position="-50">
               <caret line="338" column="17" lean-forward="false" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherApp.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/youWeather/style/weatherApp.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -88,6 +99,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/vuePortfolio/vuePortfolio.css" />
         <option value="$PROJECT_DIR$/youWeather/index.html" />
+        <option value="$PROJECT_DIR$/youWeather/style/weatherApp.css" />
       </list>
     </option>
   </component>
@@ -268,12 +280,12 @@
       <workItem from="1506847612202" duration="1184000" />
       <workItem from="1506863961851" duration="745000" />
       <workItem from="1506867964945" duration="16865000" />
-      <workItem from="1506934248726" duration="92000" />
+      <workItem from="1506934248726" duration="900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29279000" />
+    <option name="totallyTimeSpent" value="30087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -445,17 +457,9 @@
     <entry file="file://$PROJECT_DIR$/weatherAPp/style/weatherApp.css" />
     <entry file="file://$PROJECT_DIR$/weatherAPp/index1.html" />
     <entry file="file://$PROJECT_DIR$/youWeather/index1.html" />
-    <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8450">
-          <caret line="338" column="17" lean-forward="false" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2725">
+        <state relative-caret-position="-2650">
           <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
           <folding>
             <marker date="1506898672147" expanded="true" signature="9384:9406" ph="{&quot;name&quot;: &quot;Booklist with APIs&quot;...}" />
@@ -465,8 +469,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/youWeather/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="94" column="32" lean-forward="false" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+        <state relative-caret-position="500">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePortfolio/vuePortfolio.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="338" column="17" lean-forward="false" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/youWeather/style/weatherApp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
           <folding />
         </state>
       </provider>

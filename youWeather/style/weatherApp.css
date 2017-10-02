@@ -129,12 +129,11 @@ font-weight: 700;
 }
 
 button{
-
     background: none;
     border: none;
-    border-bottom: 1px solid #873232;
+
     transition: 0.3s ease;
-    height: 94%;
+    height: 93%;
     width: 30%;
     cursor: pointer;
     outline: none!important;
