@@ -89,7 +89,7 @@ body {
     border-left: 1px lightgrey;
     padding-top:2%;
 
-
+    font-weight: 700;
 
 }
 
@@ -97,6 +97,7 @@ body {
 
     background-color: #232621;
     color: white;
+
 
 
 }
